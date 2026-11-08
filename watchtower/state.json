@@ -1,4 +1,60 @@
 {
- "sources": {},
+ "sources": {
+  "CA-CEC": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://www.dgs.ca.gov/BSC/Codes",
+   "last_seen": "2025 CEC eff 2026-01-01; Part 3 errata 2026-01-01; 2028 cycle NEC 2026 adoption not posted"
+  },
+  "NFPA-70": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/70/TIA_70_26_2.pdf",
+   "last_seen": "2026 edition; TIA 70-26-6 (latest, eff 2025-09-09); next edition status not shown"
+  },
+  "CA-ENERGY": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2028-building-energy-efficiency",
+   "last_seen": "2025 edition eff 2026-01-01; errata 2026-01-01 (Table 140.10-B BESS factors); 2028 pre-rulemaking 25-BSTD-03, eff 2029-01-01"
+  },
+  "CA-ENERGY-BLUEPRINT": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://www.energy.ca.gov/newsroom/blueprint-newsletter",
+   "last_seen": "Summer 2026 issue; no BESS/PV/140.10 items"
+  },
+  "CA-JA12": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists",
+   "last_seen": "2025 JA12 (CEC-400-2025-010-AP); 2025 JA12 declaration statements; PCS list 2026-10-21"
+  },
+  "CA-CFC": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://codes.iccsafe.org/content/CAFC2025P2/chapter-12-energy-systems",
+   "last_seen": "2025 CFC; January 2026 errata; Ch 12 text paywalled"
+  },
+  "NFPA-855": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/855/Errata_855_26_1.pdf",
+   "last_seen": "2026 edition; errata 855-26-1 2025-10-13; next edition status not shown"
+  },
+  "UL-9540": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://www.shopulstandards.com/ProductDetail.aspx?productId=UL9540",
+   "last_seen": "UL 9540 Ed 3 rev 2025-03-07; UL 9540A Ed 6 2026-03-13"
+  },
+  "UL-1741": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://www.shopulstandards.com/ProductDetail.aspx?productId=UL1741",
+   "last_seen": "UL 1741 Ed 3 rev 2026-08-14; SB not shown on page"
+  },
+  "IEEE-1547": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://standards.ieee.org/ieee/1547/5915/",
+   "last_seen": "1547-2018 active, 1547a-2020; P1547 active PAR 2022-03-24"
+  },
+  "CPUC-R21": {
+   "last_checked": "2026-11-08",
+   "last_url": "https://www.cpuc.ca.gov/Rule21",
+   "last_seen": "R.25-08-004 opened 2025-08-20; latest decision not shown on page"
+  }
+ },
  "queue": []
 }
