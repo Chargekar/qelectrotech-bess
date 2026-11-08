@@ -1,0 +1,111 @@
+{
+  "version": "1.0.0",
+  "asset_kind": "raceway-type-vocabulary-and-schedule-contract",
+  "code_basis_policy": "Verify use/installation restrictions in actual adopted NEC/CEC edition and listing/manufacturer data. No suitability or numerical sizing is preselected.",
+  "types": [
+    {
+      "id": "EMT",
+      "name": "Electrical metallic tubing",
+      "project_trade_size": null,
+      "material_coating": null,
+      "installation_exposure": null,
+      "fitting_transition_refs": [],
+      "support_expansion_detail_refs": [],
+      "bonding_detail_refs": [],
+      "fill_calculation_ref": null,
+      "rule_edition_locator": null,
+      "review_status": "open"
+    },
+    {
+      "id": "IMC",
+      "name": "Intermediate metal conduit",
+      "project_trade_size": null,
+      "material_coating": null,
+      "installation_exposure": null,
+      "fitting_transition_refs": [],
+      "support_expansion_detail_refs": [],
+      "bonding_detail_refs": [],
+      "fill_calculation_ref": null,
+      "rule_edition_locator": null,
+      "review_status": "open"
+    },
+    {
+      "id": "RMC",
+      "name": "Rigid metal conduit",
+      "project_trade_size": null,
+      "material_coating": null,
+      "installation_exposure": null,
+      "fitting_transition_refs": [],
+      "support_expansion_detail_refs": [],
+      "bonding_detail_refs": [],
+      "fill_calculation_ref": null,
+      "rule_edition_locator": null,
+      "review_status": "open"
+    },
+    {
+      "id": "FMC",
+      "name": "Flexible metal conduit",
+      "project_trade_size": null,
+      "material_coating": null,
+      "installation_exposure": null,
+      "fitting_transition_refs": [],
+      "support_expansion_detail_refs": [],
+      "bonding_detail_refs": [],
+      "fill_calculation_ref": null,
+      "rule_edition_locator": null,
+      "review_status": "open"
+    },
+    {
+      "id": "LFMC",
+      "name": "Liquidtight flexible metal conduit",
+      "project_trade_size": null,
+      "material_coating": null,
+      "installation_exposure": null,
+      "fitting_transition_refs": [],
+      "support_expansion_detail_refs": [],
+      "bonding_detail_refs": [],
+      "fill_calculation_ref": null,
+      "rule_edition_locator": null,
+      "review_status": "open"
+    },
+    {
+      "id": "LFNC",
+      "name": "Liquidtight flexible nonmetallic conduit",
+      "project_trade_size": null,
+      "material_coating": null,
+      "installation_exposure": null,
+      "fitting_transition_refs": [],
+      "support_expansion_detail_refs": [],
+      "bonding_detail_refs": [],
+      "fill_calculation_ref": null,
+      "rule_edition_locator": null,
+      "review_status": "open"
+    },
+    {
+      "id": "PVC-RNC",
+      "name": "Rigid nonmetallic PVC conduit",
+      "project_trade_size": null,
+      "material_coating": null,
+      "installation_exposure": null,
+      "fitting_transition_refs": [],
+      "support_expansion_detail_refs": [],
+      "bonding_detail_refs": [],
+      "fill_calculation_ref": null,
+      "rule_edition_locator": null,
+      "review_status": "open"
+    },
+    {
+      "id": "RTRC",
+      "name": "Reinforced thermosetting resin conduit",
+      "project_trade_size": null,
+      "material_coating": null,
+      "installation_exposure": null,
+      "fitting_transition_refs": [],
+      "support_expansion_detail_refs": [],
+      "bonding_detail_refs": [],
+      "fill_calculation_ref": null,
+      "rule_edition_locator": null,
+      "review_status": "open"
+    }
+  ]
+}

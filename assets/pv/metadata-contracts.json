@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "scope": "Reusable property contracts only; no project equipment selection or size",
+  "pv_source_definition": "PVSourceSpecification",
+  "shutdown_definition": "PVShutdownRequirement",
+  "port_rules": [
+    "An individual positive/negative conductor is different from an aggregated DC circuit bundle.",
+    "A logical shutdown command port does not mandate a dedicated control wire; actual PLC/wired/other method needs evidence.",
+    "A microinverter, optimizer or module glyph alone proves no shutdown, backup or grid-forming function.",
+    "Internal module marks in a string glyph do not specify series count."
+  ],
+  "rating_input_topics": [
+    "STC or other stated condition",
+    "module power/Voc/Isc and applicable temperature coefficients",
+    "series/parallel topology",
+    "design temperature basis",
+    "inverter DC voltage/current/MPPT limits",
+    "source protection and wiring",
+    "exact compatible product/assembly and listing",
+    "mounting/fire/environment and adopted code basis"
+  ]
+}

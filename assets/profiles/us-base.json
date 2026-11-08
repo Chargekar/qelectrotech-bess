@@ -1,0 +1,16 @@
+{
+  "id": "US-BASE",
+  "country": "US",
+  "status": "reference-only",
+  "electrical_model_code": "NFPA 70 / NEC; select adopted edition and amendments",
+  "energy_code": "Select state/local adoption; no universal Title 24 requirement",
+  "fire_code": "Select adopted fire/building codes and referenced standards",
+  "additional_review_domains": [
+    "utility interconnection",
+    "environmental and air district permits for generators as applicable",
+    "structural/mounting",
+    "accessibility and egress",
+    "flood/coastal/land-use permitting"
+  ],
+  "binding_project_defaults": false
+}

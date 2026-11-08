@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<definition type="element" version="0.80" width="880" height="242" hotspot_x="0" hotspot_y="0" orientation="dyyy" link_type="simple">
+  <uuid uuid="{37b63fd6-1caa-5cf6-85f3-542222ce1ce0}" />
+  <names>
+    <name lang="en">Blank conductor / raceway schedule</name>
+  </names>
+  <informations>Original CC0-1.0 blank drafting form. No project rows, ratings, calculations or approval. No electrical terminals.</informations>
+  <description>
+    <rect x="0" y="0" width="880" height="242" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="true" />
+    <text x="12" y="22" text="CONDUCTOR / RACEWAY SCHEDULE" size="11" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="0" y1="32" x2="880" y2="32" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="62" x2="880" y2="62" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="92" x2="880" y2="92" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="122" x2="880" y2="122" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="152" x2="880" y2="152" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="182" x2="880" y2="182" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="212" x2="880" y2="212" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="8" y="52" text="CIRCUIT" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="85" y1="32" x2="85" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="93" y="52" text="FROM / TO" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="240" y1="32" x2="240" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="248" y="52" text="CONDUCTORS" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="420" y1="32" x2="420" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="428" y="52" text="RACEWAY / ROUTE" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="600" y1="32" x2="600" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="608" y="52" text="CALC / SOURCE" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="760" y1="32" x2="760" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="768" y="52" text="REVIEW" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+  </description>
+</definition>

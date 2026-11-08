@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "selection_key": "jurisdiction.subdivision_code",
+  "fallback_policy": "Do not silently substitute another US state. Create and verify the actual adoption/AHJ profile.",
+  "profiles": [
+    {
+      "id": "US-BASE",
+      "path": "us-base.json",
+      "enforceability": "unadopted-reference-only"
+    },
+    {
+      "id": "US-CA",
+      "path": "us-ca.json",
+      "enforceability": "requires-project-code-basis-selection"
+    },
+    {
+      "id": "US-NY",
+      "path": "us-ny.json",
+      "enforceability": "requires-project-code-basis-selection"
+    },
+    {
+      "id": "US-TX",
+      "path": "us-tx.json",
+      "enforceability": "requires-project-code-basis-selection"
+    }
+  ]
+}

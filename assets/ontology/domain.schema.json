@@ -1,0 +1,4438 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:qelectrotech-bess:ontology:1.1",
+  "title": "Renewable engineering domain contracts; no default project scenario",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ontology_version": {
+      "const": "1.1.0"
+    },
+    "jurisdiction": {
+      "$ref": "#/$defs/Jurisdiction"
+    },
+    "operating_modes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/OperatingMode"
+      }
+    },
+    "component_conditions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ComponentCondition"
+      }
+    },
+    "switch_positions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SwitchPosition"
+      }
+    },
+    "battery_soc_records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/BatterySoc"
+      }
+    },
+    "physical_constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PhysicalConstraint"
+      }
+    },
+    "environment_constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/EnvironmentConstraint"
+      }
+    },
+    "electrical_constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ElectricalConstraint"
+      }
+    },
+    "resilience_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ResilienceRequirement"
+      }
+    },
+    "source_transitions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SourceTransition"
+      }
+    },
+    "calculation_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/CalculationRequirement"
+      }
+    },
+    "energy_code_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/EnergyCodeRequirement"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Source"
+      }
+    },
+    "raceway_specifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RacewaySpecification"
+      }
+    },
+    "raceway_route_annotations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RacewayRouteAnnotation"
+      }
+    },
+    "pv_source_specifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PVSourceSpecification"
+      }
+    },
+    "pv_shutdown_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PVShutdownRequirement"
+      }
+    },
+    "control_function_specifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ControlFunctionSpecification"
+      }
+    },
+    "sensor_specifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SensorSpecification"
+      }
+    },
+    "protection_specifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ProtectionSpecification"
+      }
+    },
+    "distribution_assembly_specifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/DistributionAssemblySpecification"
+      }
+    },
+    "grounding_bonding_specifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/GroundingBondingSpecification"
+      }
+    },
+    "transfer_specifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/TransferSpecification"
+      }
+    },
+    "generator_specifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/GeneratorSpecification"
+      }
+    },
+    "availability_dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/AvailabilityDependency"
+      }
+    },
+    "physical_coordinate_frames": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PhysicalCoordinateFrame"
+      }
+    },
+    "footprint_definitions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/FootprintDefinition"
+      }
+    },
+    "mounting_interfaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/MountingInterface"
+      }
+    },
+    "spatial_envelope_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SpatialEnvelopeRequirement"
+      }
+    },
+    "environmental_exposure_records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/EnvironmentalExposureRecord"
+      }
+    },
+    "authority_scopes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/AuthorityScope"
+      }
+    },
+    "rule_applicability_decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RuleApplicability"
+      }
+    },
+    "compliance_note_instances": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ComplianceNoteInstance"
+      }
+    },
+    "external_authorizations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ExternalAuthorizationRecord"
+      }
+    },
+    "sheet_definitions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SheetDefinition"
+      }
+    },
+    "drawing_occurrences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/DrawingOccurrence"
+      }
+    },
+    "schedule_contracts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ScheduleContract"
+      }
+    },
+    "annotation_placements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/AnnotationPlacement"
+      }
+    }
+  },
+  "required": [
+    "ontology_version"
+  ],
+  "$defs": {
+    "Review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "open",
+            "needs-review",
+            "pass",
+            "fail",
+            "not-applicable"
+          ]
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "pass"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reviewer",
+              "date",
+              "source_refs"
+            ],
+            "properties": {
+              "reviewer": {
+                "type": "string",
+                "minLength": 1
+              },
+              "date": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_refs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "not-applicable"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reason"
+            ],
+            "properties": {
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Quantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "enum": [
+            "V",
+            "A",
+            "kA",
+            "W",
+            "kW",
+            "VA",
+            "kVA",
+            "Wh",
+            "kWh",
+            "Hz",
+            "h",
+            "day",
+            "ft",
+            "in",
+            "mm",
+            "m",
+            "kg",
+            "lb",
+            "percent",
+            "fraction",
+            "degC",
+            "ohm",
+            "count",
+            "ft2",
+            "m2"
+          ]
+        },
+        "basis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_status": {
+          "enum": [
+            "unknown",
+            "assumed",
+            "provided",
+            "verified",
+            "engineer-reviewed"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "evidence_status"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "evidence_status": {
+                "const": "unknown"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "evidence_status": {
+                "enum": [
+                  "verified",
+                  "engineer-reviewed"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "source_refs"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "source_refs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "TimeQuantity": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Quantity"
+        },
+        {
+          "properties": {
+            "unit": {
+              "enum": [
+                "h",
+                "day"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "VoltageQuantity": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Quantity"
+        },
+        {
+          "properties": {
+            "unit": {
+              "enum": [
+                "V"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "EnergyQuantity": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Quantity"
+        },
+        {
+          "properties": {
+            "unit": {
+              "enum": [
+                "Wh",
+                "kWh"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "PowerQuantity": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Quantity"
+        },
+        {
+          "properties": {
+            "unit": {
+              "enum": [
+                "W",
+                "kW"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ApparentPowerQuantity": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Quantity"
+        },
+        {
+          "properties": {
+            "unit": {
+              "enum": [
+                "VA",
+                "kVA"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "issuer": {
+          "type": "string"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "access_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rights": {
+          "type": "string"
+        },
+        "inspection_coverage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "document_kind": {
+          "enum": [
+            "adopted-rule",
+            "model-code",
+            "guidance",
+            "manufacturer",
+            "historical-plan",
+            "owner-requirement",
+            "other",
+            "unresolved"
+          ]
+        },
+        "enforceability_status": {
+          "enum": [
+            "effective",
+            "future-effective",
+            "stayed",
+            "superseded",
+            "draft",
+            "not-a-rule",
+            "unresolved"
+          ]
+        },
+        "legal_effect_basis_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "superseded_by_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "content_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "issuer",
+        "rights"
+      ]
+    },
+    "CodeBasis": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code_name": {
+          "type": "string"
+        },
+        "edition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "adoption_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "effective_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "amendment_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "errata_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "applicability": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "code_name",
+        "review"
+      ]
+    },
+    "Jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country": {
+          "const": "US"
+        },
+        "subdivision_code": {
+          "type": "string",
+          "pattern": "^US-[A-Z]{2}$"
+        },
+        "county": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "building_ahj": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fire_ahj": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "utility": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "special_jurisdiction": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "permit_basis_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "code_basis": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CodeBasis"
+          }
+        }
+      },
+      "required": [
+        "country",
+        "subdivision_code"
+      ],
+      "description": "Geographic/legal jurisdiction only. Never an electrical operating mode."
+    },
+    "OperatingMode": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "grid-parallel",
+            "islanded",
+            "transition",
+            "maintenance",
+            "shutdown",
+            "black-start",
+            "fault-response",
+            "unknown"
+          ]
+        },
+        "active_source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "served_load_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "switch_configuration_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transition_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "parallel_operation_permitted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "id",
+        "mode"
+      ],
+      "description": "System operating condition. Never a US state or an evidence disposition."
+    },
+    "ComponentCondition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "equipment_ref": {
+          "type": "string"
+        },
+        "condition": {
+          "enum": [
+            "available",
+            "degraded",
+            "failed",
+            "maintenance",
+            "isolated",
+            "unknown"
+          ]
+        },
+        "observed_time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "equipment_ref",
+        "condition"
+      ]
+    },
+    "SwitchPosition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "equipment_ref": {
+          "type": "string"
+        },
+        "position": {
+          "enum": [
+            "open",
+            "closed",
+            "transitioning",
+            "unknown"
+          ]
+        },
+        "mode_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "equipment_ref",
+        "position"
+      ]
+    },
+    "BatterySoc": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "equipment_ref": {
+          "type": "string"
+        },
+        "soc_fraction": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "basis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "timestamp": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "equipment_ref",
+        "soc_fraction"
+      ]
+    },
+    "PhysicalConstraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "subject_class_or_ref": {
+          "type": "string"
+        },
+        "mounting_method": {
+          "enum": [
+            "wall",
+            "floor",
+            "pad",
+            "rack",
+            "roof",
+            "pole",
+            "other",
+            "unresolved"
+          ]
+        },
+        "location_setting": {
+          "enum": [
+            "indoor",
+            "outdoor",
+            "roof",
+            "garage",
+            "room",
+            "yard",
+            "utility",
+            "other",
+            "unresolved"
+          ]
+        },
+        "substrate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "orientation_restriction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "footprint_quantity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "mass_quantity_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "service_face_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "clearance_requirement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "anchorage_detail_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "load_path_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "wind_seismic_basis_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "elevation_flood_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "manufacturer_restriction_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "id",
+        "subject_class_or_ref",
+        "review"
+      ]
+    },
+    "EnclosureQualification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rating_system": {
+          "enum": [
+            "NEMA-Type",
+            "IEC-IP",
+            "other",
+            "unresolved"
+          ]
+        },
+        "designation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "qualifying_standard_edition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "qualification_source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additional_environment_limits": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "rating_system"
+      ],
+      "description": "An enclosure designation does not prove coastal or chemical suitability."
+    },
+    "EnvironmentConstraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "subject_class_or_ref": {
+          "type": "string"
+        },
+        "coastal_exposure": {
+          "enum": [
+            "none-verified",
+            "salt-air",
+            "salt-spray",
+            "splash",
+            "submersion",
+            "unresolved"
+          ]
+        },
+        "corrosive_agents": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "corrosion_classification_basis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "enclosure_qualification": {
+          "$ref": "#/$defs/EnclosureQualification"
+        },
+        "material_coating_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fastener_galvanic_isolation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "ambient_temperature_quantity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "altitude_quantity_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "humidity_condensation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "uv_pollution_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "maintenance_restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "manufacturer_warranty_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "id",
+        "subject_class_or_ref",
+        "review"
+      ]
+    },
+    "ElectricalConstraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "subject_class_or_ref": {
+          "type": "string"
+        },
+        "current_kind": {
+          "enum": [
+            "ac",
+            "dc",
+            "unresolved"
+          ]
+        },
+        "voltage": {
+          "$ref": "#/$defs/VoltageQuantity"
+        },
+        "voltage_basis": {
+          "enum": [
+            "line-to-line",
+            "line-to-neutral",
+            "dc-pole-to-pole",
+            "dc-pole-to-ground",
+            "unresolved"
+          ]
+        },
+        "voltage_range_quantity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "configuration": {
+          "enum": [
+            "wye",
+            "delta",
+            "split-phase",
+            "single-phase",
+            "other",
+            "unresolved"
+          ]
+        },
+        "phase_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "wire_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "neutral_available": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "grounding_arrangement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "frequency_quantity_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "current_rating_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sccr_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interrupting_rating_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fault_duty_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compatible_port_class_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "protection_setting_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "id",
+        "subject_class_or_ref",
+        "current_kind",
+        "review"
+      ],
+      "description": "480 V alone does not establish wye/delta, line-neutral voltage, neutral or grounding."
+    },
+    "SourceTransition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "from_mode_ref": {
+          "type": "string"
+        },
+        "to_mode_ref": {
+          "type": "string"
+        },
+        "trigger": {
+          "type": "string"
+        },
+        "guard_requirement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "switch_action_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "control_supply_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "allowed_interruption_quantity_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "failure_response_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "id",
+        "trigger",
+        "review"
+      ]
+    },
+    "RedundancyClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "claimed_label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "n_definition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "extra_unit_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "served_function_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "capacity_basis_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "failure_case_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "common_cause_dependency_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "verification_artifact_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verification_status": {
+          "enum": [
+            "unverified",
+            "verified",
+            "failed"
+          ]
+        }
+      },
+      "required": [
+        "claimed_label",
+        "verification_status"
+      ],
+      "description": "A source count or mains/BESS/generator hierarchy is not itself N+k proof."
+    },
+    "ResilienceRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "autonomy_duration": {
+          "$ref": "#/$defs/TimeQuantity"
+        },
+        "autonomy_supply_basis": {
+          "enum": [
+            "bess-only",
+            "coordinated-island-system",
+            "other",
+            "unresolved"
+          ]
+        },
+        "served_load_boundary_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "critical_load_profile_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "outage_window_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "permitted_unserved_energy_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "permitted_interruption_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "initial_soc_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "end_of_life_temperature_derating_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "efficiency_auxiliary_input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "renewable_resource_basis_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "normal_source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "alternate_source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fallback_source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fuel_refueling_requirement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "black_start_requirement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "control_auxiliary_requirement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "transition_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "redundancy_claim": {
+          "$ref": "#/$defs/RedundancyClaim"
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "id",
+        "review"
+      ]
+    },
+    "CalculationRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "purpose": {
+          "enum": [
+            "energy-code-minimum",
+            "resilience-energy",
+            "resilience-power",
+            "inverter-transient-apparent-power",
+            "load-demand",
+            "conductor-ampacity",
+            "raceway-fill",
+            "fault-protection",
+            "grounding",
+            "structural-mounting",
+            "fire-exposure",
+            "other"
+          ]
+        },
+        "jurisdiction_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rule_edition_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "required_input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "capacity_basis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "software_version_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "assumption_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "artifact_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "result_quantity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "id",
+        "purpose",
+        "review"
+      ],
+      "description": "Input/output contract only; no project calculation is performed by this ontology."
+    },
+    "EnergyCodeRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "jurisdiction_ref": {
+          "type": "string"
+        },
+        "adopted_energy_code_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "building_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_scope": {
+          "enum": [
+            "new",
+            "addition",
+            "alteration",
+            "other",
+            "unresolved"
+          ]
+        },
+        "climate_zone_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compliance_path": {
+          "enum": [
+            "prescriptive",
+            "performance",
+            "exception",
+            "other",
+            "unresolved"
+          ]
+        },
+        "applicability_exception_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "floor_solar_access_input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "corrected_table_rule_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "equipment_qualification_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "control_capability_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "approved_software_form_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "calculation_requirement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "required": [
+        "id",
+        "jurisdiction_ref",
+        "review"
+      ]
+    },
+    "RacewaySpecification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type_id",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type_id": {
+          "enum": [
+            "EMT",
+            "IMC",
+            "RMC",
+            "FMC",
+            "LFMC",
+            "LFNC",
+            "PVC-RNC",
+            "RTRC",
+            "other",
+            "unresolved"
+          ]
+        },
+        "trade_size": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "material_coating": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "installation_exposure": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fitting_listing_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "support_detail_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "expansion_detail_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "bonding_detail_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fill_calculation_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bending_pulling_calculation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "adopted_rule_edition_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Physical containment system specification; not an electrical net or conductor-size calculation."
+    },
+    "RacewayRouteAnnotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "raceway_specification_ref",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "raceway_specification_ref": {
+          "type": "string"
+        },
+        "route_graphic_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "contained_circuit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "installation_condition": {
+          "enum": [
+            "exposed",
+            "concealed",
+            "underground",
+            "overhead",
+            "transition",
+            "unresolved"
+          ]
+        },
+        "sleeve_firestop_detail_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "surveyed_elevation_dimension_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "mechanical_anchor_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Physical route graphics/anchors cannot be used as electrical terminals."
+    },
+    "PVSourceSpecification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source_level",
+        "terminal_representation",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source_level": {
+          "enum": [
+            "cell",
+            "module",
+            "string",
+            "array",
+            "ac-module",
+            "unresolved"
+          ]
+        },
+        "terminal_representation": {
+          "enum": [
+            "individual-conductor",
+            "circuit-bundle",
+            "unresolved"
+          ]
+        },
+        "module_product_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "series_module_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "parallel_source_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "nameplate_rating_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "rating_condition_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "voc_isc_temperature_input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_circuit_topology_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "optimizer_inverter_compatibility_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "mounting_environment_constraint_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "shutdown_requirement_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "code_basis_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "PV data/input contract only. Counts and rated-condition data are unresolved until actual project data is provided."
+    },
+    "PVShutdownRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "approach",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "approach": {
+          "enum": [
+            "module-device-system",
+            "array-boundary-system",
+            "pv-hazard-control-system",
+            "other",
+            "unresolved"
+          ]
+        },
+        "applicability_rule_edition_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shutdown_equipment_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "initiator_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "activation_basis_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "logical_command_port_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "actual_signal_method_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compatible_product_system_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "system_listing_evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "shutdown_boundary_graphic_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "voltage_time_criterion_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "commissioning_verification_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Selected applicability, approach, compatible equipment, boundary and verification are separately evidenced. Symbol presence does not establish rapid shutdown compliance."
+    },
+    "ControlFunctionSpecification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "function_type",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "function_type": {
+          "enum": [
+            "power-control",
+            "energy-management",
+            "microgrid-coordination",
+            "protection",
+            "communications",
+            "trip",
+            "sensing",
+            "other",
+            "unresolved"
+          ]
+        },
+        "measured_circuit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "controlled_equipment_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "logical_interface_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "actual_signal_transport_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "setpoint_limit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "auxiliary_supply_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "failure_response_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "certified_configuration_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "utility_approval_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "commissioning_verification_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "A control role is distinct from power conversion and from a verified approved system configuration."
+    },
+    "SensorSpecification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sensed_quantity",
+        "interface_basis",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "sensed_quantity": {
+          "enum": [
+            "current",
+            "voltage",
+            "power",
+            "other",
+            "unresolved"
+          ]
+        },
+        "interface_basis": {
+          "enum": [
+            "logical-measurement",
+            "physical-secondary-circuit",
+            "unresolved"
+          ]
+        },
+        "measured_circuit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "ratio_quantity_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "polarity_orientation_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accuracy_burden_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "physical_secondary_wiring_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supply_protection_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "A logical sense port does not specify physical instrument-transformer secondary wiring or rating."
+    },
+    "ProtectionSpecification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "device_function",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "device_function": {
+          "enum": [
+            "breaker",
+            "fuse",
+            "disconnect",
+            "fused-disconnect",
+            "surge-protection",
+            "other",
+            "unresolved"
+          ]
+        },
+        "rated_voltage_configuration_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "frame_trip_current_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "interrupting_rating_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "short_time_withstand_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "assembly_sccr_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "available_fault_current_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "series_combination_evidence_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "coordination_calculation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "service_suitability_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "control_function_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Trip/frame, interrupting rating, withstand and assembly SCCR are different input/evidence fields; no rating is calculated."
+    },
+    "DistributionAssemblySpecification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "assembly_class",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "assembly_class": {
+          "enum": [
+            "service",
+            "switchboard",
+            "panelboard",
+            "combiner",
+            "other",
+            "unresolved"
+          ]
+        },
+        "voltage_configuration_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bus_rating_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "main_device_rating_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "assembly_sccr_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "internal_topology_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_interconnection_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "neutral_bonding_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "service_qualification_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "listed_combination_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Multiple drawing ports do not prove an internal common bus or select an interconnection method."
+    },
+    "GroundingBondingSpecification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "role",
+        "subject_class_or_ref",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "grounding-electrode-conductor",
+            "equipment-grounding-conductor",
+            "main-bonding-jumper",
+            "system-bonding-jumper",
+            "equipment-bonding-jumper",
+            "neutral-circuit-conductor",
+            "electrode",
+            "terminal",
+            "other",
+            "unresolved"
+          ]
+        },
+        "subject_class_or_ref": {
+          "type": "string"
+        },
+        "endpoint_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "grounding_arrangement_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "separately_derived_determination_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bond_location_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "permitted_domain_bridge_evidence_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "electrode_system_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "material_size_rating_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sizing_calculation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "termination_qualification_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "continuity_fault_path_verification_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "environment_constraint_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Grounded/neutral conductors, equipment grounding and electrode paths have distinct roles. No default neutral-ground bond or electrode dimensions."
+    },
+    "TransferSpecification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "operation_type",
+        "transition_type",
+        "neutral_treatment",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "operation_type": {
+          "enum": [
+            "manual",
+            "automatic",
+            "nonautomatic",
+            "other",
+            "unresolved"
+          ]
+        },
+        "transition_type": {
+          "enum": [
+            "open",
+            "closed",
+            "delayed",
+            "programmed",
+            "other",
+            "unresolved"
+          ]
+        },
+        "neutral_treatment": {
+          "enum": [
+            "unswitched",
+            "switched",
+            "not-present",
+            "unresolved"
+          ]
+        },
+        "controlled_pole_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "normal_source_equipment_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "alternate_source_equipment_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "load_boundary_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "bypass_isolation_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "withstand_closing_rating_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "voltage_frequency_configuration_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "grounding_bonding_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_transition_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "interlock_sequence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sync_parallel_authorization_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "control_supply_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "failure_response_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "manufacturer_configuration_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Transition category is distinct from observed switch position. Closed transition is not utility authorization or an uninterrupted-power claim."
+    },
+    "GeneratorSpecification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "application_class",
+        "engine_technology",
+        "fuel_type",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "application_class": {
+          "enum": [
+            "emergency",
+            "legally-required-standby",
+            "optional-standby",
+            "other",
+            "unresolved"
+          ]
+        },
+        "engine_technology": {
+          "enum": [
+            "compression-ignition",
+            "spark-ignition",
+            "other",
+            "unresolved"
+          ]
+        },
+        "fuel_type": {
+          "enum": [
+            "diesel",
+            "natural-gas",
+            "lpg",
+            "other",
+            "unresolved"
+          ]
+        },
+        "electrical_configuration_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "duty_rating_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "site_derating_input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "motor_start_and_transient_calculation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "grounding_bonding_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "starting_energy_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "auxiliary_supply_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fuel_system_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fuel_autonomy_calculation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "emissions_permit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fire_environment_noise_review_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "maintenance_test_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "availability_dependency_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Application/duty and regulatory classification do not establish running condition, fuel autonomy or backup availability."
+    },
+    "AvailabilityDependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "subject_class_or_ref",
+        "dependency_kind",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "subject_class_or_ref": {
+          "type": "string"
+        },
+        "dependency_kind": {
+          "enum": [
+            "starting-energy",
+            "auxiliary-power",
+            "fuel",
+            "cooling",
+            "control",
+            "transfer-path",
+            "protection",
+            "environment",
+            "other",
+            "unresolved"
+          ]
+        },
+        "dependency_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "failure_case_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "loss_response_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "common_cause_group_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "verification_evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "A reusable dependency contract for later failure-case review; it neither instantiates redundancy nor proves independent availability."
+    },
+    "PhysicalCoordinateFrame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "frame_kind",
+        "unit",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "frame_kind": {
+          "enum": [
+            "physical-model",
+            "sheet-layout",
+            "symbol-preview",
+            "unresolved"
+          ]
+        },
+        "unit": {
+          "enum": [
+            "mm",
+            "m",
+            "in",
+            "ft",
+            "drawing-unit",
+            "unresolved"
+          ]
+        },
+        "origin_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "horizontal_crs_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vertical_datum_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "axis_convention_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "north_basis": {
+          "enum": [
+            "true",
+            "grid",
+            "project",
+            "magnetic",
+            "unresolved"
+          ]
+        },
+        "north_rotation_quantity_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sheet_scale_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "survey_geometry_source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Physical model, paper layout and NTS glyph frames are distinct.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "frame_kind": {
+                "const": "physical-model"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "enum": [
+                  "mm",
+                  "m",
+                  "in",
+                  "ft"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "frame_kind": {
+                "const": "symbol-preview"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "const": "drawing-unit"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "FootprintDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "subject_class_or_ref",
+        "drawing_use",
+        "geometry_basis",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "subject_class_or_ref": {
+          "type": "string"
+        },
+        "drawing_use": {
+          "enum": [
+            "NTS-symbol",
+            "dimensioned-outline",
+            "unresolved"
+          ]
+        },
+        "geometry_basis": {
+          "enum": [
+            "measured",
+            "product-drawing",
+            "engineered-detail",
+            "NTS-preview",
+            "unresolved"
+          ]
+        },
+        "physical_frame_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "geometry_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dimension_source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "placement_transform_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cross_view_equipment_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "service_face_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "door_geometry_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "envelope_requirement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "revision_configuration_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Physical footprint and equipment identity are independent from the symbolic SLD occurrence.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "drawing_use": {
+                "const": "dimensioned-outline"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "physical_frame_ref",
+              "geometry_ref",
+              "dimension_source_refs"
+            ],
+            "properties": {
+              "physical_frame_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "geometry_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dimension_source_refs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "geometry_basis": {
+                "enum": [
+                  "measured",
+                  "product-drawing",
+                  "engineered-detail"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MountingInterface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "subject_class_or_ref",
+        "mounting_method",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "subject_class_or_ref": {
+          "type": "string"
+        },
+        "mounting_method": {
+          "enum": [
+            "wall",
+            "floor",
+            "pad",
+            "rack",
+            "roof",
+            "pole",
+            "other",
+            "unresolved"
+          ]
+        },
+        "physical_constraint_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "support_geometry_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "substrate_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attachment_anchor_pattern_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "load_path_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "wind_seismic_calculation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "equipment_mass_center_of_gravity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fastener_material_compatibility_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "waterproofing_corrosion_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "bonding_detail_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "manufacturer_installation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "A mounting preview does not establish connection capacity, anchorage design or a verified load path."
+    },
+    "SpatialEnvelopeRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "subject_class_or_ref",
+        "purpose",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "subject_class_or_ref": {
+          "type": "string"
+        },
+        "purpose": {
+          "enum": [
+            "equipment-service",
+            "electrical-working",
+            "fire-separation",
+            "door-sweep",
+            "egress-access",
+            "ventilation",
+            "vehicle-protection",
+            "roof-pathway",
+            "other",
+            "unresolved"
+          ]
+        },
+        "reference_face_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "physical_frame_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "required_geometry_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actual_obstruction_geometry_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "target_boundary_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "distance_quantity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "manufacturer_requirement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "applicable_rule_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "exception_test_evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "accessibility_egress_review_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Working space, service clearance, fire separation and movement/access envelopes are independently sourced requirements."
+    },
+    "EnvironmentalExposureRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "subject_class_or_ref",
+        "hazard",
+        "exposure_basis",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "subject_class_or_ref": {
+          "type": "string"
+        },
+        "hazard": {
+          "enum": [
+            "coastal-salt",
+            "corrosive-agent",
+            "flood",
+            "wind",
+            "seismic",
+            "ambient-temperature",
+            "uv",
+            "other",
+            "unresolved"
+          ]
+        },
+        "exposure_basis": {
+          "enum": [
+            "observed",
+            "site-study",
+            "manufacturer-screening",
+            "unresolved"
+          ]
+        },
+        "location_geometry_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "physical_frame_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vertical_datum_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "environment_constraint_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "site_observation_study_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "material_qualification_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Physical hazard/exposure evidence is distinct from geographic or coastal permitting jurisdiction."
+    },
+    "AuthorityScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "authority_kind",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "authority_kind": {
+          "enum": [
+            "state-building",
+            "local-building",
+            "fire",
+            "utility",
+            "air",
+            "environment-land-use",
+            "accessibility",
+            "professional-practice",
+            "owner",
+            "other",
+            "unresolved"
+          ]
+        },
+        "geographic_jurisdiction_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "territory_or_special_scope_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agency_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "discipline_scope_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "permit_or_activity_basis_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "An authority territory/topic is distinct from operating mode and does not itself grant a permit."
+    },
+    "RuleApplicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "rule_or_requirement_ref",
+        "subject_class_or_ref",
+        "decision",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "rule_or_requirement_ref": {
+          "type": "string"
+        },
+        "subject_class_or_ref": {
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "applicable",
+            "not-applicable",
+            "undetermined"
+          ]
+        },
+        "authority_scope_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "code_basis_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "permit_activity_date_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_fact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "amendment_errata_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "exception_or_legal_effect_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unresolved_input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Applicability is a separate decision from evidence review status; a guidance source is not an adopted rule.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "decision": {
+                "enum": [
+                  "applicable",
+                  "not-applicable"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "rationale",
+              "source_refs"
+            ],
+            "properties": {
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_refs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ComplianceNoteInstance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "template_ref",
+        "render_disposition",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "template_ref": {
+          "type": "string"
+        },
+        "applicability_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "render_disposition": {
+          "enum": [
+            "draft",
+            "withhold",
+            "review-copy",
+            "eligible-for-issue"
+          ]
+        },
+        "rendered_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "resolved_project_value_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unresolved_placeholders": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "rule_product_basis_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "A reusable note is not an issued project assertion. Actual applicability and resolved references must be checked.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "render_disposition": {
+                "const": "eligible-for-issue"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "applicability_ref",
+              "rendered_text",
+              "unresolved_placeholders",
+              "rule_product_basis_refs"
+            ],
+            "properties": {
+              "applicability_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rendered_text": {
+                "type": "string",
+                "minLength": 1,
+                "not": {
+                  "pattern": "\\{[^{}]+\\}"
+                }
+              },
+              "unresolved_placeholders": {
+                "type": "array",
+                "maxItems": 0
+              },
+              "rule_product_basis_refs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "review": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/Review"
+                  },
+                  {
+                    "properties": {
+                      "status": {
+                        "const": "pass"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalAuthorizationRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "authorization_kind",
+        "disposition",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "authority_scope_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "authorization_kind": {
+          "enum": [
+            "building-permit",
+            "fire-permit",
+            "air-permit",
+            "land-use-permit",
+            "interconnection",
+            "permission-to-operate",
+            "permission-to-energize",
+            "other",
+            "unresolved"
+          ]
+        },
+        "disposition": {
+          "enum": [
+            "pending",
+            "granted",
+            "conditional",
+            "denied",
+            "expired",
+            "unresolved"
+          ]
+        },
+        "decision_artifact_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decision_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expiration_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "condition_restriction_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Authority decisions are distinct milestones from professional review and from one another.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "disposition": {
+                "enum": [
+                  "granted",
+                  "conditional"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "authority_scope_ref",
+              "decision_artifact_ref",
+              "decision_date"
+            ],
+            "properties": {
+              "authority_scope_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "decision_artifact_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "decision_date": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "SheetDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "issue_stage",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "sheet_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "issue_stage": {
+          "enum": [
+            "draft",
+            "review",
+            "submittal",
+            "record",
+            "unresolved"
+          ]
+        },
+        "titleblock_asset_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sheet_layout_frame_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "physical_scale_basis_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "revision_record_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_basis_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "drawn_by_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "checked_by_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "responsible_review_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "professional_execution_artifact_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "template_professional_area_policy": {
+          "const": "leave-blank-no-generated-seal-or-signature"
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "A drawing issue stage is distinct from professional execution, AHJ acceptance and utility authorization."
+    },
+    "DrawingOccurrence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "subject_ref",
+        "sheet_ref",
+        "view_kind",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "subject_ref": {
+          "type": "string"
+        },
+        "sheet_ref": {
+          "type": "string"
+        },
+        "view_kind": {
+          "enum": [
+            "single-line",
+            "plan",
+            "section",
+            "detail",
+            "schedule",
+            "annotation",
+            "unresolved"
+          ]
+        },
+        "asset_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sheet_layout_frame_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "placement_transform_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "physical_geometry_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "schematic_topology_node_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cross_view_identity_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "annotation_placement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "One model subject can have many schematic/physical occurrences; a screen coordinate never supplies a physical distance."
+    },
+    "ScheduleContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "schedule_kind",
+        "column_keys",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "schedule_kind": {
+          "enum": [
+            "equipment",
+            "conductor-raceway",
+            "control-io",
+            "compliance-evidence",
+            "sheet-index",
+            "revision",
+            "other",
+            "unresolved"
+          ]
+        },
+        "form_asset_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "column_keys": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_record_class_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "row_identity_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cross_view_key_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "quantity_unit_basis_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence_revision_policy_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reconciliation_check_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "A schedule layout supplies no project rows, engineering values or verified code mappings."
+    },
+    "AnnotationPlacement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text_role",
+        "placement_space",
+        "review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "drawing_occurrence_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "text_role": {
+          "enum": [
+            "equipment-tag",
+            "circuit-id",
+            "rating",
+            "note",
+            "detail-reference",
+            "sheet-reference",
+            "revision",
+            "work-scope",
+            "direction",
+            "other",
+            "unresolved"
+          ]
+        },
+        "placement_space": {
+          "const": "sheet-layout"
+        },
+        "anchor_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "offset_layout_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "leader_style_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "resolved_text_or_note_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "collision_check_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "print_legibility_check_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/Review"
+        }
+      },
+      "description": "Annotation offsets are drafting placement, not electrical/fire clearance or conductor topology."
+    }
+  }
+}

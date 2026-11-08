@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "scope": "Reusable functions, annotation markers and ontology; no connected project or numeric design values",
+  "rules": [
+    "Neutral is an individual AC conductor; no implicit connection to protective bonding.",
+    "GEC/EGC markers and fuel/exhaust legends have no electrical terminals.",
+    "Bonding-jumper endpoints require an explicit reviewed grounding detail and any intended domain-bridge evidence.",
+    "CT test-block ports are physical individual secondary conductors, not logical sensing signals; no shorting sequence is assumed.",
+    "Open/closed transition categories do not record contact position or establish synchronization/parallel approval.",
+    "Generator application class, operating mode, component condition and permit status are separate namespaces.",
+    "Fuel/start/auxiliary/transfer-path dependencies must be considered before any future availability or autonomy claim."
+  ],
+  "project_evidence_topics": [
+    "actual grounding and separately-derived-system determination",
+    "manufacturer terminal/internal topology",
+    "transfer neutral and pole configuration",
+    "short-circuit withstand/closing rating",
+    "control and auxiliary supply availability",
+    "source transition guards, interlocks and failure response",
+    "fuel, cooling and environmental dependencies",
+    "air district/CARB/fire/utility applicability and exact permits",
+    "future load/duty/fuel/transient calculations"
+  ]
+}

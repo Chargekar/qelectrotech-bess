@@ -1,0 +1,1723 @@
+{
+ "version": "1.0.0",
+ "policy": [
+  "Truth rows are constant for an edition and append-only. Errata, renumbering and new cycles are new rows linked by clause_lineage.",
+  "Intents are short paraphrases written for this library, never quotations of code text.",
+  "Every locator, constant and table value starts as needs-verification. Promote to verified only with verified_by and verified_on after checking the adopted text.",
+  "physics rows are definitions (unit relationships), not code requirements.",
+  "Code tables are declared with key schemas; values are transcribed from the purchased/adopted text into code_table_row, never typed from memory.",
+  "Record verification in 'verifications' as {row, by, on}; row is a clause, formula, constant or code_table id. Rebuilds re-apply it."
+ ],
+ "sources": [
+  {
+   "id": "NFPA-70-2020",
+   "title": "NFPA 70 National Electrical Code, 2020 edition",
+   "issuer": "NFPA",
+   "url": "https://www.nfpa.org/codes-and-standards/nfpa-70-standard-development/70",
+   "kind": "model-code"
+  },
+  {
+   "id": "NFPA-70-2023",
+   "title": "NFPA 70 National Electrical Code, 2023 edition",
+   "issuer": "NFPA",
+   "url": "https://www.nfpa.org/codes-and-standards/nfpa-70-standard-development/70",
+   "kind": "model-code"
+  },
+  {
+   "id": "NFPA-855",
+   "title": "NFPA 855 Standard for the Installation of Stationary Energy Storage Systems",
+   "issuer": "NFPA",
+   "url": "https://www.nfpa.org/codes-and-standards/nfpa-855-standard-development/855",
+   "kind": "model-code"
+  },
+  {
+   "id": "CA-ENERGY-2022",
+   "title": "2022 Building Energy Efficiency Standards (Title 24 Part 6)",
+   "issuer": "California Energy Commission",
+   "url": "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2022-building-energy-efficiency",
+   "kind": "adopted-code"
+  },
+  {
+   "id": "IEEE-1547",
+   "title": "IEEE 1547 Interconnection and Interoperability of DER",
+   "issuer": "IEEE",
+   "url": "https://standards.ieee.org/ieee/1547/5915/",
+   "kind": "product-standard"
+  }
+ ],
+ "standards": [
+  {
+   "id": "PHYSICS",
+   "body": "PHYSICS",
+   "title": "Electrical relationships and unit definitions",
+   "kind": "physics"
+  },
+  {
+   "id": "NEC",
+   "body": "NFPA",
+   "title": "NFPA 70 National Electrical Code",
+   "kind": "model-code"
+  },
+  {
+   "id": "CA-CEC",
+   "body": "BSC",
+   "title": "California Electrical Code (Title 24 Part 3)",
+   "kind": "adopted-code"
+  },
+  {
+   "id": "CA-T24-P6",
+   "body": "CEC",
+   "title": "California Energy Code (Title 24 Part 6)",
+   "kind": "energy-code"
+  },
+  {
+   "id": "CA-JA12",
+   "body": "CEC",
+   "title": "Joint Appendix JA12, battery storage system qualification",
+   "kind": "energy-code"
+  },
+  {
+   "id": "CA-CFC",
+   "body": "BSC/OSFM",
+   "title": "California Fire Code (Title 24 Part 9)",
+   "kind": "fire-code"
+  },
+  {
+   "id": "NFPA-855",
+   "body": "NFPA",
+   "title": "Installation of Stationary Energy Storage Systems",
+   "kind": "fire-code"
+  },
+  {
+   "id": "UL-9540",
+   "body": "UL",
+   "title": "Energy Storage Systems and Equipment",
+   "kind": "product-standard"
+  },
+  {
+   "id": "UL-9540A",
+   "body": "UL",
+   "title": "Test Method for Thermal Runaway Fire Propagation in BESS",
+   "kind": "test-method"
+  },
+  {
+   "id": "UL-1741",
+   "body": "UL",
+   "title": "Inverters, Converters, Controllers and Interconnection System Equipment (incl. SB)",
+   "kind": "product-standard"
+  },
+  {
+   "id": "IEEE-1547",
+   "body": "IEEE",
+   "title": "Interconnection and Interoperability of DER with Electric Power Systems",
+   "kind": "interconnection"
+  },
+  {
+   "id": "CPUC-R21",
+   "body": "CPUC",
+   "title": "Electric Rule 21 (IOU interconnection)",
+   "kind": "interconnection"
+  },
+  {
+   "id": "NFPA-70E",
+   "body": "NFPA",
+   "title": "Electrical Safety in the Workplace",
+   "kind": "safety-practice"
+  }
+ ],
+ "editions": [
+  {
+   "id": "PHYSICS-0",
+   "standard_id": "PHYSICS",
+   "label": "Definitions",
+   "verification": "definition"
+  },
+  {
+   "id": "NEC-2017",
+   "standard_id": "NEC",
+   "label": "NEC 2017",
+   "year": 2017,
+   "verification": "verified"
+  },
+  {
+   "id": "NEC-2020",
+   "standard_id": "NEC",
+   "label": "NEC 2020",
+   "year": 2020,
+   "source_id": "NFPA-70-2020",
+   "verification": "verified"
+  },
+  {
+   "id": "NEC-2023",
+   "standard_id": "NEC",
+   "label": "NEC 2023",
+   "year": 2023,
+   "source_id": "NFPA-70-2023",
+   "verification": "verified"
+  },
+  {
+   "id": "CA-CEC-2022",
+   "standard_id": "CA-CEC",
+   "label": "2022 California Electrical Code",
+   "year": 2022,
+   "model_basis_id": "NEC-2020",
+   "jurisdiction": "US-CA",
+   "effective_from": "2023-01-01",
+   "effective_to": "2025-12-31"
+  },
+  {
+   "id": "CA-CEC-2025",
+   "standard_id": "CA-CEC",
+   "label": "2025 California Electrical Code",
+   "year": 2025,
+   "model_basis_id": "NEC-2023",
+   "jurisdiction": "US-CA",
+   "effective_from": "2026-01-01",
+   "source_id": "CA-CEC"
+  },
+  {
+   "id": "CA-T24-P6-2022",
+   "standard_id": "CA-T24-P6",
+   "label": "2022 Energy Code",
+   "year": 2022,
+   "jurisdiction": "US-CA",
+   "effective_from": "2023-01-01",
+   "effective_to": "2025-12-31",
+   "source_id": "CA-ENERGY-2022"
+  },
+  {
+   "id": "CA-T24-P6-2025",
+   "standard_id": "CA-T24-P6",
+   "label": "2025 Energy Code",
+   "year": 2025,
+   "jurisdiction": "US-CA",
+   "effective_from": "2026-01-01",
+   "source_id": "CA-ENERGY-2025"
+  },
+  {
+   "id": "CA-JA12-2022",
+   "standard_id": "CA-JA12",
+   "label": "JA12 (2022 Reference Appendices)",
+   "year": 2022,
+   "jurisdiction": "US-CA",
+   "source_id": "CA-JA12",
+   "effective_from": "2023-01-01",
+   "effective_to": "2025-12-31"
+  },
+  {
+   "id": "CA-JA12-2025",
+   "standard_id": "CA-JA12",
+   "label": "JA12 (2025 Reference Appendices)",
+   "year": 2025,
+   "jurisdiction": "US-CA",
+   "source_id": "CA-JA12",
+   "effective_from": "2026-01-01"
+  },
+  {
+   "id": "CA-CFC-2022",
+   "standard_id": "CA-CFC",
+   "label": "2022 California Fire Code",
+   "year": 2022,
+   "jurisdiction": "US-CA",
+   "effective_from": "2023-01-01",
+   "effective_to": "2025-12-31"
+  },
+  {
+   "id": "CA-CFC-2025",
+   "standard_id": "CA-CFC",
+   "label": "2025 California Fire Code",
+   "year": 2025,
+   "jurisdiction": "US-CA",
+   "effective_from": "2026-01-01",
+   "source_id": "CA-FIRE-2025"
+  },
+  {
+   "id": "NFPA-855-2023",
+   "standard_id": "NFPA-855",
+   "label": "NFPA 855 2023",
+   "year": 2023,
+   "source_id": "NFPA-855"
+  },
+  {
+   "id": "UL-9540-CUR",
+   "standard_id": "UL-9540",
+   "label": "UL 9540 (current edition, confirm)",
+   "source_id": "UL-SYSTEM"
+  },
+  {
+   "id": "UL-9540A-CUR",
+   "standard_id": "UL-9540A",
+   "label": "UL 9540A (current edition, confirm)",
+   "source_id": "UL-TEST"
+  },
+  {
+   "id": "UL-1741-CUR",
+   "standard_id": "UL-1741",
+   "label": "UL 1741 incl. Supplement SB (confirm)"
+  },
+  {
+   "id": "IEEE-1547-2018",
+   "standard_id": "IEEE-1547",
+   "label": "IEEE 1547-2018",
+   "year": 2018,
+   "source_id": "IEEE-1547"
+  },
+  {
+   "id": "CPUC-R21-CUR",
+   "standard_id": "CPUC-R21",
+   "label": "Rule 21 (current tariff, confirm per utility)",
+   "jurisdiction": "US-CA",
+   "source_id": "CPUC-R21"
+  },
+  {
+   "id": "NFPA-70E-2024",
+   "standard_id": "NFPA-70E",
+   "label": "NFPA 70E 2024",
+   "year": 2024
+  }
+ ],
+ "clauses": [
+  {
+   "editions": [
+    "PHYSICS-0"
+   ],
+   "locator": "P-AC3",
+   "title": "Three-phase current from real power",
+   "topic": "physics",
+   "intent": "Line current of a balanced three-phase load or source from kW, line-to-line volts and power factor. Use datasheet continuous current for code calcs when available.",
+   "formulas": [
+    {
+     "key": "I3",
+     "name": "Three-phase line current",
+     "form": "equation",
+     "expression": "P_kW*1000/(sqrt(3)*V_LL*PF)",
+     "output_symbol": "I",
+     "output_unit": "A",
+     "terms": [
+      {
+       "symbol": "P_kW",
+       "meaning": "real power",
+       "unit": "kW",
+       "role": "input"
+      },
+      {
+       "symbol": "V_LL",
+       "meaning": "line-to-line voltage",
+       "unit": "V",
+       "role": "input"
+      },
+      {
+       "symbol": "PF",
+       "meaning": "power factor (1.0 for kVA basis)",
+       "unit": "1",
+       "role": "input"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "PHYSICS-0"
+   ],
+   "locator": "P-AC1",
+   "title": "Single-phase current from real power",
+   "topic": "physics",
+   "intent": "Current of a single-phase load or source from kW, circuit voltage and power factor.",
+   "formulas": [
+    {
+     "key": "I1",
+     "name": "Single-phase current",
+     "form": "equation",
+     "expression": "P_kW*1000/(V*PF)",
+     "output_symbol": "I",
+     "output_unit": "A",
+     "terms": [
+      {
+       "symbol": "P_kW",
+       "meaning": "real power",
+       "unit": "kW",
+       "role": "input"
+      },
+      {
+       "symbol": "V",
+       "meaning": "circuit voltage",
+       "unit": "V",
+       "role": "input"
+      },
+      {
+       "symbol": "PF",
+       "meaning": "power factor",
+       "unit": "1",
+       "role": "input"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "PHYSICS-0"
+   ],
+   "locator": "P-DC",
+   "title": "DC current from power",
+   "topic": "physics",
+   "intent": "Battery or PV DC current from power and DC bus voltage (use the minimum operating voltage for worst-case current).",
+   "formulas": [
+    {
+     "key": "IDC",
+     "name": "DC current",
+     "form": "equation",
+     "expression": "P_kW*1000/V_dc",
+     "output_symbol": "I_dc",
+     "output_unit": "A",
+     "terms": [
+      {
+       "symbol": "P_kW",
+       "meaning": "DC power",
+       "unit": "kW",
+       "role": "input"
+      },
+      {
+       "symbol": "V_dc",
+       "meaning": "DC voltage (min of operating window for worst case)",
+       "unit": "V",
+       "role": "input"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "PHYSICS-0"
+   ],
+   "locator": "P-ENERGY",
+   "title": "Usable energy, delivered energy and runtime",
+   "topic": "physics",
+   "intent": "Usable energy is gross energy times depth of discharge only when the rating given is gross; a datasheet usable rating must not be derated again. Delivered AC energy applies one-way discharge efficiency, not round-trip efficiency.",
+   "formulas": [
+    {
+     "key": "EUSE",
+     "name": "Usable energy from gross rating",
+     "form": "equation",
+     "expression": "E_gross*DoD",
+     "output_symbol": "E_usable",
+     "output_unit": "kWh",
+     "note": "Skip when the manufacturer already states usable energy.",
+     "terms": [
+      {
+       "symbol": "E_gross",
+       "meaning": "nameplate gross energy",
+       "unit": "kWh",
+       "role": "rating-fact",
+       "param": "energy_gross"
+      },
+      {
+       "symbol": "DoD",
+       "meaning": "depth of discharge fraction",
+       "unit": "1",
+       "role": "input"
+      }
+     ]
+    },
+    {
+     "key": "EAC",
+     "name": "Delivered AC energy",
+     "form": "equation",
+     "expression": "E_usable*eta_dis",
+     "output_symbol": "E_ac",
+     "output_unit": "kWh",
+     "note": "eta_dis is one-way discharge efficiency; sqrt(RTE) is only an approximation when no one-way figure exists.",
+     "terms": [
+      {
+       "symbol": "E_usable",
+       "meaning": "usable DC energy",
+       "unit": "kWh",
+       "role": "input"
+      },
+      {
+       "symbol": "eta_dis",
+       "meaning": "one-way discharge efficiency",
+       "unit": "1",
+       "role": "input"
+      }
+     ]
+    },
+    {
+     "key": "RUN",
+     "name": "Runtime at constant power",
+     "form": "equation",
+     "expression": "E_kWh/P_kW",
+     "output_symbol": "t",
+     "output_unit": "h",
+     "terms": [
+      {
+       "symbol": "E_kWh",
+       "meaning": "energy available",
+       "unit": "kWh",
+       "role": "input"
+      },
+      {
+       "symbol": "P_kW",
+       "meaning": "constant discharge power",
+       "unit": "kW",
+       "role": "input"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "PHYSICS-0"
+   ],
+   "locator": "P-VD",
+   "title": "Voltage drop",
+   "topic": "physics",
+   "intent": "Approximate voltage drop percentage using conductor resistance per 1000 ft (from NEC Chapter 9 Table 8/9). Limits are design targets, not mandatory code values.",
+   "formulas": [
+    {
+     "key": "VD3",
+     "name": "Three-phase voltage drop percent",
+     "form": "equation",
+     "expression": "sqrt(3)*I*L_ft*R_kft/1000/V_LL*100",
+     "output_symbol": "VD_pct",
+     "output_unit": "%",
+     "terms": [
+      {
+       "symbol": "I",
+       "meaning": "load current",
+       "unit": "A",
+       "role": "input"
+      },
+      {
+       "symbol": "L_ft",
+       "meaning": "one-way length",
+       "unit": "ft",
+       "role": "input"
+      },
+      {
+       "symbol": "R_kft",
+       "meaning": "resistance per 1000 ft",
+       "unit": "ohm/kft",
+       "role": "input"
+      },
+      {
+       "symbol": "V_LL",
+       "meaning": "line-to-line voltage",
+       "unit": "V",
+       "role": "input"
+      }
+     ]
+    },
+    {
+     "key": "VD2",
+     "name": "Two-wire (1-ph or DC) voltage drop percent",
+     "form": "equation",
+     "expression": "2*I*L_ft*R_kft/1000/V*100",
+     "output_symbol": "VD_pct",
+     "output_unit": "%",
+     "terms": [
+      {
+       "symbol": "I",
+       "meaning": "current",
+       "unit": "A",
+       "role": "input"
+      },
+      {
+       "symbol": "L_ft",
+       "meaning": "one-way length",
+       "unit": "ft",
+       "role": "input"
+      },
+      {
+       "symbol": "R_kft",
+       "meaning": "resistance per 1000 ft",
+       "unit": "ohm/kft",
+       "role": "input"
+      },
+      {
+       "symbol": "V",
+       "meaning": "circuit voltage",
+       "unit": "V",
+       "role": "input"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "690.7(A)",
+   "title": "PV maximum voltage, temperature corrected",
+   "topic": "pv-voltage",
+   "applies_to": [
+    "pv_string",
+    "pv_inverter",
+    "hybrid_inverter"
+   ],
+   "intent": "Maximum PV DC voltage is the series sum of module open-circuit voltage corrected to the lowest expected ambient temperature using the manufacturer temperature coefficient.",
+   "formulas": [
+    {
+     "key": "VOC",
+     "name": "Temperature-corrected string Voc",
+     "form": "equation",
+     "expression": "N_s*Voc_stc*(1+beta_voc*(T_min_c-25))",
+     "output_symbol": "V_max",
+     "output_unit": "V",
+     "note": "beta_voc as a fraction per degC (negative).",
+     "terms": [
+      {
+       "symbol": "N_s",
+       "meaning": "modules in series",
+       "unit": "1",
+       "role": "input"
+      },
+      {
+       "symbol": "Voc_stc",
+       "meaning": "module Voc at STC",
+       "unit": "V",
+       "role": "rating-fact",
+       "param": "voc_stc"
+      },
+      {
+       "symbol": "beta_voc",
+       "meaning": "Voc temperature coefficient",
+       "unit": "1/degC",
+       "role": "rating-fact",
+       "param": "voc_temp_coeff"
+      },
+      {
+       "symbol": "T_min_c",
+       "meaning": "lowest expected ambient",
+       "unit": "degC",
+       "role": "input"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "690.8(A)(1)",
+   "title": "PV source circuit maximum current",
+   "topic": "pv-current",
+   "applies_to": [
+    "pv_string",
+    "dc_combiner"
+   ],
+   "intent": "PV source circuit maximum current is 125 percent of the summed parallel module short-circuit current (one of the permitted methods).",
+   "constants": [
+    {
+     "key": "K690",
+     "symbol": "K_isc",
+     "value": 1.25,
+     "unit": "1",
+     "meaning": "irradiance multiplier on Isc"
+    }
+   ],
+   "formulas": [
+    {
+     "key": "IMAX",
+     "name": "PV source circuit max current",
+     "form": "equation",
+     "expression": "K_isc*Isc*N_p",
+     "output_symbol": "I_max",
+     "output_unit": "A",
+     "terms": [
+      {
+       "symbol": "K_isc",
+       "meaning": "multiplier",
+       "unit": "1",
+       "role": "constant",
+       "constant": "K690"
+      },
+      {
+       "symbol": "Isc",
+       "meaning": "module short-circuit current",
+       "unit": "A",
+       "role": "rating-fact",
+       "param": "isc_stc"
+      },
+      {
+       "symbol": "N_p",
+       "meaning": "parallel strings",
+       "unit": "1",
+       "role": "input"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "690.12",
+   "title": "PV rapid shutdown",
+   "topic": "pv-rsd",
+   "applies_to": [
+    "rapid_shutdown",
+    "pv_array"
+   ],
+   "intent": "PV circuits on or in buildings need a rapid shutdown function controlling conductors inside and outside the array boundary, with an initiation device and labeling."
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "705.11",
+   "title": "Supply-side source connections",
+   "topic": "interconnection",
+   "applies_to": [
+    "service_switchboard"
+   ],
+   "intent": "Connection on the supply side of the service disconnect has its own conductor, disconnect and overcurrent rules; it is a different method from load-side 705.12 and needs separate evidence."
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "705.12(B)(3)(1)",
+   "title": "Busbar: 100 percent method",
+   "topic": "interconnection",
+   "applies_to": [
+    "service_switchboard",
+    "distribution_board",
+    "critical_load_panel"
+   ],
+   "intent": "125 percent of the summed power-source output current plus the busbar main OCPD rating must not exceed busbar ampacity.",
+   "constants": [
+    {
+     "key": "K125",
+     "symbol": "K_src",
+     "value": 1.25,
+     "unit": "1",
+     "meaning": "multiplier on power-source output current"
+    }
+   ],
+   "formulas": [
+    {
+     "key": "B100",
+     "name": "Busbar 100 percent check",
+     "form": "check",
+     "expression": "K_src*I_src_sum + I_main <= I_bus",
+     "output_symbol": "ok",
+     "output_unit": "bool",
+     "terms": [
+      {
+       "symbol": "K_src",
+       "meaning": "multiplier",
+       "unit": "1",
+       "role": "constant",
+       "constant": "K125"
+      },
+      {
+       "symbol": "I_src_sum",
+       "meaning": "sum of inverter/PCS continuous output currents (or PCS setting per 705.13)",
+       "unit": "A",
+       "role": "input"
+      },
+      {
+       "symbol": "I_main",
+       "meaning": "OCPD protecting the busbar",
+       "unit": "A",
+       "role": "input"
+      },
+      {
+       "symbol": "I_bus",
+       "meaning": "busbar ampacity",
+       "unit": "A",
+       "role": "rating-fact",
+       "param": "bus_rating"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "705.12(B)(3)(2)",
+   "title": "Busbar: 120 percent method",
+   "topic": "interconnection",
+   "applies_to": [
+    "service_switchboard",
+    "distribution_board",
+    "critical_load_panel"
+   ],
+   "intent": "With source breakers at the opposite end of the busbar from the main supply and a permanent warning label, 125 percent of source current plus the main OCPD may reach 120 percent of busbar ampacity.",
+   "constants": [
+    {
+     "key": "K125",
+     "symbol": "K_src",
+     "value": 1.25,
+     "unit": "1",
+     "meaning": "multiplier on power-source output current"
+    },
+    {
+     "key": "K120",
+     "symbol": "K_bus",
+     "value": 1.2,
+     "unit": "1",
+     "meaning": "busbar allowance"
+    }
+   ],
+   "formulas": [
+    {
+     "key": "B120",
+     "name": "Busbar 120 percent check",
+     "form": "check",
+     "expression": "K_src*I_src_sum + I_main <= K_bus*I_bus",
+     "output_symbol": "ok",
+     "output_unit": "bool",
+     "note": "Also requires opposite-end placement and label; the inequality alone is not compliance.",
+     "terms": [
+      {
+       "symbol": "K_src",
+       "meaning": "multiplier",
+       "unit": "1",
+       "role": "constant",
+       "constant": "K125"
+      },
+      {
+       "symbol": "K_bus",
+       "meaning": "busbar allowance",
+       "unit": "1",
+       "role": "constant",
+       "constant": "K120"
+      },
+      {
+       "symbol": "I_src_sum",
+       "meaning": "sum of source continuous output currents",
+       "unit": "A",
+       "role": "input"
+      },
+      {
+       "symbol": "I_main",
+       "meaning": "OCPD protecting the busbar",
+       "unit": "A",
+       "role": "input"
+      },
+      {
+       "symbol": "I_bus",
+       "meaning": "busbar ampacity",
+       "unit": "A",
+       "role": "rating-fact",
+       "param": "bus_rating"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "705.12(B)(3)(3)",
+   "title": "Busbar: sum-of-breakers method",
+   "topic": "interconnection",
+   "applies_to": [
+    "distribution_board",
+    "critical_load_panel"
+   ],
+   "intent": "The sum of all load and supply OCPD ratings on the panelboard, excluding the OCPD protecting the busbar, must not exceed busbar ampacity (with a label).",
+   "formulas": [
+    {
+     "key": "BSUM",
+     "name": "Sum-of-breakers check",
+     "form": "check",
+     "expression": "I_ocpd_sum <= I_bus",
+     "output_symbol": "ok",
+     "output_unit": "bool",
+     "terms": [
+      {
+       "symbol": "I_ocpd_sum",
+       "meaning": "sum of all OCPD ratings excluding the busbar main",
+       "unit": "A",
+       "role": "input"
+      },
+      {
+       "symbol": "I_bus",
+       "meaning": "busbar ampacity",
+       "unit": "A",
+       "role": "rating-fact",
+       "param": "bus_rating"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "705.13",
+   "title": "Power control systems",
+   "topic": "pcs-control",
+   "applies_to": [
+    "pcs_control",
+    "hybrid_inverter"
+   ],
+   "intent": "A listed power control system may limit current; its controlled setting can replace nameplate current in busbar and conductor calculations, with access-restricted settings."
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "705.20",
+   "title": "Power source disconnecting means",
+   "topic": "disconnect",
+   "applies_to": [
+    "ac_disconnect",
+    "pv_ac_disconnect"
+   ],
+   "intent": "Each power production source needs a disconnecting means meeting the listed type, location, rating and marking requirements."
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "705.28",
+   "title": "Power source circuit sizing and current",
+   "topic": "conductor",
+   "applies_to": [
+    "pv_inverter",
+    "hybrid_inverter",
+    "pcs_conversion",
+    "feeder_conductor"
+   ],
+   "intent": "Source output circuit current is the continuous output current rating; conductors are sized at not less than 125 percent of it before adjustment and correction.",
+   "constants": [
+    {
+     "key": "K125",
+     "symbol": "K_cont",
+     "value": 1.25,
+     "unit": "1",
+     "meaning": "continuous current multiplier"
+    }
+   ],
+   "formulas": [
+    {
+     "key": "AMIN",
+     "name": "Minimum conductor ampacity",
+     "form": "equation",
+     "expression": "K_cont*I_cont",
+     "output_symbol": "A_min",
+     "output_unit": "A",
+     "terms": [
+      {
+       "symbol": "K_cont",
+       "meaning": "multiplier",
+       "unit": "1",
+       "role": "constant",
+       "constant": "K125"
+      },
+      {
+       "symbol": "I_cont",
+       "meaning": "continuous output current rating",
+       "unit": "A",
+       "role": "rating-fact",
+       "param": "ac_continuous_current"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "705.30",
+   "title": "Power source overcurrent protection",
+   "topic": "ocpd",
+   "applies_to": [
+    "breaker",
+    "fused_disconnect"
+   ],
+   "intent": "Source output OCPD rating is not less than 125 percent of the continuous output current; round up to a standard rating only where 240.4(B) permits.",
+   "constants": [
+    {
+     "key": "K125",
+     "symbol": "K_cont",
+     "value": 1.25,
+     "unit": "1",
+     "meaning": "continuous current multiplier"
+    }
+   ],
+   "formulas": [
+    {
+     "key": "OMIN",
+     "name": "Minimum source OCPD",
+     "form": "equation",
+     "expression": "K_cont*I_cont",
+     "output_symbol": "I_ocpd_min",
+     "output_unit": "A",
+     "terms": [
+      {
+       "symbol": "K_cont",
+       "meaning": "multiplier",
+       "unit": "1",
+       "role": "constant",
+       "constant": "K125"
+      },
+      {
+       "symbol": "I_cont",
+       "meaning": "continuous output current rating",
+       "unit": "A",
+       "role": "rating-fact",
+       "param": "ac_continuous_current"
+      }
+     ]
+    },
+    {
+     "key": "OSTD",
+     "name": "Next standard OCPD rating",
+     "form": "lookup",
+     "expression": "next_std(I_ocpd_min)",
+     "output_symbol": "I_ocpd",
+     "output_unit": "A",
+     "note": "Uses the 240.6(A) table of the same edition.",
+     "terms": [
+      {
+       "symbol": "I_ocpd_min",
+       "meaning": "minimum OCPD current",
+       "unit": "A",
+       "role": "input"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "706.15",
+   "title": "ESS disconnecting means",
+   "topic": "ess-disconnect",
+   "applies_to": [
+    "bess_cabinet",
+    "battery_dc_disconnect"
+   ],
+   "intent": "An ESS needs a disconnecting means for all ungrounded conductors, readily accessible or remotely operated, lockable, and marked; DC remote disconnect labeling applies where used."
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "706.30",
+   "title": "ESS circuit sizing and current",
+   "topic": "conductor",
+   "applies_to": [
+    "bess_cabinet",
+    "pcs_conversion",
+    "battery_rack"
+   ],
+   "intent": "ESS circuit maximum current is the nameplate rated charge or discharge current (larger governs); conductors and OCPD sized at not less than 125 percent of it.",
+   "constants": [
+    {
+     "key": "K125",
+     "symbol": "K_cont",
+     "value": 1.25,
+     "unit": "1",
+     "meaning": "continuous current multiplier"
+    }
+   ],
+   "formulas": [
+    {
+     "key": "EMIN",
+     "name": "ESS minimum circuit ampacity",
+     "form": "equation",
+     "expression": "K_cont*max(I_chg, I_dis)",
+     "output_symbol": "A_min",
+     "output_unit": "A",
+     "terms": [
+      {
+       "symbol": "K_cont",
+       "meaning": "multiplier",
+       "unit": "1",
+       "role": "constant",
+       "constant": "K125"
+      },
+      {
+       "symbol": "I_chg",
+       "meaning": "max continuous charge current",
+       "unit": "A",
+       "role": "rating-fact",
+       "param": "ac_charge_current"
+      },
+      {
+       "symbol": "I_dis",
+       "meaning": "max continuous discharge current",
+       "unit": "A",
+       "role": "rating-fact",
+       "param": "ac_continuous_current"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "706.31",
+   "title": "ESS overcurrent protection",
+   "topic": "ocpd",
+   "applies_to": [
+    "dc_fuse",
+    "breaker"
+   ],
+   "intent": "ESS circuits need OCPD at the source with ratings coordinated to the 706.30 current and the battery's available fault current."
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "110.26(A)(1)",
+   "title": "Working space depth",
+   "topic": "workspace",
+   "applies_to": [
+    "service_switchboard",
+    "distribution_board",
+    "bess_cabinet",
+    "pcs_conversion"
+   ],
+   "intent": "Minimum clear working depth in front of equipment depends on voltage to ground and the condition of the opposite surface.",
+   "tables": [
+    {
+     "key": "T11026",
+     "name": "Table 110.26(A)(1) working space depth",
+     "key_schema": [
+      "v_to_ground",
+      "condition"
+     ],
+     "value_unit": "ft"
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "240.6(A)",
+   "title": "Standard ampere ratings",
+   "topic": "ocpd",
+   "intent": "List of standard fuse and inverse-time breaker ampere ratings.",
+   "tables": [
+    {
+     "key": "T2406",
+     "name": "Standard ampere ratings",
+     "key_schema": [
+      "rating_a"
+     ],
+     "value_unit": "A"
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "240.4(B)",
+   "title": "Next higher standard rating",
+   "topic": "ocpd",
+   "intent": "Up to 800 A, the next higher standard OCPD rating may be used above conductor ampacity when the stated conditions are all met."
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "310.16",
+   "title": "Conductor ampacity table",
+   "topic": "conductor",
+   "intent": "Allowable ampacities of insulated conductors in raceway by size, material and temperature rating, before correction and adjustment.",
+   "tables": [
+    {
+     "key": "T31016",
+     "name": "Table 310.16 ampacity",
+     "key_schema": [
+      "size",
+      "material",
+      "temp_rating_c"
+     ],
+     "value_unit": "A"
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "250.122",
+   "title": "Equipment grounding conductor size",
+   "topic": "grounding",
+   "intent": "Minimum EGC size is set by the rating of the upstream OCPD.",
+   "tables": [
+    {
+     "key": "T250122",
+     "name": "Table 250.122 EGC size",
+     "key_schema": [
+      "ocpd_rating_a",
+      "material"
+     ],
+     "value_unit": "AWG/kcmil"
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2020",
+    "NEC-2023"
+   ],
+   "locator": "Chapter 9 Table 8",
+   "title": "Conductor properties",
+   "topic": "conductor",
+   "intent": "DC resistance and physical properties of conductors used for voltage drop.",
+   "tables": [
+    {
+     "key": "TCH9T8",
+     "name": "Chapter 9 Table 8 DC resistance",
+     "key_schema": [
+      "size",
+      "material",
+      "stranding"
+     ],
+     "value_unit": "ohm/kft"
+    }
+   ]
+  },
+  {
+   "editions": [
+    "NEC-2017"
+   ],
+   "locator": "705.60",
+   "title": "Circuit sizing and current (2017 numbering)",
+   "topic": "conductor",
+   "intent": "2017 location of the source circuit sizing rule; relocated in 2020."
+  },
+  {
+   "editions": [
+    "NEC-2017"
+   ],
+   "locator": "705.65",
+   "title": "Overcurrent protection (2017 numbering)",
+   "topic": "ocpd",
+   "intent": "2017 location of the source OCPD rule; relocated in 2020."
+  },
+  {
+   "editions": [
+    "CA-T24-P6-2022",
+    "CA-T24-P6-2025"
+   ],
+   "locator": "140.10(a)",
+   "title": "Nonresidential prescriptive PV",
+   "topic": "energy-code-pv",
+   "applies_to": [
+    "pv_array"
+   ],
+   "applicability": "Newly constructed nonresidential and listed occupancies; confirm building-type scope and exceptions (SARA, shading) in the adopted text.",
+   "intent": "Minimum PV DC size is conditioned floor area times a building-type and climate-zone factor, divided by 1000, subject to exceptions.",
+   "tables": [
+    {
+     "key": "TPV",
+     "name": "Table 140.10-A PV capacity factor",
+     "key_schema": [
+      "building_type",
+      "climate_zone"
+     ],
+     "value_unit": "W/ft2"
+    }
+   ],
+   "formulas": [
+    {
+     "key": "PVDC",
+     "name": "Required PV DC size",
+     "form": "equation",
+     "expression": "CFA*A/1000",
+     "output_symbol": "kW_PVdc",
+     "output_unit": "kWdc",
+     "note": "Exceptions can cap or waive the result; evaluate separately.",
+     "terms": [
+      {
+       "symbol": "CFA",
+       "meaning": "conditioned floor area",
+       "unit": "ft2",
+       "role": "input"
+      },
+      {
+       "symbol": "A",
+       "meaning": "PV capacity factor",
+       "unit": "W/ft2",
+       "role": "table",
+       "table": "TPV"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "CA-T24-P6-2022",
+    "CA-T24-P6-2025"
+   ],
+   "locator": "140.10(b)",
+   "title": "Nonresidential prescriptive battery storage",
+   "topic": "energy-code-bess",
+   "applies_to": [
+    "bess_cabinet"
+   ],
+   "applicability": "Applies where 140.10(a) PV is required; confirm exceptions and the 2025 errata to the capacity tables.",
+   "intent": "Minimum battery energy and power capacity are the required PV kWdc times building-type factors. Confirm whether the factor applies to rated usable capacity before applying any DoD derating.",
+   "tables": [
+    {
+     "key": "TBESS",
+     "name": "Table 140.10-B battery factors",
+     "key_schema": [
+      "building_type"
+     ],
+     "value_unit": "kWh/kWdc or kW/kWdc"
+    }
+   ],
+   "formulas": [
+    {
+     "key": "BKWH",
+     "name": "Required battery energy",
+     "form": "equation",
+     "expression": "kW_PVdc*B",
+     "output_symbol": "kWh_batt",
+     "output_unit": "kWh",
+     "terms": [
+      {
+       "symbol": "kW_PVdc",
+       "meaning": "PV size from 140.10(a)",
+       "unit": "kWdc",
+       "role": "input"
+      },
+      {
+       "symbol": "B",
+       "meaning": "energy capacity factor",
+       "unit": "kWh/kWdc",
+       "role": "table",
+       "table": "TBESS"
+      }
+     ]
+    },
+    {
+     "key": "BKW",
+     "name": "Required battery power",
+     "form": "equation",
+     "expression": "kW_PVdc*C",
+     "output_symbol": "kW_batt",
+     "output_unit": "kW",
+     "terms": [
+      {
+       "symbol": "kW_PVdc",
+       "meaning": "PV size from 140.10(a)",
+       "unit": "kWdc",
+       "role": "input"
+      },
+      {
+       "symbol": "C",
+       "meaning": "power capacity factor",
+       "unit": "kW/kWdc",
+       "role": "table",
+       "table": "TBESS"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "editions": [
+    "CA-T24-P6-2022"
+   ],
+   "locator": "150.1(c)14",
+   "title": "Residential prescriptive PV",
+   "topic": "energy-code-pv",
+   "applicability": "Low-rise/single-family residential only. Not a nonresidential sizing basis.",
+   "intent": "Residential PV sizing rule; flagged because nonresidential projects have been mis-cited to it."
+  },
+  {
+   "editions": [
+    "CA-T24-P6-2022",
+    "CA-T24-P6-2025"
+   ],
+   "locator": "110.12",
+   "title": "Demand management mandatory measures",
+   "topic": "demand-flexibility",
+   "applies_to": [
+    "ems",
+    "das_meter"
+   ],
+   "intent": "Mandatory demand-responsive control capability for covered building systems; confirm which measures apply and whether metering/DAS evidence is required."
+  },
+  {
+   "editions": [
+    "CA-JA12-2022",
+    "CA-JA12-2025"
+   ],
+   "locator": "JA12",
+   "title": "Battery storage system qualification",
+   "topic": "energy-code-bess",
+   "applies_to": [
+    "bess_cabinet"
+   ],
+   "intent": "Qualification and control capability requirements a battery system must meet to receive energy-code credit or satisfy prescriptive storage; verify the exact product on the CEC list."
+  },
+  {
+   "editions": [
+    "CA-CFC-2022",
+    "CA-CFC-2025"
+   ],
+   "locator": "1207",
+   "title": "Electrical energy storage systems",
+   "topic": "ess-fire",
+   "applies_to": [
+    "bess_cabinet",
+    "bess_container"
+   ],
+   "intent": "Fire-code ESS rules: thresholds, listing, location, separation, size limits, detection, explosion control and signage, with fire AHJ amendments."
+  },
+  {
+   "editions": [
+    "NFPA-855-2023"
+   ],
+   "locator": "Ch 9 (ESS general)",
+   "title": "ESS installation requirements",
+   "topic": "ess-fire",
+   "applies_to": [
+    "bess_cabinet",
+    "bess_container"
+   ],
+   "intent": "Model installation rules referenced by the fire code: unit size, spacing, large-scale fire testing, hazard mitigation analysis."
+  },
+  {
+   "editions": [
+    "UL-9540-CUR"
+   ],
+   "locator": "UL 9540",
+   "title": "ESS system listing",
+   "topic": "listing",
+   "applies_to": [
+    "bess_cabinet",
+    "bess_container"
+   ],
+   "intent": "Safety listing of the energy storage system as a combination; the installed battery, PCS and controls must match the listed configuration."
+  },
+  {
+   "editions": [
+    "UL-9540A-CUR"
+   ],
+   "locator": "UL 9540A",
+   "title": "Thermal runaway propagation test",
+   "topic": "ess-fire",
+   "applies_to": [
+    "bess_cabinet"
+   ],
+   "intent": "Cell, module, unit and installation level test data used by fire AHJs to accept spacing and size; it is test evidence, not a listing."
+  },
+  {
+   "editions": [
+    "UL-1741-CUR"
+   ],
+   "locator": "UL 1741 SB",
+   "title": "Grid-support inverter certification",
+   "topic": "listing",
+   "applies_to": [
+    "pv_inverter",
+    "hybrid_inverter",
+    "pcs_conversion"
+   ],
+   "intent": "Inverter safety listing with grid-support functions tested to IEEE 1547.1; required for Rule 21 interconnection of smart inverters."
+  },
+  {
+   "editions": [
+    "IEEE-1547-2018"
+   ],
+   "locator": "IEEE 1547",
+   "title": "DER interconnection performance",
+   "topic": "interconnection",
+   "applies_to": [
+    "pv_inverter",
+    "hybrid_inverter",
+    "pcs_conversion"
+   ],
+   "intent": "Voltage/frequency ride-through, trip and interoperability requirements for DER at the point of interconnection."
+  },
+  {
+   "editions": [
+    "CPUC-R21-CUR"
+   ],
+   "locator": "Rule 21",
+   "title": "IOU interconnection tariff",
+   "topic": "interconnection",
+   "applies_to": [
+    "utility_meter"
+   ],
+   "intent": "Application, review path, metering and smart-inverter settings for PG&E, SCE and SDG&E customers; read the utility's own tariff."
+  },
+  {
+   "editions": [
+    "NFPA-70E-2024"
+   ],
+   "locator": "130.5",
+   "title": "Arc flash risk assessment and labeling",
+   "topic": "safety",
+   "applies_to": [
+    "service_switchboard",
+    "bess_cabinet"
+   ],
+   "intent": "Arc flash risk assessment and equipment labeling basis for energized work."
+  }
+ ],
+ "table_rows": [
+  {
+   "edition": "NEC-2020",
+   "table": "T2406",
+   "values": [
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    300,
+    350,
+    400,
+    450,
+    500,
+    600,
+    700,
+    800,
+    1000,
+    1200,
+    1600,
+    2000,
+    2500,
+    3000,
+    4000,
+    5000,
+    6000
+   ]
+  },
+  {
+   "edition": "NEC-2023",
+   "table": "T2406",
+   "values": [
+    1,
+    3,
+    6,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    300,
+    350,
+    400,
+    450,
+    500,
+    600,
+    700,
+    800,
+    1000,
+    1200,
+    1600,
+    2000,
+    2500,
+    3000,
+    4000,
+    5000,
+    6000
+   ]
+  },
+  {
+   "edition": "NEC-2020",
+   "table": "T11026",
+   "rows": [
+    [
+     {
+      "v_to_ground": "0-150",
+      "condition": "1"
+     },
+     3
+    ],
+    [
+     {
+      "v_to_ground": "0-150",
+      "condition": "2"
+     },
+     3
+    ],
+    [
+     {
+      "v_to_ground": "0-150",
+      "condition": "3"
+     },
+     3
+    ],
+    [
+     {
+      "v_to_ground": "151-600",
+      "condition": "1"
+     },
+     3
+    ],
+    [
+     {
+      "v_to_ground": "151-600",
+      "condition": "2"
+     },
+     3.5
+    ],
+    [
+     {
+      "v_to_ground": "151-600",
+      "condition": "3"
+     },
+     4
+    ]
+   ]
+  },
+  {
+   "edition": "NEC-2023",
+   "table": "T11026",
+   "rows": [
+    [
+     {
+      "v_to_ground": "0-150",
+      "condition": "1"
+     },
+     3
+    ],
+    [
+     {
+      "v_to_ground": "0-150",
+      "condition": "2"
+     },
+     3
+    ],
+    [
+     {
+      "v_to_ground": "0-150",
+      "condition": "3"
+     },
+     3
+    ],
+    [
+     {
+      "v_to_ground": "151-1000",
+      "condition": "1"
+     },
+     3
+    ],
+    [
+     {
+      "v_to_ground": "151-1000",
+      "condition": "2"
+     },
+     3.5
+    ],
+    [
+     {
+      "v_to_ground": "151-1000",
+      "condition": "3"
+     },
+     4
+    ]
+   ]
+  }
+ ],
+ "lineage": [
+  {
+   "from": "NEC-2017:705.60",
+   "to": "NEC-2020:705.28",
+   "relation": "renumbered",
+   "note": "Citing 705.60 on a CEC 2022 or 2025 project is an outdated reference."
+  },
+  {
+   "from": "NEC-2017:705.65",
+   "to": "NEC-2020:705.30",
+   "relation": "renumbered"
+  },
+  {
+   "from": "NEC-2020:705.28",
+   "to": "NEC-2023:705.28",
+   "relation": "revised"
+  },
+  {
+   "from": "NEC-2020:705.30",
+   "to": "NEC-2023:705.30",
+   "relation": "revised"
+  },
+  {
+   "from": "CA-T24-P6-2022:140.10(b)",
+   "to": "CA-T24-P6-2025:140.10(b)",
+   "relation": "revised",
+   "note": "2025 capacity tables received errata (see CA-ENERGY-ERRATA)."
+  },
+  {
+   "from": "CA-T24-P6-2022:140.10(a)",
+   "to": "CA-T24-P6-2025:140.10(a)",
+   "relation": "revised"
+  }
+ ],
+ "verifications": []
+}

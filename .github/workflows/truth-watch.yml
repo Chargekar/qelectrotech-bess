@@ -1,0 +1,40 @@
+name: truth-watch
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pick comparison base
+        id: base
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "ref=${{ github.event.pull_request.base.sha }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+            echo "ref=$(git hash-object -t tree /dev/null)" >> "$GITHUB_OUTPUT"
+          else
+            echo "ref=${{ github.event.before }}" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Truth seed guard (immutability + changelog)
+        run: python scripts/watchtower.py check --base "${{ steps.base.outputs.ref }}"
+      - name: Build relational model
+        run: python scripts/build_db.py
+      - name: Validate library
+        run: python scripts/validate_library.py
+      - name: Domain contract tests
+        run: |
+          pip install --quiet jsonschema
+          python scripts/test_domain_contract.py

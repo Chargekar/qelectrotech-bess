@@ -1,0 +1,118 @@
+{
+  "version": "1.1.0",
+  "ambiguous_property_forbidden": "state",
+  "namespaces": {
+    "jurisdiction": {
+      "kind": "geographic/legal",
+      "key": "subdivision_code",
+      "examples": [
+        "US-CA",
+        "US-NY"
+      ],
+      "contract": "Jurisdiction"
+    },
+    "operating": {
+      "kind": "system operating mode",
+      "key": "mode",
+      "contract": "OperatingMode"
+    },
+    "component": {
+      "kind": "equipment health/availability",
+      "key": "condition",
+      "contract": "ComponentCondition"
+    },
+    "switch": {
+      "kind": "contact position",
+      "key": "position",
+      "contract": "SwitchPosition"
+    },
+    "battery": {
+      "kind": "stored-energy fraction",
+      "key": "soc_fraction",
+      "contract": "BatterySoc"
+    },
+    "review": {
+      "kind": "evidence/workflow",
+      "key": "status",
+      "contract": "Review"
+    },
+    "applicability": {
+      "kind": "rule/subject scope decision",
+      "key": "decision",
+      "contract": "RuleApplicability"
+    },
+    "authorization": {
+      "kind": "external authority decision",
+      "key": "disposition",
+      "contract": "ExternalAuthorizationRecord"
+    }
+  },
+  "constraint_domains": {
+    "physical": "PhysicalConstraint",
+    "environment": "EnvironmentConstraint",
+    "electrical": "ElectricalConstraint",
+    "resilience": "ResilienceRequirement",
+    "calculation": "CalculationRequirement",
+    "energy_code": "EnergyCodeRequirement",
+    "raceway": "RacewaySpecification",
+    "raceway_route": "RacewayRouteAnnotation",
+    "pv_source": "PVSourceSpecification",
+    "pv_shutdown": "PVShutdownRequirement",
+    "control_function": "ControlFunctionSpecification",
+    "sensor": "SensorSpecification",
+    "protection": "ProtectionSpecification",
+    "distribution_assembly": "DistributionAssemblySpecification",
+    "grounding_bonding": "GroundingBondingSpecification",
+    "transfer": "TransferSpecification",
+    "generator": "GeneratorSpecification",
+    "availability_dependency": "AvailabilityDependency",
+    "physical_coordinate_frame": "PhysicalCoordinateFrame",
+    "footprint": "FootprintDefinition",
+    "mounting_interface": "MountingInterface",
+    "spatial_envelope": "SpatialEnvelopeRequirement",
+    "environmental_exposure": "EnvironmentalExposureRecord",
+    "authority_scope": "AuthorityScope",
+    "rule_applicability": "RuleApplicability",
+    "note_instance": "ComplianceNoteInstance",
+    "external_authorization": "ExternalAuthorizationRecord",
+    "sheet": "SheetDefinition",
+    "drawing_occurrence": "DrawingOccurrence",
+    "schedule": "ScheduleContract",
+    "annotation_placement": "AnnotationPlacement"
+  },
+  "selection_rule": "All applicable jurisdictional, equipment-qualification, physical, environmental, electrical, operational, energy-code and resilience constraints must be resolved; one does not substitute for another.",
+  "relations": {
+    "subject_to": [
+      "Equipment",
+      "Constraint"
+    ],
+    "depicted_as": [
+      "Equipment",
+      "DrawingOccurrence"
+    ],
+    "located_at": [
+      "Equipment",
+      "Placement"
+    ],
+    "supported_by": [
+      "Fact or Requirement",
+      "Source"
+    ],
+    "operates_in": [
+      "System",
+      "OperatingMode"
+    ],
+    "has_condition": [
+      "Equipment",
+      "ComponentCondition"
+    ],
+    "has_position": [
+      "Switch",
+      "SwitchPosition"
+    ],
+    "transitioned_by": [
+      "OperatingMode",
+      "SourceTransition"
+    ]
+  }
+}

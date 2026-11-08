@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "scope": "Editable sheet-layout conventions only; no physical or code clearance values",
+  "coordinate_space": "sheet-layout",
+  "unit": "drawing-unit",
+  "local_grid": 10,
+  "preferred_text_geometry_gap": 8,
+  "annotation_line_step": 13,
+  "hierarchy": ["stable equipment or circuit tag", "function and verified rating", "note/detail/evidence references"],
+  "placement_rules": [
+    "Check actual text bounds and final print scale; nominal gap does not prove legibility.",
+    "Reserve clear zones around terminals, switch contacts, junctions, conductor elbows and revision marks.",
+    "Anchor related labels to the same subject/occurrence; preserve space for longer real identifiers.",
+    "Use native annotations for resolved text and actual conductors/report topology for electrical continuity.",
+    "Do not stretch physical icons or use annotation offsets as electrical/fire/service clearance.",
+    "Keep work scope, revision, operating mode, component condition and review status independent."
+  ]
+}

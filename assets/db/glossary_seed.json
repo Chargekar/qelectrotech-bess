@@ -1,0 +1,3266 @@
+{
+  "version": "1.0.0",
+  "drawio_base": "verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;",
+  "families": [
+    [
+      "service",
+      "Utility service"
+    ],
+    [
+      "distribution",
+      "Distribution"
+    ],
+    [
+      "protection",
+      "Protection and isolation"
+    ],
+    [
+      "pv",
+      "Photovoltaic"
+    ],
+    [
+      "conversion",
+      "Power conversion"
+    ],
+    [
+      "storage",
+      "Energy storage"
+    ],
+    [
+      "control",
+      "Controls and sensing"
+    ],
+    [
+      "metering",
+      "Metering and monitoring"
+    ],
+    [
+      "grounding",
+      "Grounding and bonding"
+    ],
+    [
+      "wiring",
+      "Conductors and raceway"
+    ],
+    [
+      "site",
+      "Site and signage"
+    ]
+  ],
+  "symbols": [
+    {
+      "id": "utility",
+      "qet": "bess/utility.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.signal_sources.source",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=ac;",
+      "w": 40,
+      "h": 40
+    },
+    {
+      "id": "meter",
+      "qet": "bess/meter.elmt",
+      "kind": "basic",
+      "style": "shape=ellipse;perimeter=ellipsePerimeter;aspect=fixed;whiteSpace=wrap;html=1;fontSize=10;fontStyle=1;",
+      "w": 36,
+      "h": 36,
+      "note": "glyph M; the palette itself draws meters as labelled ellipses"
+    },
+    {
+      "id": "breaker",
+      "qet": "bess/breaker.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.electro-mechanical.circuitBreaker2",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.electro-mechanical.circuitBreaker2;elSwitchState=on;",
+      "w": 60,
+      "h": 16
+    },
+    {
+      "id": "disconnect",
+      "qet": "bess/disconnect.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.electro-mechanical.switchDisconnector",
+      "style": "{B}shape=mxgraph.electrical.electro-mechanical.switchDisconnector;aspect=fixed;elSwitchState=on;",
+      "w": 60,
+      "h": 16
+    },
+    {
+      "id": "fused_disconnect",
+      "qet": null,
+      "kind": "composite",
+      "shape": "mxgraph.electrical.electro-mechanical.switchDisconnector",
+      "style": "{B}shape=mxgraph.electrical.electro-mechanical.switchDisconnector;aspect=fixed;elSwitchState=on;",
+      "w": 60,
+      "h": 16,
+      "note": "draw a fuse_2 in series immediately downstream"
+    },
+    {
+      "id": "bus",
+      "qet": "bess/bus.elmt",
+      "kind": "basic",
+      "style": "rounded=0;html=1;fillColor=#000000;strokeColor=none;",
+      "w": 6,
+      "h": 200
+    },
+    {
+      "id": "battery",
+      "qet": "bess/battery.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.miscellaneous.batteryStack",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.miscellaneous.batteryStack;",
+      "w": 60,
+      "h": 36
+    },
+    {
+      "id": "battery_cell",
+      "qet": "bess/battery_cell.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.miscellaneous.monocell_battery",
+      "style": "{B}fillColor=strokeColor;strokeWidth=1;shape=mxgraph.electrical.miscellaneous.monocell_battery;",
+      "w": 50,
+      "h": 30
+    },
+    {
+      "id": "battery_module",
+      "qet": "bess/battery_module.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.miscellaneous.multicell_battery_tapped",
+      "style": "pointerEvents=1;{B}fillColor=strokeColor;strokeWidth=1;shape=mxgraph.electrical.miscellaneous.multicell_battery_tapped;",
+      "w": 60,
+      "h": 42
+    },
+    {
+      "id": "battery_rack",
+      "qet": "bess/battery_rack.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.miscellaneous.batteryStack",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.miscellaneous.batteryStack;",
+      "w": 60,
+      "h": 36
+    },
+    {
+      "id": "power_conversion_system",
+      "qet": "bess/power_conversion_system.elmt",
+      "kind": "composite",
+      "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;",
+      "w": 60,
+      "h": 60,
+      "note": "box with diagonal; AC top-left, DC bottom-right (no PCS stencil exists in the palette)"
+    },
+    {
+      "id": "pv_inverter",
+      "qet": "bess/pv_inverter.elmt",
+      "kind": "composite",
+      "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;",
+      "w": 60,
+      "h": 60,
+      "note": "box with diagonal; DC in, AC out"
+    },
+    {
+      "id": "hybrid_inverter",
+      "qet": "bess/hybrid_inverter.elmt",
+      "kind": "composite",
+      "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;",
+      "w": 70,
+      "h": 70,
+      "note": "box with diagonal; PV DC, battery DC, grid AC and backup AC ports"
+    },
+    {
+      "id": "pv_array",
+      "qet": "bess/pv_array.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.opto_electronics.solar_cell",
+      "style": "{B}shape=mxgraph.electrical.opto_electronics.solar_cell;pointerEvents=1;",
+      "w": 50,
+      "h": 35
+    },
+    {
+      "id": "transformer",
+      "qet": "bess/transformer.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.inductors.transformer_1",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.inductors.transformer_1;",
+      "w": 40,
+      "h": 38
+    },
+    {
+      "id": "load_panel",
+      "qet": "bess/load_panel.elmt",
+      "kind": "basic",
+      "style": "rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 70,
+      "h": 30
+    },
+    {
+      "id": "transfer_switch",
+      "qet": "bess/transfer_switch.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.electro-mechanical.changeoverContactSwitch2",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.electro-mechanical.changeoverContactSwitch2;elSwitchState=1;",
+      "w": 60,
+      "h": 16
+    },
+    {
+      "id": "ground",
+      "qet": "bess/ground.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.signal_sources.protective_earth",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.signal_sources.protective_earth;",
+      "w": 20,
+      "h": 16
+    },
+    {
+      "id": "controller",
+      "qet": "bess/controller.elmt",
+      "kind": "basic",
+      "style": "rounded=1;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 70,
+      "h": 30
+    },
+    {
+      "id": "current_sensor",
+      "qet": "bess/current_sensor.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.inductors.current_transformer_1",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.inductors.current_transformer_1;",
+      "w": 8,
+      "h": 40
+    },
+    {
+      "id": "potential_transformer",
+      "qet": null,
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.inductors.potential_transformer",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.inductors.potential_transformer;",
+      "w": 40,
+      "h": 20
+    },
+    {
+      "id": "estop",
+      "qet": "bess/estop.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.electro-mechanical.pushbuttonBreak2",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.electro-mechanical.pushbuttonBreak2;elSwitchState=on;",
+      "w": 50,
+      "h": 26
+    },
+    {
+      "id": "bess_cabinet",
+      "qet": "bess/bess_cabinet.elmt",
+      "kind": "composite",
+      "style": "rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;verticalAlign=top;align=left;spacingLeft=4;fontSize=9;",
+      "w": 240,
+      "h": 110,
+      "note": "dashed boundary grouping PCS, DC disconnect, battery racks and BMS"
+    },
+    {
+      "id": "bess_container",
+      "qet": "bess/bess_container.elmt",
+      "kind": "composite",
+      "style": "rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;verticalAlign=top;align=left;spacingLeft=4;fontSize=9;",
+      "w": 300,
+      "h": 140
+    },
+    {
+      "id": "bms",
+      "qet": "bess/bms.elmt",
+      "kind": "basic",
+      "style": "rounded=1;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 40,
+      "h": 22
+    },
+    {
+      "id": "dc_disconnect",
+      "qet": "bess/dc_disconnect.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.electro-mechanical.switchDisconnector",
+      "style": "{B}shape=mxgraph.electrical.electro-mechanical.switchDisconnector;aspect=fixed;elSwitchState=on;",
+      "w": 60,
+      "h": 16
+    },
+    {
+      "id": "dc_fuse",
+      "qet": "bess/dc_fuse.elmt",
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.miscellaneous.fuse_2",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.miscellaneous.fuse_2;",
+      "w": 50,
+      "h": 10
+    },
+    {
+      "id": "dc_combiner",
+      "qet": "bess/dc_combiner.elmt",
+      "kind": "basic",
+      "style": "rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 50,
+      "h": 30
+    },
+    {
+      "id": "spd",
+      "qet": null,
+      "kind": "stencil",
+      "shape": "mxgraph.electrical.miscellaneous.surge_protector_2",
+      "style": "pointerEvents=1;{B}shape=mxgraph.electrical.miscellaneous.surge_protector_2;",
+      "w": 40,
+      "h": 14
+    },
+    {
+      "id": "relay",
+      "qet": null,
+      "kind": "basic",
+      "style": "shape=ellipse;perimeter=ellipsePerimeter;aspect=fixed;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 30,
+      "h": 30,
+      "note": "glyph = IEEE device numbers, e.g. 27/59/81O/U/32"
+    },
+    {
+      "id": "das",
+      "qet": null,
+      "kind": "basic",
+      "style": "rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 50,
+      "h": 26
+    },
+    {
+      "id": "aux_box",
+      "qet": null,
+      "kind": "basic",
+      "style": "rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 60,
+      "h": 26,
+      "note": "generic labelled block: UPS, RSD, comms enclosure, junction box"
+    },
+    {
+      "id": "raceway_emt",
+      "qet": "bess/raceway_emt.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_imc",
+      "qet": "bess/raceway_imc.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_rmc",
+      "qet": "bess/raceway_rmc.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_fmc",
+      "qet": "bess/raceway_fmc.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_lfmc",
+      "qet": "bess/raceway_lfmc.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_lfnc",
+      "qet": "bess/raceway_lfnc.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_pvc",
+      "qet": "bess/raceway_pvc.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_rtrc",
+      "qet": "bess/raceway_rtrc.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_elbow",
+      "qet": "bess/raceway_elbow.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Direction change; bend radius and bend count are unresolved. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_offset",
+      "qet": "bess/raceway_offset.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Offset routing concept; geometry is not a calculated bend. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_riser_up",
+      "qet": "bess/raceway_riser_up.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Plan legend marker UP; does not establish elevation. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_riser_down",
+      "qet": "bess/raceway_riser_down.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Plan legend marker DN; does not establish elevation. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_underground",
+      "qet": "bess/raceway_underground.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Route designation only; cover, burial method and location require project data. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_overhead",
+      "qet": "bess/raceway_overhead.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Route designation only; clearances and support require project data. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_sleeve",
+      "qet": "bess/raceway_sleeve.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Sleeve location concept; wall assembly, seal and dimensions are unresolved. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_firestop",
+      "qet": "bess/raceway_firestop.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Reference a specific applicable tested/listed firestop assembly; glyph is not an assembly design. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_expansion",
+      "qet": "bess/raceway_expansion.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Movement accommodation function; stroke, setting and installation per selected product. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_support",
+      "qet": "bess/raceway_support.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Support function; span, attachment and structural adequacy are not supplied. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_conduit_body",
+      "qet": "bess/raceway_conduit_body.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Accessible fitting function; fill, pull access and compatible size/type remain unresolved. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_pull_box",
+      "qet": "bess/raceway_pull_box.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Pull/access box marker; sizing, access and environmental rating need evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "raceway_transition",
+      "qet": "bess/raceway_transition.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Transition function; exact compatible listed fittings and bonding remain unresolved. Original NTS legend; no installation dimensions, electrical net or compliance are implied."
+    },
+    {
+      "id": "pv_module",
+      "qet": "bess/pv_module.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. One module functional representation; external positive/negative conductor terminals, not a selected product."
+    },
+    {
+      "id": "pv_string",
+      "qet": "bess/pv_string.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Aggregated string source circuit; small internal module marks are illustrative and do not specify quantity."
+    },
+    {
+      "id": "pv_string_polarized",
+      "qet": "bess/pv_string_polarized.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. String source with separate positive/negative conductor terminals; no module count, voltage or current implied."
+    },
+    {
+      "id": "pv_dc_combiner",
+      "qet": "bess/pv_dc_combiner.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Two depicted bundle inputs and one output; actual source count, protection and internal arrangement require data."
+    },
+    {
+      "id": "pv_optimizer",
+      "qet": "bess/pv_optimizer.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. DC-to-DC function; compatibility, ratings and any shutdown capability are separately evidenced."
+    },
+    {
+      "id": "pv_rapid_shutdown",
+      "qet": "bess/pv_rapid_shutdown.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Generic controlled DC function. Command port is logical, not a prescribed physical wire or a compliance claim."
+    },
+    {
+      "id": "pv_shutdown_initiator",
+      "qet": "bess/pv_shutdown_initiator.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Logical initiating function only; initiation method, scope and equipment compatibility require evidence."
+    },
+    {
+      "id": "pv_ac_module",
+      "qet": "bess/pv_ac_module.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. PV module/converter assembly exposing AC and protective bond; exact assembly listing remains project data."
+    },
+    {
+      "id": "pv_microinverter",
+      "qet": "bess/pv_microinverter.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Module-scale DC/AC converter function; no assumed grid-forming, backup or shutdown approval."
+    },
+    {
+      "id": "pv_string_inverter_dual_mppt",
+      "qet": "bess/pv_string_inverter_dual_mppt.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Two conceptual DC input bundles and one AC output. Actual independent MPPT channels, allowable strings and ratings require the exact product data."
+    },
+    {
+      "id": "pv_junction_box",
+      "qet": "bess/pv_junction_box.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Circuit transition/enclosure function; enclosure rating, terminations and bonding require project evidence."
+    },
+    {
+      "id": "pv_hazard_boundary",
+      "qet": "bess/pv_hazard_boundary.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Original NTS boundary graphic. Boundary geometry and selected hazard/shutdown approach must be documented; this graphic proves no code criterion."
+    },
+    {
+      "id": "power_control_system",
+      "qet": "bess/power_control_system.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Current/power limiting control function, distinct from a power conversion system. Exact certified configuration, sensing, limits and failure response require evidence."
+    },
+    {
+      "id": "energy_management_system",
+      "qet": "bess/energy_management_system.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Energy optimization/dispatch function. EMS naming does not establish certified overload or export-limit control."
+    },
+    {
+      "id": "microgrid_controller",
+      "qet": "bess/microgrid_controller.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Coordination function only; no islanding, isolation, reconnection or resilience capability is proven by the glyph."
+    },
+    {
+      "id": "communications_gateway",
+      "qet": "bess/communications_gateway.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Logical data interfaces; protocol, physical transport, auxiliary power, security and failure response remain product/design data."
+    },
+    {
+      "id": "voltage_sensor",
+      "qet": "bess/voltage_sensor.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Logical measurement output only. Actual primary/secondary instrumentation wiring, ratio and protection are separate details."
+    },
+    {
+      "id": "protection_relay",
+      "qet": "bess/protection_relay.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Protection function. Device functions, settings, sensing, trip circuit and independent control supply require engineering evidence."
+    },
+    {
+      "id": "trip_coil",
+      "qet": "bess/trip_coil.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Logical trip input; not a selected physical coil voltage, wiring circuit or fail-safe claim."
+    },
+    {
+      "id": "control_power_supply",
+      "qet": "bess/control_power_supply.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. AC-to-DC auxiliary power conversion; ratings, protection, isolation and outage availability require product/design evidence."
+    },
+    {
+      "id": "ups_function",
+      "qet": "bess/ups_function.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Auxiliary continuity function; topology, bypass, runtime and failure behavior are unresolved and no runtime is calculated."
+    },
+    {
+      "id": "remote_operated_breaker",
+      "qet": "bess/remote_operated_breaker.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Generic breaker and logical command. Contact graphic is a drafting symbol, not a verified operating-mode position or fail-safe response."
+    },
+    {
+      "id": "service_disconnect",
+      "qet": "bess/service_disconnect.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Service isolation function; exact service suitability/listing, overcurrent protection, neutral and bonding are not implied."
+    },
+    {
+      "id": "switchboard",
+      "qet": "bess/switchboard.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Functional assembly boundary. Depicted ports do not establish an internal common bus, breaker count or source interconnection method."
+    },
+    {
+      "id": "panelboard",
+      "qet": "bess/panelboard.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Functional distribution boundary; actual branch circuits, neutral/bonding, main/bus ratings and protection remain project data."
+    },
+    {
+      "id": "ac_fuse",
+      "qet": "bess/ac_fuse.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. AC overcurrent protection; current/voltage class, interrupting rating and coordination are unspecified."
+    },
+    {
+      "id": "ac_fused_disconnect",
+      "qet": "bess/ac_fused_disconnect.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Combined isolation/protection function; poles, fuse class, switching suitability and service qualification require evidence."
+    },
+    {
+      "id": "surge_protective_device",
+      "qet": "bess/surge_protective_device.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Shunt surge-protection function; type, system configuration, protection, SCCR and connection/bonding details must be specified."
+    },
+    {
+      "id": "ac_combiner",
+      "qet": "bess/ac_combiner.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Two conceptual source bundle inputs and one output. Actual internal protection, allowable sources and interconnection require evidence."
+    },
+    {
+      "id": "power_meter",
+      "qet": "bess/power_meter.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Logical measurement/data function; physical CT/PT or direct voltage wiring, ratio, polarity and revenue acceptance are separate evidence."
+    },
+    {
+      "id": "ground_bar",
+      "qet": "bess/ground_bar.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Protective-bond common bar. Does not establish an electrode, a neutral bond or conductor sizing."
+    },
+    {
+      "id": "neutral_bar",
+      "qet": "bess/neutral_bar.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Neutral conductor common bar, with no implicit connection to protective bonding or earth."
+    },
+    {
+      "id": "ground_rod",
+      "qet": "bess/ground_rod.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Electrode type identifier only. Dimensions, material, electrodes present, soil/site suitability and testing require evidence."
+    },
+    {
+      "id": "main_bonding_jumper",
+      "qet": "bess/main_bonding_jumper.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Bonding function with endpoints assigned by a reviewed service grounding detail; neither port establishes a permitted neutral-ground connection by itself."
+    },
+    {
+      "id": "system_bonding_jumper",
+      "qet": "bess/system_bonding_jumper.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Bonding function for an explicitly determined system arrangement. Separately-derived classification and bond location are not inferred."
+    },
+    {
+      "id": "equipment_bonding_jumper",
+      "qet": "bess/equipment_bonding_jumper.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Equipment bonding path function; material, terminals, environment and sizing remain unresolved."
+    },
+    {
+      "id": "ground_test_link",
+      "qet": "bess/ground_test_link.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Removable testing-link identifier, not an operating instruction or an assertion that opening a protective path is permissible."
+    },
+    {
+      "id": "terminal_block_ac",
+      "qet": "bess/terminal_block_ac.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. One conductor termination function. Phase/neutral identity, internal continuity and ratings require the actual terminal contract."
+    },
+    {
+      "id": "terminal_block_dc",
+      "qet": "bess/terminal_block_dc.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. One DC conductor termination function. No polarity, grounded-pole selection or product rating is assigned."
+    },
+    {
+      "id": "ct_test_block",
+      "qet": "bess/ct_test_block.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Physical secondary conductor interfaces, not logical sensor ports. Actual shorting/test sequencing and internal wiring require the exact manufacturer detail."
+    },
+    {
+      "id": "generator_set",
+      "qet": "bess/generator_set.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. AC source and protective-bond boundary. No voltage, capacity, fuel, duty, neutral arrangement, autonomy or availability is selected."
+    },
+    {
+      "id": "generator_controller",
+      "qet": "bess/generator_controller.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Logical supervision/start function. Physical start circuit, supply, health monitoring and failure response remain separate evidence."
+    },
+    {
+      "id": "generator_start_battery",
+      "qet": "bess/generator_start_battery.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Starting-energy boundary only; no battery chemistry, voltage, capacity or guaranteed start performance."
+    },
+    {
+      "id": "generator_battery_charger",
+      "qet": "bess/generator_battery_charger.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Auxiliary AC-to-DC charging function. Charger sizing, battery compatibility and outage supply are unresolved."
+    },
+    {
+      "id": "generator_heater",
+      "qet": "bess/generator_heater.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Auxiliary heater load function; ambient requirements, supply, controls and effect on availability need evidence."
+    },
+    {
+      "id": "transfer_open_transition",
+      "qet": "bess/transfer_open_transition.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Functional transfer category. No actual timing, automatic-operation claim, neutral treatment or contact position is assigned."
+    },
+    {
+      "id": "transfer_closed_transition",
+      "qet": "bess/transfer_closed_transition.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Functional transition category, not authorization to parallel sources or a guarantee of uninterrupted power."
+    },
+    {
+      "id": "transfer_bypass_isolation",
+      "qet": "bess/transfer_bypass_isolation.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Maintenance transfer/isolation boundary. Actual internal bypass, interlocks, source availability and interruption behavior require product/sequence evidence."
+    },
+    {
+      "id": "generator_connection_cabinet",
+      "qet": "bess/generator_connection_cabinet.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Connection-equipment boundary; connector configuration, ratings, source isolation, neutral/bonding and utility acceptance remain project evidence."
+    },
+    {
+      "id": "load_bank",
+      "qet": "bess/load_bank.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Temporary/permanent test load function; test duty, load type, ventilation, controls and connection design are unresolved."
+    },
+    {
+      "id": "mechanical_interlock",
+      "qet": "bess/mechanical_interlock.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Logical interlock relationship, not a power conductor or verified mechanical design. Exact listed combination and operation sequence need evidence."
+    },
+    {
+      "id": "gec_role_marker",
+      "qet": "bess/gec_role_marker.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Grounding-electrode-conductor role marker. Attach by annotation to an actual native conductor; this is not a wire or sizing result."
+    },
+    {
+      "id": "egc_role_marker",
+      "qet": "bess/egc_role_marker.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Equipment-grounding-conductor role marker. Raceway qualification and conductor/path sizing are separate project evidence."
+    },
+    {
+      "id": "generator_fuel_tank",
+      "qet": "bess/generator_fuel_tank.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Non-electrical fuel-system reference. Fuel choice, usable quantity, delivery/refill, fire/environmental permitting and duration are unresolved."
+    },
+    {
+      "id": "generator_exhaust",
+      "qet": "bess/generator_exhaust.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Non-electrical direction marker. Emissions, discharge, receptors, ventilation, noise and clearances require actual site/product review."
+    },
+    {
+      "id": "location_bess_cabinet_plan",
+      "qet": "bess/location_bess_cabinet_plan.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Equipment footprint symbol; no model dimensions, door geometry or clearances are selected. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "location_bess_container_plan",
+      "qet": "bess/location_bess_container_plan.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Container footprint identifier; ribs are graphic detail, not battery or enclosure counts. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "location_inverter_wall_plan",
+      "qet": "bess/location_inverter_wall_plan.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Wall/equipment relationship identifier; actual attachment and ventilation remain project inputs. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "location_pv_roof_zone",
+      "qet": "bess/location_pv_roof_zone.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Roof/array relationship only; drawn cells do not select module count, roof slope or fire pathways. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "location_pv_ground_mount",
+      "qet": "bess/location_pv_ground_mount.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Array/support area identifier; no row count, module count, tilt or setback is selected. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "equipment_pad_preview",
+      "qet": "bess/equipment_pad_preview.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Support-pad reference, with no thickness, reinforcement, footprint, capacity or anchor pattern specified. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "wall_mount_section",
+      "qet": "bess/wall_mount_section.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Wall/support/equipment section identifier, not an engineered connection detail. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "roof_mount_section",
+      "qet": "bess/roof_mount_section.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Roof support relationship only; slope, standoff, attachment and flashing require actual evidence. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "rack_mount_elevation",
+      "qet": "bess/rack_mount_elevation.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Rack/support elevation identifier. Shelves and bracing are illustrative, with no load rating. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "anchor_detail_reference",
+      "qet": "bess/anchor_detail_reference.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Leader target for an approved anchorage detail; no anchor type, count, embedment or spacing is provided. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "clearance_electrical_working",
+      "qet": "bess/clearance_electrical_working.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Electrical working-space category only. No generic rectangle establishes an adopted clearance value. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "clearance_equipment_service",
+      "qet": "bess/clearance_equipment_service.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Manufacturer service envelope category, distinct from electrical working space and fire separation. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "clearance_fire_separation",
+      "qet": "bess/clearance_fire_separation.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Fire separation/exposure category. Exact installation/test/AHJ evidence governs; no distance is encoded. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "door_swing_preview",
+      "qet": "bess/door_swing_preview.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Door-sweep relationship only. The icon does not prescribe actual angle, handedness or clear width. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "access_route_preview",
+      "qet": "bess/access_route_preview.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Access path identifier, without claiming accessible-route, egress or fire-access compliance. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "fence_line_preview",
+      "qet": "bess/fence_line_preview.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Fence boundary identifier; no physical dimensions, setback, electrical bonding or access result. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "gate_swing_preview",
+      "qet": "bess/gate_swing_preview.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Gate and movement identifier; leaf count and opening angle are graphic conventions, not selected equipment. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "bollard_plan_preview",
+      "qet": "bess/bollard_plan_preview.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Vehicle-protection location marker; no impact resistance, spacing or foundation design is asserted. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "north_reference",
+      "qet": "bess/north_reference.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Orientation symbol requiring actual true/grid/project/magnetic basis; its initial rotation is not a site fact. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "roof_edge_reference",
+      "qet": "bess/roof_edge_reference.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Roof boundary reference; no verified parapet height, slope, setback or structural condition. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "environment_salt_exposure",
+      "qet": "bess/environment_salt_exposure.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Physical salt-exposure review marker, independent of California Coastal Zone legal jurisdiction. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "environment_corrosion",
+      "qet": "bess/environment_corrosion.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Corrosion review marker; does not assign enclosure type or prove coating/material suitability. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "environment_flood",
+      "qet": "bess/environment_flood.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Flood/site-elevation review marker; graphic water level is not a flood elevation or protection requirement. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "equipment_service_face",
+      "qet": "bess/equipment_service_face.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Service/front-face orientation marker, separate from a door sweep or required clearance envelope. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use."
+    },
+    {
+      "id": "equipment_tag",
+      "qet": "bess/equipment_tag.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Same stable equipment identity across SLD, plan and equipment schedule."
+    },
+    {
+      "id": "circuit_tag",
+      "qet": "bess/circuit_tag.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Circuit identity linked to actual native conductors and the circuit schedule."
+    },
+    {
+      "id": "note_reference",
+      "qet": "bess/note_reference.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Reference to a resolved, applicable note instance; the glyph is not a compliance assertion."
+    },
+    {
+      "id": "detail_reference",
+      "qet": "bess/detail_reference.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Detail/sheet identifiers are unresolved until the drawing package is coordinated."
+    },
+    {
+      "id": "section_reference",
+      "qet": "bess/section_reference.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Section/sheet reference only; direction and target drawing require coordination."
+    },
+    {
+      "id": "revision_delta",
+      "qet": "bess/revision_delta.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Revision identifier only, independent from approval, operating mode or component condition."
+    },
+    {
+      "id": "match_line",
+      "qet": "bess/match_line.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Cross-view boundary reference; not a power conductor or electrical connection."
+    },
+    {
+      "id": "existing_scope_marker",
+      "qet": "bess/existing_scope_marker.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Drawing work-scope label; not a component-health or operating-state record."
+    },
+    {
+      "id": "new_scope_marker",
+      "qet": "bess/new_scope_marker.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Proposed work-scope label; no installed/approved/energized status is implied."
+    },
+    {
+      "id": "removed_scope_marker",
+      "qet": "bess/removed_scope_marker.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Removal scope identifier; does not establish safe isolation or actual completed removal."
+    },
+    {
+      "id": "relocated_scope_marker",
+      "qet": "bess/relocated_scope_marker.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Relocation scope identifier requiring existing/proposed identity reconciliation."
+    },
+    {
+      "id": "continuation_reference",
+      "qet": "bess/continuation_reference.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Cross-sheet annotation; actual electrical continuity requires native report/conductor topology."
+    },
+    {
+      "id": "bidirectional_power_marker",
+      "qet": "bess/bidirectional_power_marker.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Direction-of-flow annotation only; no conductor or bidirectional capability proof."
+    },
+    {
+      "id": "control_signal_marker",
+      "qet": "bess/control_signal_marker.elmt",
+      "kind": "basic",
+      "style": "shape=rectangle;rounded=0;whiteSpace=wrap;html=1;fontSize=9;",
+      "w": 80,
+      "h": 40,
+      "note": "Explicit generic labelled rectangle fallback only; original native QET geometry has not been converted to a verified Draw.io stencil. Legend for logical signal relationships; actual native conductor style and physical transport must be defined."
+    }
+  ],
+  "params": [
+    [
+      "voltage_ll",
+      "Voltage line-to-line",
+      "V",
+      "voltage"
+    ],
+    [
+      "voltage_ln",
+      "Voltage line-to-neutral",
+      "V",
+      "voltage"
+    ],
+    [
+      "phases",
+      "Phases",
+      "1",
+      "count"
+    ],
+    [
+      "wires",
+      "Wires incl. neutral",
+      "1",
+      "count"
+    ],
+    [
+      "frequency",
+      "Frequency",
+      "Hz",
+      "frequency"
+    ],
+    [
+      "bus_rating",
+      "Busbar rating",
+      "A",
+      "current"
+    ],
+    [
+      "main_ocpd",
+      "Main OCPD rating",
+      "A",
+      "current"
+    ],
+    [
+      "ocpd_rating",
+      "OCPD trip/fuse rating",
+      "A",
+      "current"
+    ],
+    [
+      "frame_rating",
+      "Frame / switch rating",
+      "A",
+      "current"
+    ],
+    [
+      "poles",
+      "Poles",
+      "1",
+      "count"
+    ],
+    [
+      "aic_rating",
+      "Interrupting rating",
+      "kA",
+      "short-circuit"
+    ],
+    [
+      "sccr",
+      "Short-circuit current rating",
+      "kA",
+      "short-circuit"
+    ],
+    [
+      "ac_power_rating",
+      "AC power rating",
+      "kW",
+      "power"
+    ],
+    [
+      "ac_apparent_power",
+      "AC apparent power",
+      "kVA",
+      "apparent-power"
+    ],
+    [
+      "ac_continuous_current",
+      "AC continuous output (discharge) current",
+      "A",
+      "current"
+    ],
+    [
+      "ac_charge_current",
+      "AC continuous charge current",
+      "A",
+      "current"
+    ],
+    [
+      "backup_power",
+      "Backup / islanded output power",
+      "kW",
+      "power"
+    ],
+    [
+      "dc_voltage_max",
+      "DC maximum voltage",
+      "V",
+      "voltage"
+    ],
+    [
+      "dc_voltage_min",
+      "DC minimum operating voltage",
+      "V",
+      "voltage"
+    ],
+    [
+      "dc_current_max",
+      "DC maximum current",
+      "A",
+      "current"
+    ],
+    [
+      "energy_gross",
+      "Energy, nameplate gross",
+      "kWh",
+      "energy"
+    ],
+    [
+      "energy_usable",
+      "Energy, rated usable",
+      "kWh",
+      "energy"
+    ],
+    [
+      "chemistry",
+      "Cell chemistry",
+      "-",
+      "text"
+    ],
+    [
+      "enclosure_type",
+      "Enclosure type (NEMA/IP)",
+      "-",
+      "text"
+    ],
+    [
+      "listing",
+      "Listing / certification",
+      "-",
+      "text"
+    ],
+    [
+      "module_power_stc",
+      "Module power at STC",
+      "W",
+      "power"
+    ],
+    [
+      "voc_stc",
+      "Module Voc at STC",
+      "V",
+      "voltage"
+    ],
+    [
+      "isc_stc",
+      "Module Isc at STC",
+      "A",
+      "current"
+    ],
+    [
+      "vmp",
+      "Module Vmp",
+      "V",
+      "voltage"
+    ],
+    [
+      "imp",
+      "Module Imp",
+      "A",
+      "current"
+    ],
+    [
+      "voc_temp_coeff",
+      "Voc temperature coefficient",
+      "1/degC",
+      "ratio"
+    ],
+    [
+      "module_count",
+      "Module count",
+      "1",
+      "count"
+    ],
+    [
+      "string_count",
+      "String count",
+      "1",
+      "count"
+    ],
+    [
+      "dc_size",
+      "Array DC size at STC",
+      "kWdc",
+      "power"
+    ],
+    [
+      "kva_rating",
+      "Transformer rating",
+      "kVA",
+      "apparent-power"
+    ],
+    [
+      "impedance_pct",
+      "Transformer impedance",
+      "%",
+      "ratio"
+    ],
+    [
+      "vector_group",
+      "Winding configuration",
+      "-",
+      "text"
+    ],
+    [
+      "ct_ratio",
+      "CT ratio",
+      "-",
+      "text"
+    ],
+    [
+      "conductor_set",
+      "Conductors (qty, size, material, EGC)",
+      "-",
+      "text"
+    ],
+    [
+      "raceway_size",
+      "Raceway type and size",
+      "-",
+      "text"
+    ],
+    [
+      "length",
+      "Circuit length one-way",
+      "ft",
+      "length"
+    ],
+    [
+      "weight",
+      "Weight",
+      "lb",
+      "mass"
+    ],
+    [
+      "setpoint",
+      "Control setting",
+      "-",
+      "text"
+    ]
+  ],
+  "classes": [
+    {
+      "id": "utility",
+      "term": "Utility source",
+      "abbrev": "UTIL",
+      "family": "service",
+      "symbol": "utility",
+      "ports": [
+        [
+          "ac",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "POCC",
+        "grid"
+      ],
+      "definition": "Utility distribution system upstream of the service point.",
+      "bess_role": "Grid-forming reference in grid-parallel mode; must be isolated before any islanded operation.",
+      "params": [
+        "voltage_ll",
+        "phases",
+        "wires"
+      ]
+    },
+    {
+      "id": "utility_transformer",
+      "term": "Utility service transformer",
+      "abbrev": "XFMR",
+      "family": "service",
+      "parent": "transformer",
+      "symbol": "transformer",
+      "ports": [
+        [
+          "primary",
+          "ac"
+        ],
+        [
+          "secondary",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "pad-mount",
+        "pole-mount"
+      ],
+      "definition": "Utility-owned transformer serving the site.",
+      "bess_role": "Sets available fault current and service voltage that the PCS and switchgear must match.",
+      "pitfall": "Shown with customer ratings; it is utility-owned and its kVA/impedance must be requested.",
+      "params": [
+        "kva_rating",
+        "impedance_pct",
+        "vector_group"
+      ]
+    },
+    {
+      "id": "utility_meter",
+      "term": "Utility revenue meter",
+      "abbrev": "M",
+      "family": "metering",
+      "symbol": "meter",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "NEM meter",
+        "billing meter"
+      ],
+      "definition": "Utility billing meter at the service point, bidirectional under net metering.",
+      "bess_role": "Point of export measurement for Rule 21 / NEM and non-export control.",
+      "params": [
+        "voltage_ll",
+        "phases"
+      ]
+    },
+    {
+      "id": "service_switchboard",
+      "term": "Main switchboard (service entrance)",
+      "abbrev": "MS",
+      "family": "distribution",
+      "symbol": "bus",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "MS",
+        "MSB",
+        "SWBD",
+        "main switchboard",
+        "service entrance switchboard"
+      ],
+      "definition": "Service-entrance rated switchboard containing the main OCPD and feeder breakers.",
+      "bess_role": "Usual load-side interconnection point for PV and BESS breakers; busbar method (705.12) is evaluated here.",
+      "pitfall": "BESS and PV breakers placed next to the main instead of at the opposite end of the busbar.",
+      "params": [
+        "voltage_ll",
+        "phases",
+        "wires",
+        "bus_rating",
+        "main_ocpd",
+        "aic_rating"
+      ]
+    },
+    {
+      "id": "main_breaker",
+      "term": "Main breaker",
+      "abbrev": "MCB",
+      "family": "protection",
+      "parent": "breaker",
+      "symbol": "breaker",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "main",
+        "service disconnect"
+      ],
+      "definition": "OCPD protecting the switchboard busbar and serving as service disconnect.",
+      "bess_role": "Its rating is the I_main term in the 705.12 busbar checks.",
+      "params": [
+        "ocpd_rating",
+        "frame_rating",
+        "poles",
+        "aic_rating"
+      ]
+    },
+    {
+      "id": "distribution_board",
+      "term": "Distribution board / renewables switchboard",
+      "abbrev": "DB",
+      "family": "distribution",
+      "symbol": "bus",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "renewables switchboard",
+        "RSB",
+        "DP"
+      ],
+      "definition": "Switchboard or panelboard that aggregates feeders, sometimes dedicated to PV/BESS sources.",
+      "bess_role": "Collects PV and BESS outputs before the tie to the MS; needs its own busbar check.",
+      "params": [
+        "voltage_ll",
+        "bus_rating",
+        "main_ocpd",
+        "aic_rating"
+      ]
+    },
+    {
+      "id": "branch_panel",
+      "term": "Branch panelboard",
+      "abbrev": "PNL",
+      "family": "distribution",
+      "symbol": "load_panel",
+      "ports": [
+        [
+          "ac",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "MLO",
+        "MCB panel",
+        "PL-1",
+        "L-1",
+        "ML-1"
+      ],
+      "definition": "Panelboard feeding branch circuits; MLO means main lugs only, protected by the upstream feeder breaker.",
+      "bess_role": "Load inside or outside the backup boundary; drives demand and runtime.",
+      "params": [
+        "voltage_ll",
+        "bus_rating",
+        "main_ocpd"
+      ]
+    },
+    {
+      "id": "critical_load_panel",
+      "term": "Critical / backed-up load panel",
+      "abbrev": "CLP",
+      "family": "distribution",
+      "parent": "branch_panel",
+      "symbol": "load_panel",
+      "ports": [
+        [
+          "ac",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "CLP",
+        "backup panel",
+        "BLP",
+        "protected loads panel"
+      ],
+      "definition": "Panel fed from the backup (load) port of a grid-forming PCS or through an isolation device.",
+      "bess_role": "Defines the islanded load boundary; only its loads are served during an outage.",
+      "pitfall": "Assuming all MS loads are backed up when no isolation device or CLP exists.",
+      "params": [
+        "voltage_ll",
+        "bus_rating",
+        "main_ocpd"
+      ]
+    },
+    {
+      "id": "aux_switchboard",
+      "term": "Auxiliary panel",
+      "abbrev": "AUX",
+      "family": "distribution",
+      "symbol": "load_panel",
+      "ports": [
+        [
+          "ac",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "aux switchboard",
+        "controls panel"
+      ],
+      "definition": "Panel serving site controller, comms, metering and HVAC/aux loads of the ESS.",
+      "bess_role": "Control power continuity decides black-start and fault behavior; often on a UPS.",
+      "params": [
+        "voltage_ll",
+        "bus_rating"
+      ]
+    },
+    {
+      "id": "transformer",
+      "term": "Transformer (customer)",
+      "abbrev": "T",
+      "family": "distribution",
+      "symbol": "transformer",
+      "ports": [
+        [
+          "primary",
+          "ac"
+        ],
+        [
+          "secondary",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "480:208",
+        "step-down",
+        "step-up"
+      ],
+      "definition": "Customer-owned transformer changing voltage between equipment.",
+      "bess_role": "Matches PCS voltage to service (e.g. 208 V PCS on a 480 V service); adds grounding and fault-duty questions.",
+      "params": [
+        "kva_rating",
+        "impedance_pct",
+        "vector_group",
+        "voltage_ll"
+      ]
+    },
+    {
+      "id": "isolation_transformer",
+      "term": "Isolation transformer",
+      "abbrev": "IXFMR",
+      "family": "distribution",
+      "parent": "transformer",
+      "symbol": "transformer",
+      "ports": [
+        [
+          "primary",
+          "ac"
+        ],
+        [
+          "secondary",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "grounded wye isolation"
+      ],
+      "definition": "Transformer providing galvanic isolation and a defined grounding reference on the PCS side.",
+      "bess_role": "Some PCS require a grounded-wye source on their terminals; the manufacturer manual decides.",
+      "params": [
+        "kva_rating",
+        "vector_group",
+        "impedance_pct"
+      ]
+    },
+    {
+      "id": "breaker",
+      "term": "Circuit breaker",
+      "abbrev": "CB",
+      "family": "protection",
+      "symbol": "breaker",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "OCPD",
+        "feeder breaker",
+        "backfed breaker"
+      ],
+      "definition": "Inverse-time overcurrent device with poles, frame, trip and interrupting rating.",
+      "bess_role": "Source breaker for PCS sized at 125 percent of continuous current (705.30); bidirectional current means line/load marking matters.",
+      "pitfall": "Sized from kW nameplate instead of PCS datasheet continuous current, or to charge current only.",
+      "params": [
+        "ocpd_rating",
+        "frame_rating",
+        "poles",
+        "aic_rating"
+      ]
+    },
+    {
+      "id": "fuse",
+      "term": "Fuse",
+      "abbrev": "F",
+      "family": "protection",
+      "symbol": "dc_fuse",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [],
+      "definition": "Single-operation overcurrent device.",
+      "bess_role": "Current-limiting fuses can reduce fault duty on downstream equipment.",
+      "params": [
+        "ocpd_rating",
+        "aic_rating"
+      ]
+    },
+    {
+      "id": "fused_disconnect",
+      "term": "Fused disconnect switch",
+      "abbrev": "FDS",
+      "family": "protection",
+      "symbol": "fused_disconnect",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "fused AC disconnect",
+        "FSW"
+      ],
+      "definition": "Switch with fuses providing both isolation and OCP.",
+      "bess_role": "Common for supply-side (705.11) connections.",
+      "params": [
+        "frame_rating",
+        "ocpd_rating",
+        "poles",
+        "aic_rating"
+      ]
+    },
+    {
+      "id": "ac_disconnect",
+      "term": "AC disconnect (non-fused)",
+      "abbrev": "ACD",
+      "family": "protection",
+      "symbol": "disconnect",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "NF disconnect",
+        "safety switch",
+        "BESS AC disconnect"
+      ],
+      "definition": "Lockable visible-break switch for isolation without OCP.",
+      "bess_role": "Utility-accessible or AHJ-required isolation of the ESS/PCS (705.20, 706.15).",
+      "params": [
+        "frame_rating",
+        "poles",
+        "voltage_ll"
+      ]
+    },
+    {
+      "id": "pv_ac_disconnect",
+      "term": "PV AC disconnect",
+      "abbrev": "PVD",
+      "family": "protection",
+      "parent": "ac_disconnect",
+      "symbol": "disconnect",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "PV disconnect"
+      ],
+      "definition": "Disconnecting means for the PV inverter output circuit.",
+      "bess_role": "Separates PV source from the BESS/MS bus for service.",
+      "params": [
+        "frame_rating",
+        "poles"
+      ]
+    },
+    {
+      "id": "battery_dc_disconnect",
+      "term": "Battery DC disconnect",
+      "abbrev": "DCD",
+      "family": "protection",
+      "symbol": "dc_disconnect",
+      "ports": [
+        [
+          "line",
+          "dc"
+        ],
+        [
+          "load",
+          "dc"
+        ]
+      ],
+      "aliases": [
+        "ESS DC disconnect",
+        "DC isolator"
+      ],
+      "definition": "DC-rated switch isolating battery from PCS.",
+      "bess_role": "Required ESS disconnecting means (706.15) when not integral; must be DC and voltage rated.",
+      "pitfall": "Omitted in early drafts or shown with an AC-rated switch.",
+      "params": [
+        "frame_rating",
+        "dc_voltage_max",
+        "poles"
+      ]
+    },
+    {
+      "id": "dc_fuse",
+      "term": "DC fuse",
+      "abbrev": "DCF",
+      "family": "protection",
+      "symbol": "dc_fuse",
+      "ports": [
+        [
+          "line",
+          "dc"
+        ],
+        [
+          "load",
+          "dc"
+        ]
+      ],
+      "aliases": [
+        "string fuse",
+        "battery fuse"
+      ],
+      "definition": "DC-rated fuse protecting battery or PV DC circuits.",
+      "bess_role": "Interrupts battery fault current, which can be very high; check DC interrupting rating.",
+      "params": [
+        "ocpd_rating",
+        "dc_voltage_max",
+        "aic_rating"
+      ]
+    },
+    {
+      "id": "spd",
+      "term": "Surge protective device",
+      "abbrev": "SPD",
+      "family": "protection",
+      "symbol": "spd",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "pe",
+          "pe"
+        ]
+      ],
+      "aliases": [
+        "TVSS"
+      ],
+      "definition": "Device limiting transient overvoltage.",
+      "bess_role": "Often specified at PCS AC and DC terminals.",
+      "params": [
+        "voltage_ll"
+      ]
+    },
+    {
+      "id": "protective_relay",
+      "term": "Protective relay",
+      "abbrev": "REL",
+      "family": "protection",
+      "symbol": "relay",
+      "ports": [
+        [
+          "sense",
+          "sense"
+        ],
+        [
+          "command",
+          "control"
+        ]
+      ],
+      "aliases": [
+        "27/59",
+        "81O/U",
+        "32 reverse power",
+        "utility relay"
+      ],
+      "definition": "Relay with IEEE device functions tripping a breaker on voltage, frequency or reverse power.",
+      "bess_role": "Non-export and utility-required protection for larger interconnections.",
+      "params": [
+        "setpoint"
+      ]
+    },
+    {
+      "id": "estop",
+      "term": "Emergency shutdown",
+      "abbrev": "ESD",
+      "family": "protection",
+      "symbol": "estop",
+      "ports": [
+        [
+          "command",
+          "control"
+        ]
+      ],
+      "aliases": [
+        "EPO",
+        "E-stop",
+        "ESS emergency disconnect"
+      ],
+      "definition": "Initiating device for emergency shutdown of the ESS/PCS.",
+      "bess_role": "Fire-code and manufacturer requirement; location and labeling reviewed by fire AHJ.",
+      "params": []
+    },
+    {
+      "id": "maintenance_bypass",
+      "term": "Maintenance bypass switch",
+      "abbrev": "MBP",
+      "family": "protection",
+      "symbol": "transfer_switch",
+      "ports": [
+        [
+          "normal",
+          "ac"
+        ],
+        [
+          "alternate",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "MBS",
+        "bypass breaker"
+      ],
+      "definition": "Interlocked switch letting backed-up loads be fed from the grid while the PCS is isolated.",
+      "bess_role": "Keeps the CLP energized during PCS service; only meaningful in a backup topology.",
+      "params": [
+        "frame_rating",
+        "poles"
+      ]
+    },
+    {
+      "id": "mid",
+      "term": "Microgrid interconnection device",
+      "abbrev": "MID",
+      "family": "protection",
+      "symbol": "breaker",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "isolation device",
+        "grid disconnect",
+        "backup gateway"
+      ],
+      "definition": "Device that separates the islanded system from the utility.",
+      "bess_role": "Mandatory before islanding; may be integral to a hybrid inverter or a separate breaker/contactor.",
+      "params": [
+        "frame_rating",
+        "poles",
+        "listing"
+      ]
+    },
+    {
+      "id": "transfer_switch",
+      "term": "Transfer switch",
+      "abbrev": "ATS",
+      "family": "protection",
+      "symbol": "transfer_switch",
+      "ports": [
+        [
+          "normal",
+          "ac"
+        ],
+        [
+          "alternate",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "ATS",
+        "MTS"
+      ],
+      "definition": "Switch transferring load between normal and alternate sources.",
+      "bess_role": "Alternative isolation method for generator/BESS backup.",
+      "params": [
+        "frame_rating",
+        "poles"
+      ]
+    },
+    {
+      "id": "pv_module",
+      "term": "PV module",
+      "abbrev": "MOD",
+      "family": "pv",
+      "symbol": "pv_array",
+      "ports": [
+        [
+          "dc",
+          "dc"
+        ]
+      ],
+      "aliases": [
+        "panel"
+      ],
+      "definition": "Single photovoltaic module.",
+      "bess_role": "Voc/Isc drive DC string sizing.",
+      "params": [
+        "module_power_stc",
+        "voc_stc",
+        "isc_stc",
+        "vmp",
+        "imp",
+        "voc_temp_coeff"
+      ]
+    },
+    {
+      "id": "pv_string",
+      "term": "PV string",
+      "abbrev": "STR",
+      "family": "pv",
+      "symbol": "pv_array",
+      "ports": [
+        [
+          "dc",
+          "dc"
+        ]
+      ],
+      "aliases": [
+        "source circuit"
+      ],
+      "definition": "Series-connected modules forming a PV source circuit.",
+      "bess_role": "690.7 and 690.8 checks.",
+      "params": [
+        "module_count"
+      ]
+    },
+    {
+      "id": "pv_array",
+      "term": "PV array",
+      "abbrev": "PV",
+      "family": "pv",
+      "symbol": "pv_array",
+      "ports": [
+        [
+          "dc",
+          "dc"
+        ]
+      ],
+      "aliases": [
+        "array"
+      ],
+      "definition": "Collection of strings feeding one inverter or combiner.",
+      "bess_role": "Title 24 kWdc is the array STC rating, not inverter AC output.",
+      "pitfall": "Quoting AC kW against a kWdc code minimum.",
+      "params": [
+        "dc_size",
+        "module_count",
+        "string_count"
+      ]
+    },
+    {
+      "id": "dc_combiner",
+      "term": "DC combiner",
+      "abbrev": "CMB",
+      "family": "pv",
+      "symbol": "dc_combiner",
+      "ports": [
+        [
+          "input_1",
+          "dc"
+        ],
+        [
+          "input_2",
+          "dc"
+        ],
+        [
+          "output",
+          "dc"
+        ]
+      ],
+      "aliases": [
+        "combiner box"
+      ],
+      "definition": "Enclosure paralleling strings with fuses.",
+      "bess_role": "Not needed for most string/hybrid inverters with integrated inputs.",
+      "params": [
+        "dc_voltage_max",
+        "dc_current_max"
+      ]
+    },
+    {
+      "id": "rapid_shutdown",
+      "term": "Rapid shutdown equipment",
+      "abbrev": "RSD",
+      "family": "pv",
+      "symbol": "aux_box",
+      "ports": [
+        [
+          "dc",
+          "dc"
+        ],
+        [
+          "command",
+          "control"
+        ]
+      ],
+      "aliases": [
+        "MLPE",
+        "optimizer",
+        "RSD initiator"
+      ],
+      "definition": "Module-level or array-level devices plus an initiator meeting 690.12.",
+      "bess_role": "Initiator location coordinated with ESS emergency shutdown signage.",
+      "params": [
+        "listing"
+      ]
+    },
+    {
+      "id": "pv_inverter",
+      "term": "PV string inverter",
+      "abbrev": "INV",
+      "family": "conversion",
+      "symbol": "pv_inverter",
+      "ports": [
+        [
+          "dc",
+          "dc"
+        ],
+        [
+          "ac",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "string inverter",
+        "grid-tie inverter"
+      ],
+      "definition": "Unidirectional DC-to-AC inverter for PV only; grid-following.",
+      "bess_role": "Cannot charge or discharge a battery and cannot form an island alone.",
+      "pitfall": "Treating a PV-only inverter as the BESS PCS.",
+      "params": [
+        "ac_power_rating",
+        "ac_continuous_current",
+        "voltage_ll",
+        "dc_voltage_max",
+        "listing"
+      ]
+    },
+    {
+      "id": "hybrid_inverter",
+      "term": "Hybrid inverter",
+      "abbrev": "HINV",
+      "family": "conversion",
+      "parent": "pcs_conversion",
+      "symbol": "hybrid_inverter",
+      "ports": [
+        [
+          "pv_dc",
+          "dc"
+        ],
+        [
+          "battery_dc",
+          "dc"
+        ],
+        [
+          "ac",
+          "ac"
+        ],
+        [
+          "backup_ac",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "multimode inverter",
+        "DC-coupled inverter"
+      ],
+      "definition": "Bidirectional inverter with PV and battery DC inputs, a grid port and often a backup load port with integral isolation.",
+      "bess_role": "Serves as PCS; backup port defines the CLP; grid port is the interconnection current.",
+      "params": [
+        "ac_power_rating",
+        "ac_continuous_current",
+        "ac_charge_current",
+        "backup_power",
+        "voltage_ll",
+        "dc_voltage_max",
+        "listing"
+      ]
+    },
+    {
+      "id": "pcs_conversion",
+      "term": "Power conversion system (bidirectional)",
+      "abbrev": "PCS",
+      "family": "conversion",
+      "symbol": "power_conversion_system",
+      "ports": [
+        [
+          "dc",
+          "dc"
+        ],
+        [
+          "ac",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "PCS",
+        "battery inverter",
+        "bidirectional inverter"
+      ],
+      "definition": "Bidirectional converter between battery DC and AC.",
+      "bess_role": "Sets charge/discharge current used in 706.30 and the 705.12 source current.",
+      "pitfall": "PCS abbreviation confused with power control system (705.13).",
+      "params": [
+        "ac_power_rating",
+        "ac_apparent_power",
+        "ac_continuous_current",
+        "ac_charge_current",
+        "voltage_ll",
+        "dc_voltage_min",
+        "dc_voltage_max",
+        "listing"
+      ]
+    },
+    {
+      "id": "pcs_control",
+      "term": "Power control system (current limiting)",
+      "abbrev": "PCS-C",
+      "family": "control",
+      "symbol": "controller",
+      "ports": [
+        [
+          "sense",
+          "sense"
+        ],
+        [
+          "command",
+          "control"
+        ]
+      ],
+      "aliases": [
+        "PCS",
+        "export limiting",
+        "CLS"
+      ],
+      "definition": "Listed control function limiting current on busbars/conductors or export (705.13).",
+      "bess_role": "Lets a controlled setting replace nameplate current in busbar math; needs listing and locked settings.",
+      "params": [
+        "setpoint",
+        "listing"
+      ]
+    },
+    {
+      "id": "ups",
+      "term": "Uninterruptible power supply",
+      "abbrev": "UPS",
+      "family": "conversion",
+      "symbol": "aux_box",
+      "ports": [
+        [
+          "ac",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [],
+      "definition": "Small battery-backed supply for controls and comms.",
+      "bess_role": "Keeps site controller and meters alive through transfer and grid loss.",
+      "params": [
+        "ac_apparent_power"
+      ]
+    },
+    {
+      "id": "bess_cabinet",
+      "term": "BESS cabinet (outdoor/indoor unit)",
+      "abbrev": "BESS",
+      "family": "storage",
+      "symbol": "bess_cabinet",
+      "ports": [
+        [
+          "ac",
+          "ac"
+        ],
+        [
+          "pe",
+          "pe"
+        ]
+      ],
+      "aliases": [
+        "ESS",
+        "battery cabinet",
+        "BESS unit"
+      ],
+      "definition": "Listed enclosure containing battery modules, BMS and sometimes PCS, thermal and fire features.",
+      "bess_role": "The UL 9540 listed unit; energy and power ratings, enclosure type, location and spacing come from it.",
+      "pitfall": "Rated energy confused with usable energy, or cabinet count left unresolved.",
+      "params": [
+        "energy_gross",
+        "energy_usable",
+        "ac_power_rating",
+        "chemistry",
+        "enclosure_type",
+        "listing",
+        "weight"
+      ]
+    },
+    {
+      "id": "bess_container",
+      "term": "BESS container",
+      "abbrev": "BESS-C",
+      "family": "storage",
+      "parent": "bess_cabinet",
+      "symbol": "bess_container",
+      "ports": [
+        [
+          "ac",
+          "ac"
+        ],
+        [
+          "pe",
+          "pe"
+        ]
+      ],
+      "aliases": [
+        "enclosure",
+        "walk-in ESS"
+      ],
+      "definition": "Large walk-in or non-walk-in ESS enclosure.",
+      "bess_role": "Triggers explosion control, deflagration and larger-scale fire review.",
+      "params": [
+        "energy_gross",
+        "energy_usable",
+        "ac_power_rating",
+        "listing"
+      ]
+    },
+    {
+      "id": "battery_rack",
+      "term": "Battery rack / string",
+      "abbrev": "RACK",
+      "family": "storage",
+      "symbol": "battery_rack",
+      "ports": [
+        [
+          "dc",
+          "dc"
+        ]
+      ],
+      "aliases": [
+        "battery string"
+      ],
+      "definition": "Series-connected modules forming the DC battery bus.",
+      "bess_role": "DC voltage window must fit PCS DC input range.",
+      "params": [
+        "dc_voltage_min",
+        "dc_voltage_max",
+        "dc_current_max",
+        "energy_gross"
+      ]
+    },
+    {
+      "id": "battery_module",
+      "term": "Battery module",
+      "abbrev": "MOD-B",
+      "family": "storage",
+      "symbol": "battery_module",
+      "ports": [
+        [
+          "positive",
+          "dc"
+        ],
+        [
+          "negative",
+          "dc"
+        ]
+      ],
+      "aliases": [],
+      "definition": "Assembly of cells with module-level monitoring.",
+      "bess_role": "Unit of 9540A module test data.",
+      "params": [
+        "energy_gross",
+        "chemistry"
+      ]
+    },
+    {
+      "id": "battery_cell",
+      "term": "Battery cell",
+      "abbrev": "CELL",
+      "family": "storage",
+      "symbol": "battery_cell",
+      "ports": [
+        [
+          "positive",
+          "dc"
+        ],
+        [
+          "negative",
+          "dc"
+        ]
+      ],
+      "aliases": [
+        "LFP",
+        "NMC"
+      ],
+      "definition": "Single electrochemical cell.",
+      "bess_role": "Chemistry drives fire-code thresholds and 9540A cell data.",
+      "params": [
+        "chemistry"
+      ]
+    },
+    {
+      "id": "bms",
+      "term": "Battery management system",
+      "abbrev": "BMS",
+      "family": "storage",
+      "symbol": "bms",
+      "ports": [
+        [
+          "sense",
+          "sense"
+        ],
+        [
+          "command",
+          "control"
+        ]
+      ],
+      "aliases": [],
+      "definition": "Monitors cells and commands contactors and PCS limits.",
+      "bess_role": "Its signals are control/sense domain, never drawn as power conductors.",
+      "params": []
+    },
+    {
+      "id": "ems",
+      "term": "Energy management system",
+      "abbrev": "EMS",
+      "family": "control",
+      "symbol": "controller",
+      "ports": [
+        [
+          "sense",
+          "sense"
+        ],
+        [
+          "command",
+          "control"
+        ]
+      ],
+      "aliases": [
+        "site controller",
+        "PPC",
+        "microgrid controller"
+      ],
+      "definition": "Controller dispatching PCS charge/discharge from meter data and schedules.",
+      "bess_role": "Implements non-export, TOU arbitrage, demand response and backup reserve.",
+      "params": [
+        "setpoint"
+      ]
+    },
+    {
+      "id": "site_controller",
+      "term": "Site controller / gateway",
+      "abbrev": "GW",
+      "family": "control",
+      "parent": "ems",
+      "symbol": "controller",
+      "ports": [
+        [
+          "sense",
+          "sense"
+        ],
+        [
+          "command",
+          "control"
+        ]
+      ],
+      "aliases": [
+        "Tesla site controller",
+        "gateway",
+        "backup gateway"
+      ],
+      "definition": "Vendor controller linking meters, PCS and cloud.",
+      "bess_role": "Often powered from the aux panel/UPS; needs CTs at the service.",
+      "params": []
+    },
+    {
+      "id": "comms_enclosure",
+      "term": "Communications enclosure",
+      "abbrev": "COMMS",
+      "family": "control",
+      "symbol": "aux_box",
+      "ports": [
+        [
+          "command",
+          "control"
+        ]
+      ],
+      "aliases": [
+        "Geli comms",
+        "network enclosure"
+      ],
+      "definition": "Enclosure for network/cellular equipment.",
+      "bess_role": "Supports remote monitoring and demand-response signals.",
+      "params": []
+    },
+    {
+      "id": "ct",
+      "term": "Current transformer",
+      "abbrev": "CT",
+      "family": "control",
+      "symbol": "current_sensor",
+      "ports": [
+        [
+          "sense",
+          "sense"
+        ]
+      ],
+      "aliases": [
+        "CTs"
+      ],
+      "definition": "Sensor producing a current proportional to conductor current.",
+      "bess_role": "Location and polarity at the service decide whether non-export control works.",
+      "pitfall": "CTs placed downstream of the PCS tie so the controller cannot see export.",
+      "params": [
+        "ct_ratio"
+      ]
+    },
+    {
+      "id": "pt",
+      "term": "Potential transformer",
+      "abbrev": "PT",
+      "family": "control",
+      "symbol": "potential_transformer",
+      "ports": [
+        [
+          "sense",
+          "sense"
+        ]
+      ],
+      "aliases": [
+        "VT"
+      ],
+      "definition": "Voltage sensing transformer.",
+      "bess_role": "Voltage reference for relays and revenue-grade meters.",
+      "params": [
+        "voltage_ll"
+      ]
+    },
+    {
+      "id": "revenue_grade_meter",
+      "term": "Revenue-grade sub-meter",
+      "abbrev": "RGM",
+      "family": "metering",
+      "symbol": "meter",
+      "ports": [
+        [
+          "sense",
+          "sense"
+        ]
+      ],
+      "aliases": [
+        "SEL-735",
+        "PV meter",
+        "BESS meter",
+        "grid meter"
+      ],
+      "definition": "Accuracy-class meter on the grid, PV or BESS circuit.",
+      "bess_role": "Program performance, SGIP or owner M&V data.",
+      "params": [
+        "ct_ratio"
+      ]
+    },
+    {
+      "id": "das_meter",
+      "term": "Data acquisition / monitoring meter",
+      "abbrev": "DAS",
+      "family": "metering",
+      "symbol": "das",
+      "ports": [
+        [
+          "sense",
+          "sense"
+        ],
+        [
+          "command",
+          "control"
+        ]
+      ],
+      "aliases": [
+        "eGauge",
+        "monitoring"
+      ],
+      "definition": "Monitoring device logging energy flows from CTs.",
+      "bess_role": "Evidence for demand-flexibility and performance; not a protective or revenue device.",
+      "params": [
+        "ct_ratio"
+      ]
+    },
+    {
+      "id": "grounding_electrode",
+      "term": "Grounding electrode",
+      "abbrev": "GE",
+      "family": "grounding",
+      "symbol": "ground",
+      "ports": [
+        [
+          "pe",
+          "pe"
+        ]
+      ],
+      "aliases": [
+        "ground rod",
+        "UFER"
+      ],
+      "definition": "Electrode connecting the system to earth.",
+      "bess_role": "Separately derived systems (transformers, some PCS) need their own electrode connection.",
+      "params": []
+    },
+    {
+      "id": "gec",
+      "term": "Grounding electrode conductor",
+      "abbrev": "GEC",
+      "family": "grounding",
+      "symbol": "ground",
+      "ports": [
+        [
+          "pe",
+          "pe"
+        ]
+      ],
+      "aliases": [],
+      "definition": "Conductor from system bond point to the electrode.",
+      "bess_role": "Location of the neutral-ground bond must stay single per derived system.",
+      "params": [
+        "conductor_set"
+      ]
+    },
+    {
+      "id": "egc",
+      "term": "Equipment grounding conductor",
+      "abbrev": "EGC",
+      "family": "grounding",
+      "symbol": "ground",
+      "ports": [
+        [
+          "pe",
+          "pe"
+        ]
+      ],
+      "aliases": [
+        "ground wire"
+      ],
+      "definition": "Conductor bonding equipment enclosures to the source.",
+      "bess_role": "Sized from upstream OCPD per 250.122; upsizing rules follow ungrounded conductor upsizing.",
+      "params": [
+        "conductor_set"
+      ]
+    },
+    {
+      "id": "feeder_conductor",
+      "term": "Feeder / circuit conductors",
+      "abbrev": "CKT",
+      "family": "wiring",
+      "symbol": null,
+      "ports": [],
+      "aliases": [
+        "feeder",
+        "home run",
+        "feeder tag"
+      ],
+      "definition": "Conductor set of a circuit between two ports, with its own tag in the conductor schedule.",
+      "bess_role": "Sized from 705.28 / 706.30 then corrected for temperature, fill and voltage drop.",
+      "pitfall": "Conductor size not updated after the breaker was upsized.",
+      "params": [
+        "conductor_set",
+        "raceway_size",
+        "length"
+      ]
+    },
+    {
+      "id": "raceway",
+      "term": "Raceway / conduit",
+      "abbrev": "C",
+      "family": "wiring",
+      "symbol": null,
+      "ports": [],
+      "aliases": [
+        "EMT",
+        "PVC",
+        "RMC",
+        "conduit"
+      ],
+      "definition": "Enclosure for conductors; type limited by location and exposure.",
+      "bess_role": "Outdoor/buried runs to the BESS pad decide type and fill.",
+      "params": [
+        "raceway_size"
+      ]
+    },
+    {
+      "id": "junction_box",
+      "term": "Junction / pull box",
+      "abbrev": "JB",
+      "family": "wiring",
+      "symbol": "aux_box",
+      "ports": [
+        [
+          "line",
+          "ac"
+        ],
+        [
+          "load",
+          "ac"
+        ]
+      ],
+      "aliases": [
+        "JB",
+        "pull box"
+      ],
+      "definition": "Box for splices or pulling.",
+      "bess_role": "Transition from roof/wall to underground runs.",
+      "params": []
+    },
+    {
+      "id": "equipment_pad",
+      "term": "Equipment pad / mounting",
+      "abbrev": "PAD",
+      "family": "site",
+      "symbol": null,
+      "ports": [],
+      "aliases": [
+        "housekeeping pad",
+        "anchorage"
+      ],
+      "definition": "Concrete pad, wall or roof support for equipment.",
+      "bess_role": "Anchorage and seismic detail referenced from the plan; DSA review on schools.",
+      "params": [
+        "weight"
+      ]
+    },
+    {
+      "id": "bollard",
+      "term": "Vehicle impact protection",
+      "abbrev": "BOL",
+      "family": "site",
+      "symbol": null,
+      "ports": [],
+      "aliases": [
+        "bollards"
+      ],
+      "definition": "Barrier protecting equipment from vehicles.",
+      "bess_role": "Fire/building code item where ESS is exposed to vehicle traffic.",
+      "params": []
+    },
+    {
+      "id": "placard",
+      "term": "Placard / directory",
+      "abbrev": "LBL",
+      "family": "site",
+      "symbol": null,
+      "ports": [],
+      "aliases": [
+        "signage",
+        "label"
+      ],
+      "definition": "Required warning labels and source directory.",
+      "bess_role": "Source location directory at service and ESS hazard markings.",
+      "params": []
+    }
+  ],
+  "location_kinds": [
+    [
+      "electrical-room",
+      "Electrical room",
+      "indoor"
+    ],
+    [
+      "mechanical-room",
+      "Mechanical room",
+      "indoor"
+    ],
+    [
+      "garage",
+      "Garage / parking structure",
+      "indoor"
+    ],
+    [
+      "outdoor-pad",
+      "Outdoor pad",
+      "outdoor"
+    ],
+    [
+      "wall-exterior",
+      "Exterior wall",
+      "outdoor"
+    ],
+    [
+      "roof",
+      "Roof",
+      "roof"
+    ],
+    [
+      "carport",
+      "Carport / canopy",
+      "semi-exposed"
+    ],
+    [
+      "utility-yard",
+      "Utility yard",
+      "outdoor"
+    ],
+    [
+      "underground",
+      "Underground",
+      "buried"
+    ]
+  ],
+  "layout_conventions": [
+    [
+      "sld-flow",
+      "sld",
+      "Read source to load in one direction per sheet: utility at left/top, loads at right/bottom. Bidirectional flow is an annotation, not a reversed symbol.",
+      null
+    ],
+    [
+      "grid",
+      "any",
+      "Snap every symbol hotspot and port to a 10 unit grid in Draw.io and QET.",
+      "10"
+    ],
+    [
+      "tag-first",
+      "sld",
+      "Equipment tag nearest the symbol, then function, then verified ratings; long model data goes to the schedule.",
+      null
+    ],
+    [
+      "domain-lines",
+      "sld",
+      "Power solid 2 px, bus 6 px, sense dashed 1 px (4 4), control dashed 1 px (8 4), grounding dash-dot 1 px. Never merge control and power.",
+      "power=2;bus=6;sense=4 4;control=8 4;pe=1 4 4 4"
+    ],
+    [
+      "scope-legend",
+      "sld",
+      "Existing thin grey, new black, removed dashed with X; the legend must survive monochrome printing.",
+      null
+    ],
+    [
+      "bound-edges",
+      "sld",
+      "Every connector has a source and target cell; no free-floating line ends on power circuits.",
+      null
+    ],
+    [
+      "drawio-layers",
+      "sld",
+      "Layers: Power, Sense-Control, Grounding, Annotation, Frame. Cells parent to a layer, never to root 0.",
+      "Power,Sense-Control,Grounding,Annotation,Frame"
+    ],
+    [
+      "verified-stencils",
+      "sld",
+      "Use only shapes listed in drawio_shape; anything else renders as a plain rectangle.",
+      null
+    ],
+    [
+      "keyed-notes",
+      "sld",
+      "Reference notes by unique key (hexagon tag) instead of repeating paragraphs on the drawing.",
+      null
+    ],
+    [
+      "boundary-boxes",
+      "sld",
+      "Show listed assemblies (BESS cabinet, hybrid inverter internals) as dashed boundaries so integral vs field devices are explicit.",
+      null
+    ],
+    [
+      "plan-units",
+      "plan",
+      "Declare units, origin, north and scale; dimension clearances from equipment faces, never from schematic geometry.",
+      null
+    ],
+    [
+      "cb-placement",
+      "sld",
+      "When the 120 percent method is used, draw source breakers at the end of the bus opposite the main.",
+      null
+    ]
+  ],
+  "extra_notes": [
+    {
+      "id": "N-PCS-SETTING",
+      "topic": "Power control setting",
+      "scope": "electrical",
+      "template": "Power control system {listed_pcs_function} limits {controlled_quantity} to {setting_value}; settings access restricted per {manual_revision}.",
+      "starting_source_id": "CA-CEC"
+    },
+    {
+      "id": "N-BACKUP-BOUNDARY",
+      "topic": "Backup boundary",
+      "scope": "ess",
+      "template": "Loads on {critical_load_panel} are served in islanded mode through {isolation_device}; loads on {non_backed_panels} are not backed up.",
+      "starting_source_id": "OWNER-REQUIREMENT"
+    },
+    {
+      "id": "N-SOURCE-DIRECTORY",
+      "topic": "Source directory",
+      "scope": "electrical",
+      "template": "Provide permanent directory at {service_location} identifying {power_sources_and_disconnect_locations}.",
+      "starting_source_id": "CA-CEC"
+    }
+  ],
+  "note_topics": {
+    "N-OCP": [
+      "ocpd"
+    ],
+    "N-CONDUCTOR": [
+      "conductor"
+    ],
+    "N-GROUND": [
+      "grounding"
+    ],
+    "N-WORKSPACE": [
+      "workspace"
+    ],
+    "N-ESS-LISTING": [
+      "listing"
+    ],
+    "N-FIRE-TEST": [
+      "ess-fire"
+    ],
+    "N-JA12": [
+      "energy-code-bess"
+    ],
+    "N-T24": [
+      "energy-code-pv",
+      "energy-code-bess"
+    ],
+    "N-UTILITY": [
+      "interconnection"
+    ],
+    "N-ISOLATION": [
+      "ess-disconnect"
+    ],
+    "N-SERVICE": [
+      "interconnection"
+    ],
+    "N-PCS-SETTING": [
+      "pcs-control"
+    ],
+    "N-BACKUP-BOUNDARY": [
+      "ess-disconnect"
+    ],
+    "N-SOURCE-DIRECTORY": [
+      "disconnect"
+    ]
+  }
+}

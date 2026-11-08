@@ -1,0 +1,4 @@
+interface:
+  display_name: "QElectroTech PV and BESS Drawings"
+  short_description: "Build PV/BESS single-lines and coordinated site plans"
+  default_prompt: "Use $qelectrotech-bess to develop a coordinated PV/BESS drawing package for engineering review."

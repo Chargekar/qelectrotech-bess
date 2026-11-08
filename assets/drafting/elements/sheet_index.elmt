@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<definition type="element" version="0.80" width="880" height="242" hotspot_x="0" hotspot_y="0" orientation="dyyy" link_type="simple">
+  <uuid uuid="{0aefc61a-a192-5812-98c5-ec9c14b12edb}" />
+  <names>
+    <name lang="en">Blank sheet index</name>
+  </names>
+  <informations>Original CC0-1.0 blank drafting form. No project rows, ratings, calculations or approval. No electrical terminals.</informations>
+  <description>
+    <rect x="0" y="0" width="880" height="242" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="true" />
+    <text x="12" y="22" text="SHEET INDEX" size="11" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="0" y1="32" x2="880" y2="32" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="62" x2="880" y2="62" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="92" x2="880" y2="92" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="122" x2="880" y2="122" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="152" x2="880" y2="152" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="182" x2="880" y2="182" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="212" x2="880" y2="212" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="8" y="52" text="SHEET" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="100" y1="32" x2="100" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="108" y="52" text="TITLE" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="400" y1="32" x2="400" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="408" y="52" text="VIEW / SCOPE" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="610" y1="32" x2="610" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="618" y="52" text="REV / DATE" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="750" y1="32" x2="750" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="758" y="52" text="ISSUE / REVIEW" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+  </description>
+</definition>

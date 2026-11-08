@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "scope": "Reusable interfaces; no connected project, numeric rating or protection setting",
+  "graphics_rules": [
+    "Power/bond stubs are solid; logical control/sense stubs are dashed.",
+    "Logical signal ports do not prescribe physical wire, secondary circuit or protocol.",
+    "Switch contact artwork is not an operating-state record.",
+    "An enclosure/assembly outline is not an internal bus topology."
+  ],
+  "evidence_domains": [
+    "actual electrical configuration",
+    "frame and trip current",
+    "interrupting rating",
+    "assembly SCCR",
+    "short-time withstand",
+    "available fault current",
+    "series-rated combination if applicable",
+    "exact control certification/compatibility and failure response",
+    "sensing ratio/polarity/burden and physical wiring",
+    "auxiliary/control power availability",
+    "manufacturer and adopted code/utility requirements"
+  ]
+}

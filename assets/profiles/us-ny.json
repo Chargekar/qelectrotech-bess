@@ -1,0 +1,48 @@
+{
+  "country": "US",
+  "status": "requires-project-review",
+  "researched": "2026-11-06",
+  "binding_project_defaults": false,
+  "coverage": "Research starting profile only; not a complete electrical/fire/energy/utility rule set",
+  "unresolved_project_fields": [
+    "actual authority territory and special jurisdiction",
+    "permit/activity basis and vesting",
+    "applicable rule sections, amendments, errata and current legal effect",
+    "occupancy and installation scope",
+    "electrical/fire/energy/accessibility/environmental/utility source basis",
+    "product configuration and evidence",
+    "responsible review"
+  ],
+  "id": "US-NY",
+  "subdivision_code": "US-NY",
+  "code_basis_candidates": [
+    {
+      "name": "New York State Uniform Code",
+      "edition": "2025",
+      "effective_date": "2025-12-31",
+      "source_id": "NY-DOS-ADOPTION",
+      "selection_required": "Actual territory, permit basis, amendments, exceptions and current court-order/enforcement notices"
+    },
+    {
+      "name": "New York State Energy Conservation Construction Code",
+      "edition": "2025",
+      "effective_date": "2025-12-31",
+      "source_id": "NY-DOS-ADOPTION",
+      "selection_required": "Actual state/local energy-code applicability and current legal effect"
+    }
+  ],
+  "scope_checks": [
+    {
+      "topic": "New York City and approved local energy-code scope",
+      "source_id": "NY-DOS-SCOPE",
+      "selection_required": "Do not substitute the statewide building-code path for NYC; resolve the actual DOB/FDNY/utility and local energy-code rules"
+    },
+    {
+      "topic": "NYC energy-code application/enforcement transition",
+      "source_id": "NYC-ENERGY-TRANSITION",
+      "selection_required": "Recheck current DOB notices and actual application basis; this historical bulletin is not a fixed project default"
+    }
+  ],
+  "legal_effect_policy": "Adoption notices contain later amendments and court-order notices. Edition alone does not establish that every provision is enforceable.",
+  "electrical_code_selection": "Unresolved; obtain actual electrical adoption/AHJ basis. No California fallback."
+}

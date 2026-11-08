@@ -1,0 +1,4868 @@
+{
+  "version": "1.7.0",
+  "artwork_license": "CC0-1.0",
+  "provenance": "Original parametric geometry authored for this skill; no third-party drawing or seal artwork copied.",
+  "coordinate_contract": "Symbol-local coordinates, 100x80 bounding box, hotspot (50,40). Every port declares circuit-bundle, individual-conductor, protective-bond or functional-signal representation; never infer conductor count from a bundle port.",
+  "symbols": [
+    {
+      "id": "utility",
+      "name": "Utility source",
+      "meaning": "Utility boundary, not an engineered utility detail.",
+      "ports": [
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "service",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "meter",
+      "name": "Revenue meter",
+      "meaning": "Metering function, utility arrangement requires approval.",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "service",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "breaker",
+      "name": "Circuit breaker",
+      "meaning": "Generic open breaker; poles/rating/settings are instance facts.",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "protection",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "disconnect",
+      "name": "Disconnect switch",
+      "meaning": "Generic isolation function; does not assert fuse or service suitability.",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "protection",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "bus",
+      "name": "Distribution bus",
+      "meaning": "All four power ports are electrically common.",
+      "ports": [
+        {
+          "id": "left",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "right",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "top",
+          "domain": "ac",
+          "x": 0,
+          "y": -30,
+          "orientation": "n",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "bottom",
+          "domain": "ac",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "distribution",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "battery",
+      "name": "Battery DC source",
+      "meaning": "Aggregated DC circuit ports, not individual positive/negative conductors.",
+      "ports": [
+        {
+          "id": "dc_left",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "dc_right",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "bess",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "power_conversion_system",
+      "name": "Bidirectional power converter",
+      "meaning": "Converter function only; power-control approval is separate.",
+      "ports": [
+        {
+          "id": "dc",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "conversion",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "pv_array",
+      "name": "Photovoltaic array",
+      "meaning": "Aggregated PV source; string details require a schedule.",
+      "ports": [
+        {
+          "id": "dc",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "pv",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "pv_inverter",
+      "name": "PV inverter",
+      "meaning": "DC-to-AC converter; ratings/operation are instance facts.",
+      "ports": [
+        {
+          "id": "dc",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "conversion",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "hybrid_inverter",
+      "name": "Hybrid inverter",
+      "meaning": "PV and battery DC ports; compatibility requires listing evidence.",
+      "ports": [
+        {
+          "id": "pv_dc",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "battery_dc",
+          "domain": "dc",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "conversion",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "transformer",
+      "name": "Transformer",
+      "meaning": "Winding/grounding/vector-group data must be specified separately.",
+      "ports": [
+        {
+          "id": "primary",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "secondary",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "distribution",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "load_panel",
+      "name": "Load distribution panel",
+      "meaning": "Aggregated load; bus/main/load facts required.",
+      "ports": [
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "distribution",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "transfer_switch",
+      "name": "Transfer/isolation functional block",
+      "meaning": "Functional block, not verified switching/isolation schematic.",
+      "ports": [
+        {
+          "id": "normal",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "alternate",
+          "domain": "ac",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "transfer",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "ground",
+      "name": "Grounding electrode",
+      "meaning": "Grounding reference; conductor/bonding design is separate.",
+      "ports": [
+        {
+          "id": "pe",
+          "domain": "pe",
+          "x": 0,
+          "y": -30,
+          "orientation": "n",
+          "representation": "protective-bond"
+        }
+      ],
+      "family": "grounding",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "controller",
+      "name": "Power/microgrid control function",
+      "meaning": "Control function; no assumed export limitation or islanding approval.",
+      "ports": [
+        {
+          "id": "sense",
+          "domain": "sense",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal"
+        },
+        {
+          "id": "command",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal"
+        }
+      ],
+      "family": "controls",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "current_sensor",
+      "name": "Current sensing functional block",
+      "meaning": "Separate sensing circuit; no power port or implicit CT ratio/polarity.",
+      "ports": [
+        {
+          "id": "sense",
+          "domain": "sense",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal"
+        }
+      ],
+      "family": "controls",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "estop",
+      "name": "Emergency shutdown function",
+      "meaning": "Command function; scope/fail response must be defined.",
+      "ports": [
+        {
+          "id": "command",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal"
+        }
+      ],
+      "family": "controls",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "battery_cell",
+      "name": "Battery cell",
+      "meaning": "Individual cell conductor terminals; chemistry and limits remain product data.",
+      "ports": [
+        {
+          "id": "positive",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "individual-conductor"
+        },
+        {
+          "id": "negative",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "individual-conductor"
+        }
+      ],
+      "family": "bess",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "battery_module",
+      "name": "Battery module",
+      "meaning": "Individual positive/negative ports; series/parallel assembly requires a separate design.",
+      "ports": [
+        {
+          "id": "positive",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "individual-conductor"
+        },
+        {
+          "id": "negative",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "individual-conductor"
+        }
+      ],
+      "family": "bess",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "battery_rack",
+      "name": "Battery rack",
+      "meaning": "Rack aggregation; no implied capacity or certified system arrangement.",
+      "ports": [
+        {
+          "id": "dc",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "bess",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "bess_cabinet",
+      "name": "BESS cabinet functional block",
+      "meaning": "Enclosure functional boundary; AC interface only if the selected product is an integrated AC system.",
+      "ports": [
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "pe",
+          "domain": "pe",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "protective-bond"
+        }
+      ],
+      "family": "bess",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "bess_container",
+      "name": "BESS container functional block",
+      "meaning": "Container boundary; converter/system listing and auxiliaries are separately specified.",
+      "ports": [
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "pe",
+          "domain": "pe",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "protective-bond"
+        }
+      ],
+      "family": "bess",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "bms",
+      "name": "Battery management function",
+      "meaning": "Monitoring/protection control function; no implicit safety certification.",
+      "ports": [
+        {
+          "id": "sense",
+          "domain": "sense",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal"
+        },
+        {
+          "id": "command",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal"
+        }
+      ],
+      "family": "bess",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "dc_disconnect",
+      "name": "DC disconnect",
+      "meaning": "DC isolation; voltage, polarity, interrupting and load-break suitability require evidence.",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "bess",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "dc_fuse",
+      "name": "DC fuse",
+      "meaning": "DC overcurrent functional symbol; ratings and coordination are instance data.",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "bess",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "dc_combiner",
+      "name": "DC combiner functional block",
+      "meaning": "Two schematic input circuits and one output; input count and internal protection are instance data.",
+      "ports": [
+        {
+          "id": "input_1",
+          "domain": "dc",
+          "x": -40,
+          "y": -15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "input_2",
+          "domain": "dc",
+          "x": -40,
+          "y": 15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "output",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "family": "bess",
+      "view_kind": "single-line-functional"
+    },
+    {
+      "id": "raceway_emt",
+      "name": "Electrical metallic tubing legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "tube",
+      "legend_text": "EMT",
+      "meaning": "Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_imc",
+      "name": "Intermediate metal conduit legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "tube",
+      "legend_text": "IMC",
+      "meaning": "Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_rmc",
+      "name": "Rigid metal conduit legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "tube",
+      "legend_text": "RMC",
+      "meaning": "Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_fmc",
+      "name": "Flexible metal conduit legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "flex",
+      "legend_text": "FMC",
+      "meaning": "Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_lfmc",
+      "name": "Liquidtight flexible metal conduit legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "flex",
+      "legend_text": "LFMC",
+      "meaning": "Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_lfnc",
+      "name": "Liquidtight flexible nonmetallic conduit legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "flex",
+      "legend_text": "LFNC",
+      "meaning": "Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_pvc",
+      "name": "Rigid PVC conduit legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "tube",
+      "legend_text": "PVC",
+      "meaning": "Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_rtrc",
+      "name": "Reinforced thermosetting resin conduit legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "tube",
+      "legend_text": "RTRC",
+      "meaning": "Type identifier only; permitted uses and fitting/environment suitability require adopted-code and product evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_elbow",
+      "name": "Raceway elbow legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "elbow",
+      "legend_text": "",
+      "meaning": "Direction change; bend radius and bend count are unresolved. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 0,
+          "y": 30
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_offset",
+      "name": "Raceway offset legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "offset",
+      "legend_text": "",
+      "meaning": "Offset routing concept; geometry is not a calculated bend. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 16
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": -8
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_riser_up",
+      "name": "Raceway riser up marker",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "riser_up",
+      "legend_text": "",
+      "meaning": "Plan legend marker UP; does not establish elevation. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_riser_down",
+      "name": "Raceway riser down marker",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "riser_down",
+      "legend_text": "",
+      "meaning": "Plan legend marker DN; does not establish elevation. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_underground",
+      "name": "Underground route legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "underground",
+      "legend_text": "",
+      "meaning": "Route designation only; cover, burial method and location require project data. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_overhead",
+      "name": "Overhead route legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "overhead",
+      "legend_text": "",
+      "meaning": "Route designation only; clearances and support require project data. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_sleeve",
+      "name": "Sleeve/penetration legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "sleeve",
+      "legend_text": "",
+      "meaning": "Sleeve location concept; wall assembly, seal and dimensions are unresolved. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_firestop",
+      "name": "Firestop penetration legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "firestop",
+      "legend_text": "",
+      "meaning": "Reference a specific applicable tested/listed firestop assembly; glyph is not an assembly design. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_expansion",
+      "name": "Expansion fitting legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "expansion",
+      "legend_text": "",
+      "meaning": "Movement accommodation function; stroke, setting and installation per selected product. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_support",
+      "name": "Raceway support legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "support",
+      "legend_text": "",
+      "meaning": "Support function; span, attachment and structural adequacy are not supplied. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_conduit_body",
+      "name": "Conduit body legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "conduit_body",
+      "legend_text": "",
+      "meaning": "Accessible fitting function; fill, pull access and compatible size/type remain unresolved. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_pull_box",
+      "name": "Pull box legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "pull_box",
+      "legend_text": "",
+      "meaning": "Pull/access box marker; sizing, access and environmental rating need evidence. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "raceway_transition",
+      "name": "Rigid/flexible transition legend",
+      "family": "raceway",
+      "view_kind": "installation-legend",
+      "geometry_kind": "transition",
+      "legend_text": "",
+      "meaning": "Transition function; exact compatible listed fittings and bonding remain unresolved. Original NTS legend; no installation dimensions, electrical net or compliance are implied.",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "route_in",
+          "x": -38,
+          "y": 0
+        },
+        {
+          "id": "route_out",
+          "x": 38,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "raceway_specification_ref",
+        "trade_size",
+        "material_coating",
+        "installation_exposure",
+        "fitting_listing",
+        "support_expansion_detail_refs",
+        "bonding_detail_refs",
+        "adopted_rule_edition_and_locator",
+        "project_review"
+      ],
+      "source_refs": [
+        "RACEWAY-WHEATLAND",
+        "RACEWAY-EATON"
+      ]
+    },
+    {
+      "id": "pv_module",
+      "name": "PV module, polarized terminals",
+      "meaning": "One module functional representation; external positive/negative conductor terminals, not a selected product.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "positive",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "individual-conductor"
+        },
+        {
+          "id": "negative",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "individual-conductor"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_string",
+      "name": "PV string, circuit bundle",
+      "meaning": "Aggregated string source circuit; small internal module marks are illustrative and do not specify quantity.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "dc",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_string_polarized",
+      "name": "PV string, separate polarity",
+      "meaning": "String source with separate positive/negative conductor terminals; no module count, voltage or current implied.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "positive",
+          "domain": "dc",
+          "x": 40,
+          "y": -15,
+          "orientation": "e",
+          "representation": "individual-conductor"
+        },
+        {
+          "id": "negative",
+          "domain": "dc",
+          "x": 40,
+          "y": 15,
+          "orientation": "e",
+          "representation": "individual-conductor"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_dc_combiner",
+      "name": "PV DC combiner functional block",
+      "meaning": "Two depicted bundle inputs and one output; actual source count, protection and internal arrangement require data.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "input_a",
+          "domain": "dc",
+          "x": -40,
+          "y": -15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "input_b",
+          "domain": "dc",
+          "x": -40,
+          "y": 15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "dc_out",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_optimizer",
+      "name": "PV optimizer functional block",
+      "meaning": "DC-to-DC function; compatibility, ratings and any shutdown capability are separately evidenced.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "dc_in",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "dc_out",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_rapid_shutdown",
+      "name": "PV rapid shutdown functional block",
+      "meaning": "Generic controlled DC function. Command port is logical, not a prescribed physical wire or a compliance claim.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "dc_in",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "dc_out",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "shutdown_command",
+          "domain": "control",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "functional-signal"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_shutdown_initiator",
+      "name": "PV shutdown initiator",
+      "meaning": "Logical initiating function only; initiation method, scope and equipment compatibility require evidence.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "command",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_ac_module",
+      "name": "AC module functional assembly",
+      "meaning": "PV module/converter assembly exposing AC and protective bond; exact assembly listing remains project data.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "pe",
+          "domain": "pe",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "protective-bond"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_microinverter",
+      "name": "PV microinverter function",
+      "meaning": "Module-scale DC/AC converter function; no assumed grid-forming, backup or shutdown approval.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "dc",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_string_inverter_dual_mppt",
+      "name": "PV inverter with two DC input functions",
+      "meaning": "Two conceptual DC input bundles and one AC output. Actual independent MPPT channels, allowable strings and ratings require the exact product data.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "mppt_a",
+          "domain": "dc",
+          "x": -40,
+          "y": -15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "mppt_b",
+          "domain": "dc",
+          "x": -40,
+          "y": 15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_junction_box",
+      "name": "PV junction box function",
+      "meaning": "Circuit transition/enclosure function; enclosure rating, terminations and bonding require project evidence.",
+      "family": "pv",
+      "view_kind": "single-line-functional",
+      "geometry_family": "pv-detail",
+      "ports": [
+        {
+          "id": "dc_in",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "dc_out",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "pe",
+          "domain": "pe",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "protective-bond"
+        }
+      ],
+      "required_project_fields": [
+        "exact_product_or_assembly_ref",
+        "rated_condition_and_nameplate_refs",
+        "source_circuit_topology_ref",
+        "voltage_current_temperature_basis_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301",
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "pv_hazard_boundary",
+      "name": "PV boundary annotation",
+      "meaning": "Original NTS boundary graphic. Boundary geometry and selected hazard/shutdown approach must be documented; this graphic proves no code criterion.",
+      "family": "pv",
+      "view_kind": "installation-legend",
+      "geometry_kind": "pv_boundary",
+      "ports": [],
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "boundary_origin",
+          "x": -35,
+          "y": -22
+        }
+      ],
+      "required_project_fields": [
+        "boundary_basis",
+        "actual_dimension_refs",
+        "shutdown_requirement_ref",
+        "listing_compatibility_refs",
+        "review"
+      ],
+      "source_refs": [
+        "PV-SMA-RSD"
+      ]
+    },
+    {
+      "id": "power_control_system",
+      "name": "Power control system function",
+      "family": "controls",
+      "glyph": "PCS-C",
+      "ports": [
+        {
+          "id": "sense",
+          "domain": "sense",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal",
+          "signal_role": "measurement"
+        },
+        {
+          "id": "command",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal",
+          "signal_role": "command"
+        }
+      ],
+      "meaning": "Current/power limiting control function, distinct from a power conversion system. Exact certified configuration, sensing, limits and failure response require evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "energy_management_system",
+      "name": "Energy management function",
+      "family": "controls",
+      "glyph": "EMS",
+      "ports": [
+        {
+          "id": "sense",
+          "domain": "sense",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal",
+          "signal_role": "measurement"
+        },
+        {
+          "id": "command",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal",
+          "signal_role": "command"
+        }
+      ],
+      "meaning": "Energy optimization/dispatch function. EMS naming does not establish certified overload or export-limit control.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "microgrid_controller",
+      "name": "Microgrid controller function",
+      "family": "controls",
+      "glyph": "MGC",
+      "ports": [
+        {
+          "id": "sense",
+          "domain": "sense",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal",
+          "signal_role": "measurement"
+        },
+        {
+          "id": "command",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal",
+          "signal_role": "command"
+        },
+        {
+          "id": "isolation_command",
+          "domain": "control",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "functional-signal",
+          "signal_role": "isolation-command"
+        }
+      ],
+      "meaning": "Coordination function only; no islanding, isolation, reconnection or resilience capability is proven by the glyph.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "communications_gateway",
+      "name": "Communications gateway function",
+      "family": "controls",
+      "glyph": "COM",
+      "ports": [
+        {
+          "id": "data_in",
+          "domain": "control",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal",
+          "signal_role": "communications"
+        },
+        {
+          "id": "data_out",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal",
+          "signal_role": "communications"
+        }
+      ],
+      "meaning": "Logical data interfaces; protocol, physical transport, auxiliary power, security and failure response remain product/design data.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "voltage_sensor",
+      "name": "Voltage sensing function",
+      "family": "controls",
+      "glyph": "V",
+      "ports": [
+        {
+          "id": "measurement",
+          "domain": "sense",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal",
+          "signal_role": "measurement"
+        }
+      ],
+      "meaning": "Logical measurement output only. Actual primary/secondary instrumentation wiring, ratio and protection are separate details.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "protection_relay",
+      "name": "Protective relay function",
+      "family": "controls",
+      "glyph": "RLY",
+      "ports": [
+        {
+          "id": "sense",
+          "domain": "sense",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal",
+          "signal_role": "measurement"
+        },
+        {
+          "id": "trip",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal",
+          "signal_role": "trip-command"
+        }
+      ],
+      "meaning": "Protection function. Device functions, settings, sensing, trip circuit and independent control supply require engineering evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "trip_coil",
+      "name": "Trip function interface",
+      "family": "controls",
+      "glyph": "TRIP",
+      "ports": [
+        {
+          "id": "command",
+          "domain": "control",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal",
+          "signal_role": "trip-command"
+        }
+      ],
+      "meaning": "Logical trip input; not a selected physical coil voltage, wiring circuit or fail-safe claim.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "control_power_supply",
+      "name": "Control power supply converter",
+      "family": "conversion",
+      "glyph": "AC/DC",
+      "ports": [
+        {
+          "id": "ac_in",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "dc_out",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "AC-to-DC auxiliary power conversion; ratings, protection, isolation and outage availability require product/design evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "ups_function",
+      "name": "UPS functional block",
+      "family": "conversion",
+      "glyph": "UPS",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "Auxiliary continuity function; topology, bypass, runtime and failure behavior are unresolved and no runtime is calculated.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "remote_operated_breaker",
+      "name": "Remotely operated breaker function",
+      "family": "protection",
+      "glyph": "R-CB",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "trip_command",
+          "domain": "control",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "functional-signal",
+          "signal_role": "trip-command"
+        }
+      ],
+      "meaning": "Generic breaker and logical command. Contact graphic is a drafting symbol, not a verified operating-mode position or fail-safe response.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "service_disconnect",
+      "name": "Service disconnect function",
+      "family": "service",
+      "glyph": "SD",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "Service isolation function; exact service suitability/listing, overcurrent protection, neutral and bonding are not implied.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "switchboard",
+      "name": "Switchboard functional assembly",
+      "family": "distribution",
+      "glyph": "SWBD",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "branch",
+          "domain": "ac",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "Functional assembly boundary. Depicted ports do not establish an internal common bus, breaker count or source interconnection method.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "panelboard",
+      "name": "Panelboard functional assembly",
+      "family": "distribution",
+      "glyph": "PNL",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "Functional distribution boundary; actual branch circuits, neutral/bonding, main/bus ratings and protection remain project data.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "ac_fuse",
+      "name": "AC fuse function",
+      "family": "protection",
+      "glyph": "FUSE",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "AC overcurrent protection; current/voltage class, interrupting rating and coordination are unspecified.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "ac_fused_disconnect",
+      "name": "AC fused disconnect function",
+      "family": "protection",
+      "glyph": "F-SW",
+      "ports": [
+        {
+          "id": "line",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "Combined isolation/protection function; poles, fuse class, switching suitability and service qualification require evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "surge_protective_device",
+      "name": "Surge protective function",
+      "family": "protection",
+      "glyph": "SPD",
+      "ports": [
+        {
+          "id": "ac",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "pe",
+          "domain": "pe",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "protective-bond"
+        }
+      ],
+      "meaning": "Shunt surge-protection function; type, system configuration, protection, SCCR and connection/bonding details must be specified.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "ac_combiner",
+      "name": "AC combiner functional assembly",
+      "family": "distribution",
+      "glyph": "AC-C",
+      "ports": [
+        {
+          "id": "input_a",
+          "domain": "ac",
+          "x": -40,
+          "y": -15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "input_b",
+          "domain": "ac",
+          "x": -40,
+          "y": 15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "load",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "Two conceptual source bundle inputs and one output. Actual internal protection, allowable sources and interconnection require evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "power_meter",
+      "name": "Power metering function",
+      "family": "controls",
+      "glyph": "PWR",
+      "ports": [
+        {
+          "id": "sense",
+          "domain": "sense",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal",
+          "signal_role": "measurement"
+        },
+        {
+          "id": "data",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal",
+          "signal_role": "communications"
+        }
+      ],
+      "meaning": "Logical measurement/data function; physical CT/PT or direct voltage wiring, ratio, polarity and revenue acceptance are separate evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "interface-functional",
+      "required_project_fields": [
+        "exact_equipment_or_assembly_ref",
+        "electrical_configuration_ref",
+        "nameplate_rating_refs",
+        "listing_compatibility_refs",
+        "protection_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-POWER-CONTROL",
+        "UL-PANELBOARD",
+        "EATON-SWBD"
+      ]
+    },
+    {
+      "id": "ground_bar",
+      "name": "Equipment grounding bar",
+      "family": "grounding",
+      "glyph": "GB",
+      "ports": [
+        {
+          "id": "bond_a",
+          "domain": "pe",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "protective-bond"
+        },
+        {
+          "id": "bond_b",
+          "domain": "pe",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "protective-bond"
+        },
+        {
+          "id": "pe",
+          "domain": "pe",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "protective-bond"
+        }
+      ],
+      "meaning": "Protective-bond common bar. Does not establish an electrode, a neutral bond or conductor sizing.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-GROUNDING"
+      ],
+      "connection_semantics": "internal-common-within-declared-domain"
+    },
+    {
+      "id": "neutral_bar",
+      "name": "Neutral conductor bar",
+      "family": "grounding",
+      "glyph": "N",
+      "ports": [
+        {
+          "id": "neutral_a",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "individual-conductor"
+        },
+        {
+          "id": "neutral_b",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "individual-conductor"
+        }
+      ],
+      "meaning": "Neutral conductor common bar, with no implicit connection to protective bonding or earth.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-PANELBOARD"
+      ],
+      "connection_semantics": "internal-common-within-declared-domain"
+    },
+    {
+      "id": "ground_rod",
+      "name": "Rod electrode function",
+      "family": "grounding",
+      "glyph": "ROD",
+      "ports": [
+        {
+          "id": "bond",
+          "domain": "pe",
+          "x": 0,
+          "y": -30,
+          "orientation": "n",
+          "representation": "protective-bond"
+        }
+      ],
+      "meaning": "Electrode type identifier only. Dimensions, material, electrodes present, soil/site suitability and testing require evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-GROUNDING"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "main_bonding_jumper",
+      "name": "Main bonding jumper function",
+      "family": "grounding",
+      "glyph": "MBJ",
+      "ports": [
+        {
+          "id": "bond_a",
+          "domain": "pe",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "protective-bond"
+        },
+        {
+          "id": "bond_b",
+          "domain": "pe",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "protective-bond"
+        }
+      ],
+      "meaning": "Bonding function with endpoints assigned by a reviewed service grounding detail; neither port establishes a permitted neutral-ground connection by itself.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-GROUNDING"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "system_bonding_jumper",
+      "name": "System bonding jumper function",
+      "family": "grounding",
+      "glyph": "SBJ",
+      "ports": [
+        {
+          "id": "bond_a",
+          "domain": "pe",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "protective-bond"
+        },
+        {
+          "id": "bond_b",
+          "domain": "pe",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "protective-bond"
+        }
+      ],
+      "meaning": "Bonding function for an explicitly determined system arrangement. Separately-derived classification and bond location are not inferred.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "equipment_bonding_jumper",
+      "name": "Equipment bonding jumper function",
+      "family": "grounding",
+      "glyph": "EBJ",
+      "ports": [
+        {
+          "id": "bond_a",
+          "domain": "pe",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "protective-bond"
+        },
+        {
+          "id": "bond_b",
+          "domain": "pe",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "protective-bond"
+        }
+      ],
+      "meaning": "Equipment bonding path function; material, terminals, environment and sizing remain unresolved.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-GROUNDING"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "ground_test_link",
+      "name": "Bonding test-link function",
+      "family": "grounding",
+      "glyph": "TEST",
+      "ports": [
+        {
+          "id": "bond_a",
+          "domain": "pe",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "protective-bond"
+        },
+        {
+          "id": "bond_b",
+          "domain": "pe",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "protective-bond"
+        }
+      ],
+      "meaning": "Removable testing-link identifier, not an operating instruction or an assertion that opening a protective path is permissible.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-GROUNDING"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "terminal_block_ac",
+      "name": "Individual AC conductor terminal",
+      "family": "grounding",
+      "glyph": "TB-AC",
+      "ports": [
+        {
+          "id": "conductor_a",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "individual-conductor"
+        },
+        {
+          "id": "conductor_b",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "individual-conductor"
+        }
+      ],
+      "meaning": "One conductor termination function. Phase/neutral identity, internal continuity and ratings require the actual terminal contract.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-PANELBOARD"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "terminal_block_dc",
+      "name": "Individual DC conductor terminal",
+      "family": "grounding",
+      "glyph": "TB-DC",
+      "ports": [
+        {
+          "id": "conductor_a",
+          "domain": "dc",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "individual-conductor"
+        },
+        {
+          "id": "conductor_b",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "individual-conductor"
+        }
+      ],
+      "meaning": "One DC conductor termination function. No polarity, grounded-pole selection or product rating is assigned.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "UL-PANELBOARD"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "ct_test_block",
+      "name": "CT secondary test-block function",
+      "family": "grounding",
+      "glyph": "CT-TB",
+      "ports": [
+        {
+          "id": "secondary_a_in",
+          "domain": "ac",
+          "x": -40,
+          "y": -15,
+          "orientation": "w",
+          "representation": "individual-conductor"
+        },
+        {
+          "id": "secondary_b_in",
+          "domain": "ac",
+          "x": -40,
+          "y": 15,
+          "orientation": "w",
+          "representation": "individual-conductor"
+        },
+        {
+          "id": "secondary_a_out",
+          "domain": "ac",
+          "x": 40,
+          "y": -15,
+          "orientation": "e",
+          "representation": "individual-conductor"
+        },
+        {
+          "id": "secondary_b_out",
+          "domain": "ac",
+          "x": 40,
+          "y": 15,
+          "orientation": "e",
+          "representation": "individual-conductor"
+        }
+      ],
+      "meaning": "Physical secondary conductor interfaces, not logical sensor ports. Actual shorting/test sequencing and internal wiring require the exact manufacturer detail.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "SENSOR-SCHNEIDER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "generator_set",
+      "name": "Engine-generator source function",
+      "family": "generator",
+      "glyph": "G",
+      "ports": [
+        {
+          "id": "ac_out",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "pe",
+          "domain": "pe",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "protective-bond"
+        }
+      ],
+      "meaning": "AC source and protective-bond boundary. No voltage, capacity, fuel, duty, neutral arrangement, autonomy or availability is selected.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "generator_controller",
+      "name": "Generator controller function",
+      "family": "generator",
+      "glyph": "GEN-C",
+      "ports": [
+        {
+          "id": "sense",
+          "domain": "sense",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal",
+          "signal_role": "measurement"
+        },
+        {
+          "id": "command",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal",
+          "signal_role": "command"
+        }
+      ],
+      "meaning": "Logical supervision/start function. Physical start circuit, supply, health monitoring and failure response remain separate evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "generator_start_battery",
+      "name": "Generator starting-energy function",
+      "family": "generator",
+      "glyph": "START",
+      "ports": [
+        {
+          "id": "dc",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "Starting-energy boundary only; no battery chemistry, voltage, capacity or guaranteed start performance.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "generator_battery_charger",
+      "name": "Generator battery charger function",
+      "family": "generator",
+      "glyph": "CHG",
+      "ports": [
+        {
+          "id": "ac_in",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "dc_out",
+          "domain": "dc",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "Auxiliary AC-to-DC charging function. Charger sizing, battery compatibility and outage supply are unresolved.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "generator_heater",
+      "name": "Generator auxiliary heater function",
+      "family": "generator",
+      "glyph": "HTR",
+      "ports": [
+        {
+          "id": "ac_in",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        }
+      ],
+      "meaning": "Auxiliary heater load function; ambient requirements, supply, controls and effect on availability need evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "transfer_open_transition",
+      "name": "Open-transition transfer function",
+      "family": "transfer",
+      "glyph": "O-T",
+      "ports": [
+        {
+          "id": "normal",
+          "domain": "ac",
+          "x": -40,
+          "y": -15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "alternate",
+          "domain": "ac",
+          "x": -40,
+          "y": 15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "ac_out",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "transfer_command",
+          "domain": "control",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "functional-signal",
+          "signal_role": "transfer-command"
+        }
+      ],
+      "meaning": "Functional transfer category. No actual timing, automatic-operation claim, neutral treatment or contact position is assigned.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "transfer_closed_transition",
+      "name": "Closed-transition transfer function",
+      "family": "transfer",
+      "glyph": "C-T",
+      "ports": [
+        {
+          "id": "normal",
+          "domain": "ac",
+          "x": -40,
+          "y": -15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "alternate",
+          "domain": "ac",
+          "x": -40,
+          "y": 15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "ac_out",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "transfer_command",
+          "domain": "control",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "functional-signal",
+          "signal_role": "transfer-command"
+        }
+      ],
+      "meaning": "Functional transition category, not authorization to parallel sources or a guarantee of uninterrupted power.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "transfer_bypass_isolation",
+      "name": "Transfer bypass-isolation function",
+      "family": "transfer",
+      "glyph": "BYP",
+      "ports": [
+        {
+          "id": "normal",
+          "domain": "ac",
+          "x": -40,
+          "y": -15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "alternate",
+          "domain": "ac",
+          "x": -40,
+          "y": 15,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "ac_out",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "transfer_command",
+          "domain": "control",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "functional-signal",
+          "signal_role": "transfer-command"
+        }
+      ],
+      "meaning": "Maintenance transfer/isolation boundary. Actual internal bypass, interlocks, source availability and interruption behavior require product/sequence evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "generator_connection_cabinet",
+      "name": "Temporary generator connection boundary",
+      "family": "generator",
+      "glyph": "GEN-J",
+      "ports": [
+        {
+          "id": "ac_in",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "ac_out",
+          "domain": "ac",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "pe",
+          "domain": "pe",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "protective-bond"
+        }
+      ],
+      "meaning": "Connection-equipment boundary; connector configuration, ratings, source isolation, neutral/bonding and utility acceptance remain project evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "load_bank",
+      "name": "Test load-bank function",
+      "family": "generator",
+      "glyph": "LOAD",
+      "ports": [
+        {
+          "id": "ac_in",
+          "domain": "ac",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "circuit-bundle"
+        },
+        {
+          "id": "pe",
+          "domain": "pe",
+          "x": 0,
+          "y": 30,
+          "orientation": "s",
+          "representation": "protective-bond"
+        }
+      ],
+      "meaning": "Temporary/permanent test load function; test duty, load type, ventilation, controls and connection design are unresolved.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "mechanical_interlock",
+      "name": "Interlock relationship function",
+      "family": "transfer",
+      "glyph": "INTLK",
+      "ports": [
+        {
+          "id": "equipment_a",
+          "domain": "control",
+          "x": -40,
+          "y": 0,
+          "orientation": "w",
+          "representation": "functional-signal",
+          "signal_role": "interlock"
+        },
+        {
+          "id": "equipment_b",
+          "domain": "control",
+          "x": 40,
+          "y": 0,
+          "orientation": "e",
+          "representation": "functional-signal",
+          "signal_role": "interlock"
+        }
+      ],
+      "meaning": "Logical interlock relationship, not a power conductor or verified mechanical design. Exact listed combination and operation sequence need evidence.",
+      "view_kind": "single-line-functional",
+      "geometry_family": "grounding-transfer",
+      "required_project_fields": [
+        "exact_component_or_assembly_ref",
+        "endpoint_roles_and_internal_topology",
+        "electrical_configuration_ref",
+        "rating_and_qualification_refs",
+        "grounding_and_control_evidence_refs",
+        "physical_environment_constraints",
+        "adopted_rule_basis",
+        "review"
+      ],
+      "source_refs": [
+        "GEN-CUMMINS-TRANSFER"
+      ],
+      "connection_semantics": "functional-boundary-requires-internal-topology"
+    },
+    {
+      "id": "gec_role_marker",
+      "name": "GEC role callout",
+      "family": "grounding",
+      "geometry_kind": "role_marker",
+      "legend_text": "GEC",
+      "ports": [],
+      "meaning": "Grounding-electrode-conductor role marker. Attach by annotation to an actual native conductor; this is not a wire or sizing result.",
+      "view_kind": "installation-legend",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "leader",
+          "x": -40,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "actual_subject_ref",
+        "physical_detail_or_conductor_ref",
+        "applicability_and_source_refs",
+        "review"
+      ],
+      "source_refs": [
+        "UL-GROUNDING"
+      ]
+    },
+    {
+      "id": "egc_role_marker",
+      "name": "EGC role callout",
+      "family": "grounding",
+      "geometry_kind": "role_marker",
+      "legend_text": "EGC",
+      "ports": [],
+      "meaning": "Equipment-grounding-conductor role marker. Raceway qualification and conductor/path sizing are separate project evidence.",
+      "view_kind": "installation-legend",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "leader",
+          "x": -40,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "actual_subject_ref",
+        "physical_detail_or_conductor_ref",
+        "applicability_and_source_refs",
+        "review"
+      ],
+      "source_refs": [
+        "UL-GROUNDING"
+      ]
+    },
+    {
+      "id": "generator_fuel_tank",
+      "name": "Fuel-system boundary legend",
+      "family": "generator",
+      "geometry_kind": "fuel_tank",
+      "legend_text": "FUEL",
+      "ports": [],
+      "meaning": "Non-electrical fuel-system reference. Fuel choice, usable quantity, delivery/refill, fire/environmental permitting and duration are unresolved.",
+      "view_kind": "installation-legend",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "leader",
+          "x": -40,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "actual_subject_ref",
+        "physical_detail_or_conductor_ref",
+        "applicability_and_source_refs",
+        "review"
+      ],
+      "source_refs": [
+        "CA-GENERATOR-AIR"
+      ]
+    },
+    {
+      "id": "generator_exhaust",
+      "name": "Exhaust direction legend",
+      "family": "generator",
+      "geometry_kind": "exhaust",
+      "legend_text": "EXH",
+      "ports": [],
+      "meaning": "Non-electrical direction marker. Emissions, discharge, receptors, ventilation, noise and clearances require actual site/product review.",
+      "view_kind": "installation-legend",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "leader",
+          "x": -40,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "actual_subject_ref",
+        "physical_detail_or_conductor_ref",
+        "applicability_and_source_refs",
+        "review"
+      ],
+      "source_refs": [
+        "CA-GENERATOR-AIR"
+      ]
+    },
+    {
+      "id": "location_bess_cabinet_plan",
+      "name": "Cabinet plan preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Equipment footprint symbol; no model dimensions, door geometry or clearances are selected. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "cabinet_plan",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#location_bess_cabinet_plan",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "location_bess_container_plan",
+      "name": "Container plan preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Container footprint identifier; ribs are graphic detail, not battery or enclosure counts. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "container_plan",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#location_bess_container_plan",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "location_inverter_wall_plan",
+      "name": "Wall inverter plan preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Wall/equipment relationship identifier; actual attachment and ventilation remain project inputs. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "inverter_plan",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#location_inverter_wall_plan",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "location_pv_roof_zone",
+      "name": "Rooftop PV area preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Roof/array relationship only; drawn cells do not select module count, roof slope or fire pathways. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "pv_roof",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#location_pv_roof_zone",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "location_pv_ground_mount",
+      "name": "Ground-mount PV area preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Array/support area identifier; no row count, module count, tilt or setback is selected. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "pv_ground",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#location_pv_ground_mount",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "equipment_pad_preview",
+      "name": "Equipment pad preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Support-pad reference, with no thickness, reinforcement, footprint, capacity or anchor pattern specified. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "pad",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#equipment_pad_preview",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "wall_mount_section",
+      "name": "Wall mounting section preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Wall/support/equipment section identifier, not an engineered connection detail. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "wall_section",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#wall_mount_section",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "roof_mount_section",
+      "name": "Roof mounting section preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Roof support relationship only; slope, standoff, attachment and flashing require actual evidence. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "roof_section",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#roof_mount_section",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "rack_mount_elevation",
+      "name": "Rack elevation preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Rack/support elevation identifier. Shelves and bracing are illustrative, with no load rating. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "rack_elevation",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#rack_mount_elevation",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "anchor_detail_reference",
+      "name": "Anchorage detail reference - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Leader target for an approved anchorage detail; no anchor type, count, embedment or spacing is provided. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "anchor_reference",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#anchor_detail_reference",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "clearance_electrical_working",
+      "name": "Electrical working-space preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Electrical working-space category only. No generic rectangle establishes an adopted clearance value. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "electrical_envelope",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#clearance_electrical_working",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "clearance_equipment_service",
+      "name": "Service envelope preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Manufacturer service envelope category, distinct from electrical working space and fire separation. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "service_envelope",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#clearance_equipment_service",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "clearance_fire_separation",
+      "name": "Fire separation preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Fire separation/exposure category. Exact installation/test/AHJ evidence governs; no distance is encoded. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "fire_envelope",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#clearance_fire_separation",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "CA-FIRE-2025"
+      ]
+    },
+    {
+      "id": "door_swing_preview",
+      "name": "Door sweep preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Door-sweep relationship only. The icon does not prescribe actual angle, handedness or clear width. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "door_swing",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#door_swing_preview",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "US-ACCESS-ROUTE"
+      ]
+    },
+    {
+      "id": "access_route_preview",
+      "name": "Access route preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Access path identifier, without claiming accessible-route, egress or fire-access compliance. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "access_route",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#access_route_preview",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "US-ACCESS-ROUTE"
+      ]
+    },
+    {
+      "id": "fence_line_preview",
+      "name": "Fence line preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Fence boundary identifier; no physical dimensions, setback, electrical bonding or access result. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "fence",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#fence_line_preview",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-122"
+      ]
+    },
+    {
+      "id": "gate_swing_preview",
+      "name": "Gate sweep preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Gate and movement identifier; leaf count and opening angle are graphic conventions, not selected equipment. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "gate",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#gate_swing_preview",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "US-ACCESS-ROUTE"
+      ]
+    },
+    {
+      "id": "bollard_plan_preview",
+      "name": "Bollard plan preview - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Vehicle-protection location marker; no impact resistance, spacing or foundation design is asserted. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "bollard",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#bollard_plan_preview",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "north_reference",
+      "name": "North reference marker - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Orientation symbol requiring actual true/grid/project/magnetic basis; its initial rotation is not a site fact. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "north",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#north_reference",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-122"
+      ]
+    },
+    {
+      "id": "roof_edge_reference",
+      "name": "Roof edge reference - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Roof boundary reference; no verified parapet height, slope, setback or structural condition. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "roof_edge",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#roof_edge_reference",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "environment_salt_exposure",
+      "name": "Salt exposure review marker - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Physical salt-exposure review marker, independent of California Coastal Zone legal jurisdiction. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "salt",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#environment_salt_exposure",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "NEMA-TYPES"
+      ]
+    },
+    {
+      "id": "environment_corrosion",
+      "name": "Corrosion review marker - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Corrosion review marker; does not assign enclosure type or prove coating/material suitability. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "corrosion",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#environment_corrosion",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "NEMA-TYPES"
+      ]
+    },
+    {
+      "id": "environment_flood",
+      "name": "Flood review marker - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Flood/site-elevation review marker; graphic water level is not a flood elevation or protection requirement. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "flood",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#environment_flood",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-122"
+      ]
+    },
+    {
+      "id": "equipment_service_face",
+      "name": "Equipment service-face marker - NTS",
+      "family": "location",
+      "ports": [],
+      "meaning": "Service/front-face orientation marker, separate from a door sweep or required clearance envelope. NTS preview; obtain sourced dimensions and a physical coordinate frame before dimensioned use.",
+      "view_kind": "installation-legend",
+      "geometry_family": "location-preview",
+      "geometry_kind": "service_face",
+      "connection_semantics": "non-electrical-annotation",
+      "drawing_space": "symbol-preview",
+      "physical_scale_use": "preview-only",
+      "physical_contract_ref": "assets/location/geometry-contracts.json#equipment_service_face",
+      "annotation_anchors": [
+        {
+          "id": "placement",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "stable_cross_view_equipment_or_subject_ref",
+        "physical_coordinate_frame_ref",
+        "sourced_geometry_and_parameters",
+        "rule_or_product_applicability",
+        "review"
+      ],
+      "source_refs": [
+        "SD-301"
+      ]
+    },
+    {
+      "id": "equipment_tag",
+      "name": "Equipment tag marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Same stable equipment identity across SLD, plan and equipment schedule.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "tag",
+      "marker_text": "EQ-?",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "circuit_tag",
+      "name": "Circuit tag marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Circuit identity linked to actual native conductors and the circuit schedule.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "tag",
+      "marker_text": "CKT-?",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "note_reference",
+      "name": "Note key marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Reference to a resolved, applicable note instance; the glyph is not a compliance assertion.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "note",
+      "marker_text": "N?",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "detail_reference",
+      "name": "Detail reference marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Detail/sheet identifiers are unresolved until the drawing package is coordinated.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "detail",
+      "marker_text": "D?",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "section_reference",
+      "name": "Section reference marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Section/sheet reference only; direction and target drawing require coordination.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "section",
+      "marker_text": "A?",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "revision_delta",
+      "name": "Revision identifier marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Revision identifier only, independent from approval, operating mode or component condition.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "revision",
+      "marker_text": "?",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "match_line",
+      "name": "Match-line reference marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Cross-view boundary reference; not a power conductor or electrical connection.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "match",
+      "marker_text": "ML?",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "existing_scope_marker",
+      "name": "Existing scope marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Drawing work-scope label; not a component-health or operating-state record.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "scope",
+      "marker_text": "EX",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "new_scope_marker",
+      "name": "New scope marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Proposed work-scope label; no installed/approved/energized status is implied.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "scope",
+      "marker_text": "NEW",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "removed_scope_marker",
+      "name": "Removal scope marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Removal scope identifier; does not establish safe isolation or actual completed removal.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "scope",
+      "marker_text": "RMV",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "relocated_scope_marker",
+      "name": "Relocation scope marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Relocation scope identifier requiring existing/proposed identity reconciliation.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "scope",
+      "marker_text": "REL",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "continuation_reference",
+      "name": "Continuation reference marker",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Cross-sheet annotation; actual electrical continuity requires native report/conductor topology.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "continuation",
+      "marker_text": "TO?",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "bidirectional_power_marker",
+      "name": "Bidirectional power annotation",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Direction-of-flow annotation only; no conductor or bidirectional capability proof.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "bidirectional",
+      "marker_text": "PWR",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    },
+    {
+      "id": "control_signal_marker",
+      "name": "Logical control annotation",
+      "family": "drafting",
+      "ports": [],
+      "meaning": "Legend for logical signal relationships; actual native conductor style and physical transport must be defined.",
+      "view_kind": "installation-legend",
+      "geometry_family": "drafting-marker",
+      "geometry_kind": "control_legend",
+      "marker_text": "CTRL",
+      "connection_semantics": "non-electrical-annotation",
+      "annotation_anchors": [
+        {
+          "id": "reference",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "required_project_fields": [
+        "resolved_reference_or_text",
+        "subject_or_drawing_occurrence_ref",
+        "sheet_layout_placement",
+        "review"
+      ],
+      "source_refs": [
+        "QET-TITLE"
+      ]
+    }
+  ]
+}

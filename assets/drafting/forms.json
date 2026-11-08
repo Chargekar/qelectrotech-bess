@@ -1,0 +1,300 @@
+{
+  "version": "1.0.0",
+  "artwork_license": "CC0-1.0",
+  "purpose": "Original blank review forms and native title block, not a populated project drawing set",
+  "titleblock_name": "renewable-original-review",
+  "professional_area": "blank; no seal, signature or professional identity generated",
+  "titleblock_custom_keys": [
+    "project_id",
+    "drawing_scale",
+    "checked_by",
+    "site_id",
+    "basis_ref"
+  ],
+  "rules": [
+    "No sample project rows, ratings or calculations are provided.",
+    "All schedule identity/evidence fields must resolve to the project model before use.",
+    "Native blank form geometry is editable artwork; CSV files contain headers only.",
+    "Sheet units and physical model units are independent; no generic print scale is claimed.",
+    "Replace marker placeholders through coordinated native annotations; do not treat a marker line as a conductor."
+  ],
+  "forms": [
+    {
+      "id": "equipment_schedule",
+      "title": "EQUIPMENT SCHEDULE",
+      "schedule_kind": "equipment",
+      "columns": [
+        {
+          "key": "equipment_ref",
+          "label": "TAG",
+          "width": 85
+        },
+        {
+          "key": "function_ref",
+          "label": "FUNCTION",
+          "width": 130
+        },
+        {
+          "key": "configuration_ref",
+          "label": "MODEL / CONFIG",
+          "width": 170
+        },
+        {
+          "key": "rating_evidence_refs",
+          "label": "RATINGS / BASIS",
+          "width": 175
+        },
+        {
+          "key": "source_revision_refs",
+          "label": "SOURCE / REV",
+          "width": 170
+        },
+        {
+          "key": "review_ref",
+          "label": "REVIEW",
+          "width": 150
+        }
+      ],
+      "blank_rows": 6,
+      "row_height": 30,
+      "header_height": 30,
+      "title_height": 32,
+      "row_records": [],
+      "native_electrical_terminals": false,
+      "source_refs": [
+        "QET-TITLE"
+      ],
+      "drafting_units": "drawing-unit"
+    },
+    {
+      "id": "conductor_raceway_schedule",
+      "title": "CONDUCTOR / RACEWAY SCHEDULE",
+      "schedule_kind": "conductor-raceway",
+      "columns": [
+        {
+          "key": "circuit_ref",
+          "label": "CIRCUIT",
+          "width": 85
+        },
+        {
+          "key": "from_to_refs",
+          "label": "FROM / TO",
+          "width": 155
+        },
+        {
+          "key": "conductor_refs",
+          "label": "CONDUCTORS",
+          "width": 180
+        },
+        {
+          "key": "raceway_route_refs",
+          "label": "RACEWAY / ROUTE",
+          "width": 180
+        },
+        {
+          "key": "calculation_source_refs",
+          "label": "CALC / SOURCE",
+          "width": 160
+        },
+        {
+          "key": "review_ref",
+          "label": "REVIEW",
+          "width": 120
+        }
+      ],
+      "blank_rows": 6,
+      "row_height": 30,
+      "header_height": 30,
+      "title_height": 32,
+      "row_records": [],
+      "native_electrical_terminals": false,
+      "source_refs": [
+        "QET-TITLE"
+      ],
+      "drafting_units": "drawing-unit"
+    },
+    {
+      "id": "control_io_schedule",
+      "title": "CONTROL / SENSING INTERFACE SCHEDULE",
+      "schedule_kind": "control-io",
+      "columns": [
+        {
+          "key": "interface_ref",
+          "label": "I/O ID",
+          "width": 85
+        },
+        {
+          "key": "endpoint_refs",
+          "label": "ENDPOINTS",
+          "width": 165
+        },
+        {
+          "key": "signal_role",
+          "label": "FUNCTION",
+          "width": 155
+        },
+        {
+          "key": "transport_supply_refs",
+          "label": "TRANSPORT / SUPPLY",
+          "width": 195
+        },
+        {
+          "key": "failure_response_ref",
+          "label": "FAILURE RESPONSE",
+          "width": 160
+        },
+        {
+          "key": "evidence_review_ref",
+          "label": "EVIDENCE / REVIEW",
+          "width": 120
+        }
+      ],
+      "blank_rows": 6,
+      "row_height": 30,
+      "header_height": 30,
+      "title_height": 32,
+      "row_records": [],
+      "native_electrical_terminals": false,
+      "source_refs": [
+        "QET-TITLE"
+      ],
+      "drafting_units": "drawing-unit"
+    },
+    {
+      "id": "compliance_evidence_schedule",
+      "title": "REQUIREMENT / EVIDENCE REGISTER",
+      "schedule_kind": "compliance-evidence",
+      "columns": [
+        {
+          "key": "requirement_ref",
+          "label": "REQ ID",
+          "width": 85
+        },
+        {
+          "key": "applicability_ref",
+          "label": "SCOPE / RULE",
+          "width": 170
+        },
+        {
+          "key": "subject_ref",
+          "label": "SUBJECT",
+          "width": 135
+        },
+        {
+          "key": "evidence_refs",
+          "label": "EVIDENCE / REV",
+          "width": 190
+        },
+        {
+          "key": "open_issue_ref",
+          "label": "OPEN ISSUE",
+          "width": 180
+        },
+        {
+          "key": "review_ref",
+          "label": "REVIEW",
+          "width": 120
+        }
+      ],
+      "blank_rows": 6,
+      "row_height": 30,
+      "header_height": 30,
+      "title_height": 32,
+      "row_records": [],
+      "native_electrical_terminals": false,
+      "source_refs": [
+        "QET-TITLE"
+      ],
+      "drafting_units": "drawing-unit"
+    },
+    {
+      "id": "sheet_index",
+      "title": "SHEET INDEX",
+      "schedule_kind": "sheet-index",
+      "columns": [
+        {
+          "key": "sheet_ref",
+          "label": "SHEET",
+          "width": 100
+        },
+        {
+          "key": "title",
+          "label": "TITLE",
+          "width": 300
+        },
+        {
+          "key": "view_scope",
+          "label": "VIEW / SCOPE",
+          "width": 210
+        },
+        {
+          "key": "revision_ref",
+          "label": "REV / DATE",
+          "width": 140
+        },
+        {
+          "key": "issue_review_ref",
+          "label": "ISSUE / REVIEW",
+          "width": 130
+        }
+      ],
+      "blank_rows": 6,
+      "row_height": 30,
+      "header_height": 30,
+      "title_height": 32,
+      "row_records": [],
+      "native_electrical_terminals": false,
+      "source_refs": [
+        "QET-TITLE"
+      ],
+      "drafting_units": "drawing-unit"
+    },
+    {
+      "id": "revision_log",
+      "title": "REVISION / ISSUE REGISTER",
+      "schedule_kind": "revision",
+      "columns": [
+        {
+          "key": "revision_ref",
+          "label": "REV",
+          "width": 75
+        },
+        {
+          "key": "date_ref",
+          "label": "DATE",
+          "width": 115
+        },
+        {
+          "key": "description_ref",
+          "label": "DESCRIPTION",
+          "width": 320
+        },
+        {
+          "key": "affected_sheet_refs",
+          "label": "SHEETS",
+          "width": 130
+        },
+        {
+          "key": "author_checker_refs",
+          "label": "DRAWN / CHECKED",
+          "width": 140
+        },
+        {
+          "key": "issue_review_ref",
+          "label": "ISSUE / REVIEW",
+          "width": 100
+        }
+      ],
+      "blank_rows": 6,
+      "row_height": 30,
+      "header_height": 30,
+      "title_height": 32,
+      "row_records": [],
+      "native_electrical_terminals": false,
+      "source_refs": [
+        "QET-TITLE"
+      ],
+      "drafting_units": "drawing-unit"
+    }
+  ]
+}

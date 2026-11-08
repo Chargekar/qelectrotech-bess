@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<definition type="element" version="0.80" width="880" height="242" hotspot_x="0" hotspot_y="0" orientation="dyyy" link_type="simple">
+  <uuid uuid="{e4ed3130-a7e1-5b7e-890a-7b8ac400cf7d}" />
+  <names>
+    <name lang="en">Blank requirement / evidence register</name>
+  </names>
+  <informations>Original CC0-1.0 blank drafting form. No project rows, ratings, calculations or approval. No electrical terminals.</informations>
+  <description>
+    <rect x="0" y="0" width="880" height="242" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="true" />
+    <text x="12" y="22" text="REQUIREMENT / EVIDENCE REGISTER" size="11" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="0" y1="32" x2="880" y2="32" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="62" x2="880" y2="62" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="92" x2="880" y2="92" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="122" x2="880" y2="122" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="152" x2="880" y2="152" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="182" x2="880" y2="182" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="212" x2="880" y2="212" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="8" y="52" text="REQ ID" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="85" y1="32" x2="85" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="93" y="52" text="SCOPE / RULE" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="255" y1="32" x2="255" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="263" y="52" text="SUBJECT" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="390" y1="32" x2="390" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="398" y="52" text="EVIDENCE / REV" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="580" y1="32" x2="580" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="588" y="52" text="OPEN ISSUE" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="760" y1="32" x2="760" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="768" y="52" text="REVIEW" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+  </description>
+</definition>

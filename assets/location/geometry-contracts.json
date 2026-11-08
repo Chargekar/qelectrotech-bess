@@ -1,0 +1,391 @@
+{
+  "version": "1.0.0",
+  "asset_purpose": "Reusable NTS previews and later dimensioned-geometry contracts; no site scenario",
+  "frame_rules": [
+    "QET local glyph coordinates are drawing units, not inches, feet or a survey.",
+    "Keep physical model, sheet layout and symbol preview frames distinct.",
+    "Dimensioned geometry requires a physical frame, actual source geometry and dimensional evidence.",
+    "Do not stretch icon text/strokes to represent physical dimensions; regenerate the sourced outline and place annotations separately.",
+    "Link SLD and location occurrences through the same subject/equipment identity."
+  ],
+  "normalized_footprint_basis": {
+    "unit_box": {
+      "vertices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "units": "normalized-ratio"
+    },
+    "local_axes": "X right, Y toward rear, Z up; front reference edge is Y=0. Map explicitly to sheet coordinates.",
+    "scaling_inputs": [
+      "sourced overall width",
+      "sourced overall depth",
+      "physical unit",
+      "placement transform",
+      "source revision"
+    ],
+    "scaling_rule": "Affine geometry mapping only after real dimensions are supplied; normalized coordinates select no physical size."
+  },
+  "envelope_categories": [
+    "equipment-service",
+    "electrical-working",
+    "fire-separation",
+    "door-sweep",
+    "egress-access",
+    "ventilation",
+    "vehicle-protection",
+    "roof-pathway"
+  ],
+  "blocks": [
+    {
+      "id": "location_bess_cabinet_plan",
+      "contract": "FootprintDefinition",
+      "parameter_names": [
+        "overall_width",
+        "overall_depth",
+        "service_face"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "location_bess_container_plan",
+      "contract": "FootprintDefinition",
+      "parameter_names": [
+        "overall_width",
+        "overall_depth",
+        "service_faces"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "location_inverter_wall_plan",
+      "contract": "FootprintDefinition",
+      "parameter_names": [
+        "overall_width",
+        "overall_depth",
+        "wall_offset"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "location_pv_roof_zone",
+      "contract": "FootprintDefinition",
+      "parameter_names": [
+        "array_boundary_geometry",
+        "roof_geometry",
+        "access_path_refs"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "location_pv_ground_mount",
+      "contract": "FootprintDefinition",
+      "parameter_names": [
+        "array_boundary_geometry",
+        "support_geometry",
+        "row_spacing_ref"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "equipment_pad_preview",
+      "contract": "MountingInterface",
+      "parameter_names": [
+        "pad_geometry",
+        "equipment_footprint_ref",
+        "load_path_ref"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "wall_mount_section",
+      "contract": "MountingInterface",
+      "parameter_names": [
+        "substrate_geometry",
+        "attachment_detail_ref",
+        "equipment_depth"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "roof_mount_section",
+      "contract": "MountingInterface",
+      "parameter_names": [
+        "roof_geometry",
+        "support_detail_ref",
+        "waterproofing_ref"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "rack_mount_elevation",
+      "contract": "MountingInterface",
+      "parameter_names": [
+        "rack_geometry",
+        "equipment_geometry",
+        "anchorage_ref"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "anchor_detail_reference",
+      "contract": "MountingInterface",
+      "parameter_names": [
+        "anchor_pattern_ref",
+        "detail_reference",
+        "substrate_ref"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "clearance_electrical_working",
+      "contract": "SpatialEnvelopeRequirement",
+      "parameter_names": [
+        "reference_face",
+        "required_geometry_ref",
+        "rule_basis_ref"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "clearance_equipment_service",
+      "contract": "SpatialEnvelopeRequirement",
+      "parameter_names": [
+        "reference_face",
+        "manufacturer_envelope_ref",
+        "access_ref"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "clearance_fire_separation",
+      "contract": "SpatialEnvelopeRequirement",
+      "parameter_names": [
+        "equipment_boundary",
+        "exposure_target",
+        "fire_rule_and_test_refs"
+      ],
+      "source_refs": [
+        "CA-FIRE-2025"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "door_swing_preview",
+      "contract": "SpatialEnvelopeRequirement",
+      "parameter_names": [
+        "hinge_point",
+        "leaf_width",
+        "opening_angle_ref"
+      ],
+      "source_refs": [
+        "US-ACCESS-ROUTE"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "access_route_preview",
+      "contract": "SpatialEnvelopeRequirement",
+      "parameter_names": [
+        "route_geometry",
+        "width_slope_refs",
+        "accessibility_egress_basis"
+      ],
+      "source_refs": [
+        "US-ACCESS-ROUTE"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "fence_line_preview",
+      "contract": "SpatialEnvelopeRequirement",
+      "parameter_names": [
+        "boundary_geometry",
+        "height_ref",
+        "access_and_security_refs"
+      ],
+      "source_refs": [
+        "SD-122"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "gate_swing_preview",
+      "contract": "SpatialEnvelopeRequirement",
+      "parameter_names": [
+        "gate_geometry",
+        "opening_geometry",
+        "access_basis_ref"
+      ],
+      "source_refs": [
+        "US-ACCESS-ROUTE"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "bollard_plan_preview",
+      "contract": "MountingInterface",
+      "parameter_names": [
+        "impact_design_ref",
+        "foundation_detail_ref",
+        "placement_geometry"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "north_reference",
+      "contract": "PhysicalCoordinateFrame",
+      "parameter_names": [
+        "north_basis",
+        "rotation_ref",
+        "survey_or_plan_source_ref"
+      ],
+      "source_refs": [
+        "SD-122"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "roof_edge_reference",
+      "contract": "FootprintDefinition",
+      "parameter_names": [
+        "edge_geometry",
+        "roof_surface_ref",
+        "survey_source_ref"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "environment_salt_exposure",
+      "contract": "EnvironmentalExposureRecord",
+      "parameter_names": [
+        "site_exposure_evidence",
+        "environment_constraint_ref",
+        "material_compatibility_ref"
+      ],
+      "source_refs": [
+        "NEMA-TYPES"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "environment_corrosion",
+      "contract": "EnvironmentalExposureRecord",
+      "parameter_names": [
+        "corrosive_agent_refs",
+        "material_coating_refs",
+        "qualification_refs"
+      ],
+      "source_refs": [
+        "NEMA-TYPES"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "environment_flood",
+      "contract": "EnvironmentalExposureRecord",
+      "parameter_names": [
+        "hazard_study_ref",
+        "vertical_datum_ref",
+        "equipment_elevation_ref"
+      ],
+      "source_refs": [
+        "SD-122"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    },
+    {
+      "id": "equipment_service_face",
+      "contract": "FootprintDefinition",
+      "parameter_names": [
+        "equipment_ref",
+        "face_identifier",
+        "orientation_ref"
+      ],
+      "source_refs": [
+        "SD-301"
+      ],
+      "native_preview_units": "drawing-unit",
+      "physical_dimensions_selected": false
+    }
+  ]
+}

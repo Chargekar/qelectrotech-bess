@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<definition type="element" version="0.80" width="880" height="242" hotspot_x="0" hotspot_y="0" orientation="dyyy" link_type="simple">
+  <uuid uuid="{f2bd3db5-fbde-5500-b0cf-9e66b640fbb2}" />
+  <names>
+    <name lang="en">Blank equipment schedule</name>
+  </names>
+  <informations>Original CC0-1.0 blank drafting form. No project rows, ratings, calculations or approval. No electrical terminals.</informations>
+  <description>
+    <rect x="0" y="0" width="880" height="242" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="true" />
+    <text x="12" y="22" text="EQUIPMENT SCHEDULE" size="11" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="0" y1="32" x2="880" y2="32" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="62" x2="880" y2="62" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="92" x2="880" y2="92" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="122" x2="880" y2="122" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="152" x2="880" y2="152" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="182" x2="880" y2="182" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <line x1="0" y1="212" x2="880" y2="212" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="8" y="52" text="TAG" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="85" y1="32" x2="85" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="93" y="52" text="FUNCTION" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="215" y1="32" x2="215" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="223" y="52" text="MODEL / CONFIG" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="385" y1="32" x2="385" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="393" y="52" text="RATINGS / BASIS" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="560" y1="32" x2="560" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="568" y="52" text="SOURCE / REV" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+    <line x1="730" y1="32" x2="730" y2="242" style="line-style:normal;line-weight:normal;filling:none;color:black" end1="none" end2="none" length1="1.5" length2="1.5" antialias="true" />
+    <text x="738" y="52" text="REVIEW" size="8" rotation="0" color="black" font="Arial" style="font-weight:normal;font-style:normal" />
+  </description>
+</definition>

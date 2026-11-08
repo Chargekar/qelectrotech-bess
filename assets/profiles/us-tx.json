@@ -1,0 +1,35 @@
+{
+  "country": "US",
+  "status": "requires-project-review",
+  "researched": "2026-11-06",
+  "binding_project_defaults": false,
+  "coverage": "Research starting profile only; not a complete electrical/fire/energy/utility rule set",
+  "unresolved_project_fields": [
+    "actual authority territory and special jurisdiction",
+    "permit/activity basis and vesting",
+    "applicable rule sections, amendments, errata and current legal effect",
+    "occupancy and installation scope",
+    "electrical/fire/energy/accessibility/environmental/utility source basis",
+    "product configuration and evidence",
+    "responsible review"
+  ],
+  "id": "US-TX",
+  "subdivision_code": "US-TX",
+  "code_basis_candidates": [
+    {
+      "name": "TDLR adopted National Electrical Code",
+      "edition": "2023",
+      "effective_date": "2023-09-01",
+      "source_id": "TX-TDLR-CODE",
+      "selection_required": "Confirm current TDLR basis, actual permit/activity date, local inspecting authority and scope"
+    }
+  ],
+  "scope_checks": [
+    {
+      "topic": "Local electrical inspection and technical requirements",
+      "source_id": "TX-TDLR-CODE",
+      "selection_required": "Resolve the actual local authority; state electrical adoption does not establish all local permit requirements"
+    }
+  ],
+  "energy_fire_environment_utility_selection": "Unresolved. Obtain each actual governing source; Title 24 is not a Texas default."
+}

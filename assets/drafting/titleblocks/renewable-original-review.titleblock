@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<titleblocktemplate name="renewable-original-review">
+  <information>Original CC0-1.0 review title block. Blank professional area; no generated seal, signature or identity.</information>
+  <logos />
+  <grid cols="t16%;t16%;r100%;t16%;t16%;t18%;" rows="24;28;24;24;">
+    <field row="0" col="0" name="review_status" colspan="4" rowspan="0" align="left" valign="center" displaylabel="false" hadjust="true" fontsize="9">
+      <value>
+        <translation lang="en">PRELIMINARY / NOT FOR CONSTRUCTION</translation>
+      </value>
+      <label>
+        <translation lang="en" />
+      </label>
+    </field>
+    <field row="0" col="5" name="blank_professional_area" colspan="0" rowspan="3" align="left" valign="center" displaylabel="false" hadjust="true" fontsize="8">
+      <value>
+        <translation lang="en" />
+      </value>
+      <label>
+        <translation lang="en" />
+      </label>
+    </field>
+    <field row="1" col="0" name="project" colspan="1" rowspan="0" align="left" valign="center" displaylabel="true" hadjust="true" fontsize="8">
+      <value>
+        <translation lang="en">%{project_id}</translation>
+      </value>
+      <label>
+        <translation lang="en">Project</translation>
+      </label>
+    </field>
+    <field row="1" col="2" name="title" colspan="2" rowspan="0" align="left" valign="center" displaylabel="true" hadjust="true" fontsize="10">
+      <value>
+        <translation lang="en">%{title}</translation>
+      </value>
+      <label>
+        <translation lang="en">Sheet title</translation>
+      </label>
+    </field>
+    <field row="2" col="0" name="folio" colspan="0" rowspan="0" align="left" valign="center" displaylabel="true" hadjust="true" fontsize="8">
+      <value>
+        <translation lang="en">%{folio}</translation>
+      </value>
+      <label>
+        <translation lang="en">Sheet</translation>
+      </label>
+    </field>
+    <field row="2" col="1" name="revision" colspan="0" rowspan="0" align="left" valign="center" displaylabel="true" hadjust="true" fontsize="8">
+      <value>
+        <translation lang="en">%{indexrev}</translation>
+      </value>
+      <label>
+        <translation lang="en">Rev</translation>
+      </label>
+    </field>
+    <field row="2" col="2" name="scale" colspan="0" rowspan="0" align="left" valign="center" displaylabel="true" hadjust="true" fontsize="8">
+      <value>
+        <translation lang="en">%{drawing_scale}</translation>
+      </value>
+      <label>
+        <translation lang="en">Scale</translation>
+      </label>
+    </field>
+    <field row="2" col="3" name="author" colspan="0" rowspan="0" align="left" valign="center" displaylabel="true" hadjust="true" fontsize="8">
+      <value>
+        <translation lang="en">%{author}</translation>
+      </value>
+      <label>
+        <translation lang="en">Drawn</translation>
+      </label>
+    </field>
+    <field row="2" col="4" name="checker" colspan="0" rowspan="0" align="left" valign="center" displaylabel="true" hadjust="true" fontsize="8">
+      <value>
+        <translation lang="en">%{checked_by}</translation>
+      </value>
+      <label>
+        <translation lang="en">Checked</translation>
+      </label>
+    </field>
+    <field row="3" col="0" name="site" colspan="1" rowspan="0" align="left" valign="center" displaylabel="true" hadjust="true" fontsize="8">
+      <value>
+        <translation lang="en">%{site_id}</translation>
+      </value>
+      <label>
+        <translation lang="en">Site</translation>
+      </label>
+    </field>
+    <field row="3" col="2" name="date" colspan="0" rowspan="0" align="left" valign="center" displaylabel="true" hadjust="true" fontsize="8">
+      <value>
+        <translation lang="en">%{date}</translation>
+      </value>
+      <label>
+        <translation lang="en">Date</translation>
+      </label>
+    </field>
+    <field row="3" col="3" name="basis" colspan="1" rowspan="0" align="left" valign="center" displaylabel="true" hadjust="true" fontsize="8">
+      <value>
+        <translation lang="en">%{basis_ref}</translation>
+      </value>
+      <label>
+        <translation lang="en">Basis</translation>
+      </label>
+    </field>
+  </grid>
+</titleblocktemplate>

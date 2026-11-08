@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "scope": "Reusable note and applicability contracts only; no project decisions or approvals instantiated",
+  "namespace_rules": [
+    "Geographic jurisdiction, operating mode, component condition, review status, rule applicability and authority authorization are distinct.",
+    "State profiles are research starting points, never automatic adopted project defaults.",
+    "Guidance, public plan examples and product test reports do not independently establish an adopted rule or project approval."
+  ],
+  "note_release_checks": [
+    "Resolve actual authority territory, permit/activity basis and rule/product edition/locator.",
+    "Check applicability facts, exceptions, current legal effect, amendments and errata.",
+    "Resolve all placeholders and reference targets; withhold unsupported notes.",
+    "Record responsible reviewer and evidence; verify any separate authority/utility milestones.",
+    "Schema success and eligible-for-issue metadata do not grant professional or external approval."
+  ],
+  "topic_domains": [
+    "electrical",
+    "energy-code",
+    "fire",
+    "structural-mounting",
+    "accessibility-egress",
+    "utility",
+    "emissions-fuel",
+    "environment-land-use",
+    "manufacturer-qualification",
+    "owner-resilience"
+  ],
+  "source_refs": [
+    "CA-ESS-GUIDE",
+    "NY-DOS-ADOPTION",
+    "NY-DOS-SCOPE",
+    "NYC-ENERGY-TRANSITION",
+    "TX-TDLR-CODE"
+  ]
+}

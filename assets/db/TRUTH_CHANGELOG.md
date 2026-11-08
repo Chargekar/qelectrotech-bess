@@ -1,0 +1,218 @@
+# Truth seed changelog
+
+Append-only. Written by `scripts/watchtower.py log`; newest first.
+
+## 2026-11-07  seed da2d7122b9b8  by Harsh Wadikar
+
+Base `4b825dc642cb6eb9a060e54bf8d69288fbee4904` (none). Totals: 13 standards, 19 editions, 65 clauses, 32 formulas, 14 constants, 14 code tables, 90 table rows, 0 verifications.
+
+Summary: addition 258, metadata 1
+
+Note: Initial seed baseline: 13 standards, 19 editions, 65 clauses, 32 formulas, 14 constants
+
+**addition**
+- `clause:CA-CFC-2022:1207`
+- `clause:CA-CFC-2025:1207`
+- `clause:CA-JA12-2022:JA12`
+- `clause:CA-JA12-2025:JA12`
+- `clause:CA-T24-P6-2022:110.12`
+- `clause:CA-T24-P6-2022:140.10(a)`
+- `clause:CA-T24-P6-2022:140.10(b)`
+- `clause:CA-T24-P6-2022:150.1(c)14`
+- `clause:CA-T24-P6-2025:110.12`
+- `clause:CA-T24-P6-2025:140.10(a)`
+- `clause:CA-T24-P6-2025:140.10(b)`
+- `clause:CPUC-R21-CUR:Rule 21`
+- `clause:IEEE-1547-2018:IEEE 1547`
+- `clause:NEC-2017:705.60`
+- `clause:NEC-2017:705.65`
+- `clause:NEC-2020:110.26(A)(1)`
+- `clause:NEC-2020:240.4(B)`
+- `clause:NEC-2020:240.6(A)`
+- `clause:NEC-2020:250.122`
+- `clause:NEC-2020:310.16`
+- `clause:NEC-2020:690.12`
+- `clause:NEC-2020:690.7(A)`
+- `clause:NEC-2020:690.8(A)(1)`
+- `clause:NEC-2020:705.11`
+- `clause:NEC-2020:705.12(B)(3)(1)`
+- `clause:NEC-2020:705.12(B)(3)(2)`
+- `clause:NEC-2020:705.12(B)(3)(3)`
+- `clause:NEC-2020:705.13`
+- `clause:NEC-2020:705.20`
+- `clause:NEC-2020:705.28`
+- `clause:NEC-2020:705.30`
+- `clause:NEC-2020:706.15`
+- `clause:NEC-2020:706.30`
+- `clause:NEC-2020:706.31`
+- `clause:NEC-2020:Chapter 9 Table 8`
+- `clause:NEC-2023:110.26(A)(1)`
+- `clause:NEC-2023:240.4(B)`
+- `clause:NEC-2023:240.6(A)`
+- `clause:NEC-2023:250.122`
+- `clause:NEC-2023:310.16`
+- `clause:NEC-2023:690.12`
+- `clause:NEC-2023:690.7(A)`
+- `clause:NEC-2023:690.8(A)(1)`
+- `clause:NEC-2023:705.11`
+- `clause:NEC-2023:705.12(B)(3)(1)`
+- `clause:NEC-2023:705.12(B)(3)(2)`
+- `clause:NEC-2023:705.12(B)(3)(3)`
+- `clause:NEC-2023:705.13`
+- `clause:NEC-2023:705.20`
+- `clause:NEC-2023:705.28`
+- `clause:NEC-2023:705.30`
+- `clause:NEC-2023:706.15`
+- `clause:NEC-2023:706.30`
+- `clause:NEC-2023:706.31`
+- `clause:NEC-2023:Chapter 9 Table 8`
+- `clause:NFPA-70E-2024:130.5`
+- `clause:NFPA-855-2023:Ch 9 (ESS general)`
+- `clause:PHYSICS-0:P-AC1`
+- `clause:PHYSICS-0:P-AC3`
+- `clause:PHYSICS-0:P-DC`
+- `clause:PHYSICS-0:P-ENERGY`
+- `clause:PHYSICS-0:P-VD`
+- `clause:UL-1741-CUR:UL 1741 SB`
+- `clause:UL-9540-CUR:UL 9540`
+- `clause:UL-9540A-CUR:UL 9540A`
+- `constant:NEC-2020:690.8(A)(1):K690`
+- `constant:NEC-2020:705.12(B)(3)(1):K125`
+- `constant:NEC-2020:705.12(B)(3)(2):K120`
+- `constant:NEC-2020:705.12(B)(3)(2):K125`
+- `constant:NEC-2020:705.28:K125`
+- `constant:NEC-2020:705.30:K125`
+- `constant:NEC-2020:706.30:K125`
+- `constant:NEC-2023:690.8(A)(1):K690`
+- `constant:NEC-2023:705.12(B)(3)(1):K125`
+- `constant:NEC-2023:705.12(B)(3)(2):K120`
+- `constant:NEC-2023:705.12(B)(3)(2):K125`
+- `constant:NEC-2023:705.28:K125`
+- `constant:NEC-2023:705.30:K125`
+- `constant:NEC-2023:706.30:K125`
+- `edition:CA-CEC-2022`
+- `edition:CA-CEC-2025`
+- `edition:CA-CFC-2022`
+- `edition:CA-CFC-2025`
+- `edition:CA-JA12-2022`
+- `edition:CA-JA12-2025`
+- `edition:CA-T24-P6-2022`
+- `edition:CA-T24-P6-2025`
+- `edition:CPUC-R21-CUR`
+- `edition:IEEE-1547-2018`
+- `edition:NEC-2017`
+- `edition:NEC-2020`
+- `edition:NEC-2023`
+- `edition:NFPA-70E-2024`
+- `edition:NFPA-855-2023`
+- `edition:PHYSICS-0`
+- `edition:UL-1741-CUR`
+- `edition:UL-9540-CUR`
+- `edition:UL-9540A-CUR`
+- `formula:CA-T24-P6-2022:140.10(a):PVDC`
+- `formula:CA-T24-P6-2022:140.10(b):BKW`
+- `formula:CA-T24-P6-2022:140.10(b):BKWH`
+- `formula:CA-T24-P6-2025:140.10(a):PVDC`
+- `formula:CA-T24-P6-2025:140.10(b):BKW`
+- `formula:CA-T24-P6-2025:140.10(b):BKWH`
+- `formula:NEC-2020:690.7(A):VOC`
+- `formula:NEC-2020:690.8(A)(1):IMAX`
+- `formula:NEC-2020:705.12(B)(3)(1):B100`
+- `formula:NEC-2020:705.12(B)(3)(2):B120`
+- `formula:NEC-2020:705.12(B)(3)(3):BSUM`
+- `formula:NEC-2020:705.28:AMIN`
+- `formula:NEC-2020:705.30:OMIN`
+- `formula:NEC-2020:705.30:OSTD`
+- `formula:NEC-2020:706.30:EMIN`
+- `formula:NEC-2023:690.7(A):VOC`
+- `formula:NEC-2023:690.8(A)(1):IMAX`
+- `formula:NEC-2023:705.12(B)(3)(1):B100`
+- `formula:NEC-2023:705.12(B)(3)(2):B120`
+- `formula:NEC-2023:705.12(B)(3)(3):BSUM`
+- `formula:NEC-2023:705.28:AMIN`
+- `formula:NEC-2023:705.30:OMIN`
+- `formula:NEC-2023:705.30:OSTD`
+- `formula:NEC-2023:706.30:EMIN`
+- `formula:PHYSICS-0:P-AC1:I1`
+- `formula:PHYSICS-0:P-AC3:I3`
+- `formula:PHYSICS-0:P-DC:IDC`
+- `formula:PHYSICS-0:P-ENERGY:EAC`
+- `formula:PHYSICS-0:P-ENERGY:EUSE`
+- `formula:PHYSICS-0:P-ENERGY:RUN`
+- `formula:PHYSICS-0:P-VD:VD2`
+- `formula:PHYSICS-0:P-VD:VD3`
+- `lineage:CA-T24-P6-2022:140.10(a)->CA-T24-P6-2025:140.10(a)`
+- `lineage:CA-T24-P6-2022:140.10(b)->CA-T24-P6-2025:140.10(b)`
+- `lineage:NEC-2017:705.60->NEC-2020:705.28`
+- `lineage:NEC-2017:705.65->NEC-2020:705.30`
+- `lineage:NEC-2020:705.28->NEC-2023:705.28`
+- `lineage:NEC-2020:705.30->NEC-2023:705.30`
+- `source:CA-ENERGY-2022`
+- `source:IEEE-1547`
+- `source:NFPA-70-2020`
+- `source:NFPA-70-2023`
+- `source:NFPA-855`
+- `standard:CA-CEC`
+- `standard:CA-CFC`
+- `standard:CA-JA12`
+- `standard:CA-T24-P6`
+- `standard:CPUC-R21`
+- `standard:IEEE-1547`
+- `standard:NEC`
+- `standard:NFPA-70E`
+- `standard:NFPA-855`
+- `standard:PHYSICS`
+- `standard:UL-1741`
+- `standard:UL-9540`
+- `standard:UL-9540A`
+- `table:CA-T24-P6-2022:140.10(a):TPV`
+- `table:CA-T24-P6-2022:140.10(b):TBESS`
+- `table:CA-T24-P6-2025:140.10(a):TPV`
+- `table:CA-T24-P6-2025:140.10(b):TBESS`
+- `table:NEC-2020:110.26(A)(1):T11026`
+- `table:NEC-2020:240.6(A):T2406`
+- `table:NEC-2020:250.122:T250122`
+- `table:NEC-2020:310.16:T31016`
+- `table:NEC-2020:Chapter 9 Table 8:TCH9T8`
+- `table:NEC-2023:110.26(A)(1):T11026`
+- `table:NEC-2023:240.6(A):T2406`
+- `table:NEC-2023:250.122:T250122`
+- `table:NEC-2023:310.16:T31016`
+- `table:NEC-2023:Chapter 9 Table 8:TCH9T8`
+- `table_row:NEC-2020:T11026:condition=1,v_to_ground=0-150`
+- `table_row:NEC-2020:T11026:condition=1,v_to_ground=151-600`
+- `table_row:NEC-2020:T11026:condition=2,v_to_ground=0-150`
+- `table_row:NEC-2020:T11026:condition=2,v_to_ground=151-600`
+- `table_row:NEC-2020:T11026:condition=3,v_to_ground=0-150`
+- `table_row:NEC-2020:T11026:condition=3,v_to_ground=151-600`
+- `table_row:NEC-2020:T2406:rating_a=100`
+- `table_row:NEC-2020:T2406:rating_a=1000`
+- `table_row:NEC-2020:T2406:rating_a=110`
+- `table_row:NEC-2020:T2406:rating_a=1200`
+- `table_row:NEC-2020:T2406:rating_a=125`
+- `table_row:NEC-2020:T2406:rating_a=15`
+- `table_row:NEC-2020:T2406:rating_a=150`
+- `table_row:NEC-2020:T2406:rating_a=1600`
+- `table_row:NEC-2020:T2406:rating_a=175`
+- `table_row:NEC-2020:T2406:rating_a=20`
+- `table_row:NEC-2020:T2406:rating_a=200`
+- `table_row:NEC-2020:T2406:rating_a=2000`
+- `table_row:NEC-2020:T2406:rating_a=225`
+- `table_row:NEC-2020:T2406:rating_a=25`
+- `table_row:NEC-2020:T2406:rating_a=250`
+- `table_row:NEC-2020:T2406:rating_a=2500`
+- `table_row:NEC-2020:T2406:rating_a=30`
+- `table_row:NEC-2020:T2406:rating_a=300`
+- `table_row:NEC-2020:T2406:rating_a=3000`
+- `table_row:NEC-2020:T2406:rating_a=35`
+- `table_row:NEC-2020:T2406:rating_a=350`
+- `table_row:NEC-2020:T2406:rating_a=40`
+- `table_row:NEC-2020:T2406:rating_a=400`
+- `table_row:NEC-2020:T2406:rating_a=4000`
+- `table_row:NEC-2020:T2406:rating_a=45`
+- `table_row:NEC-2020:T2406:rating_a=450`
+- ... 58 more in watchtower/changelog.jsonl
+
+**metadata**
+- `policy` (policy: [] -> ["Truth rows are constant for an edition and append-only. Errata, renumbering an)
+

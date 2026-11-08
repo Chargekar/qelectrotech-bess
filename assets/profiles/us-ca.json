@@ -1,0 +1,54 @@
+{
+  "id": "US-CA",
+  "country": "US",
+  "subdivision_code": "US-CA",
+  "status": "requires-project-review",
+  "researched": "2026-11-06",
+  "binding_project_defaults": false,
+  "code_basis_candidates": [
+    {
+      "part": "Title 24 Part 3",
+      "name": "California Electrical Code",
+      "edition": "2025",
+      "model_basis": "2023 NEC with California amendments",
+      "effective_date": "2026-01-01",
+      "source_id": "CA-CEC",
+      "selection_required": "Actual permit basis, agency, amendments, errata"
+    },
+    {
+      "part": "Title 24 Part 6",
+      "name": "California Energy Code",
+      "edition": "2025",
+      "source_id": "CA-ENERGY-2025",
+      "selection_required": "Building/project applicability, compliance path, corrected rules/tables and current forms"
+    },
+    {
+      "part": "Title 24 Part 9",
+      "name": "California Fire Code",
+      "edition": "2025",
+      "source_id": "CA-FIRE-2025",
+      "selection_required": "Actual occupancy/ESS scope and fire AHJ amendments"
+    }
+  ],
+  "equipment_qualification_topics": [
+    "Exact system listing and compatibility",
+    "JA12 certification/capability when applicable to selected energy-code path",
+    "Manufacturer installation/environmental limits"
+  ],
+  "special_contexts": [
+    "DSA public-school projects",
+    "HCAI healthcare projects",
+    "coastal zone permits vs physical salt exposure",
+    "local air district/CARB generator rules",
+    "IOU Rule 21 vs municipal utility vs wholesale/CAISO"
+  ],
+  "unresolved_project_fields": [
+    "building/fire AHJs",
+    "utility",
+    "permit basis date",
+    "occupancy/project scope",
+    "local amendments",
+    "applicable code sections/exceptions",
+    "energy-code compliance path"
+  ]
+}
