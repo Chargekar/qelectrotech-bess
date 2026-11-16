@@ -1,4 +1,60 @@
 {
- "sources": {},
+ "sources": {
+  "CA-CEC": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://www.dgs.ca.gov/BSC/Codes",
+   "last_seen": "2025 CEC (Title 24 Part 3) eff 2026-01-01; errata Part 3 eff 2026-01-01; next cycle not posted"
+  },
+  "NFPA-70": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/70/NFPA_70_Proposed_TIA_1915.pdf",
+   "last_seen": "2026 edition; proposed TIAs to 2026 ed (latest log 1915, comments closed 2026-07-07); next cycle A2028"
+  },
+  "CA-ENERGY": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2025-building-energy-efficiency",
+   "last_seen": "2025 Energy Code eff 2026-01-01; BESS capacity corrections NOA 2025-06-09; 2028 code adopt 2027 eff 2029-01-01 (docket 25-BSTD-03)"
+  },
+  "CA-ENERGY-BLUEPRINT": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://www.energy.ca.gov/newsroom/blueprint-newsletter",
+   "last_seen": "Blueprint 5 Summer 2026; no battery/PV items; Spring 2026 had PV and BESS Q&A"
+  },
+  "CA-JA12": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://www.energy.ca.gov/rules-and-regulations/building-energy-efficiency/manufacturer-certification-building-equipment/battery-bess",
+   "last_seen": "JA12 Qualification Requirements for Battery Storage System (media/2248); no list update date shown"
+  },
+  "CA-CFC": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://codes.iccsafe.org/content/CAFC2025P2/chapter-12-energy-systems",
+   "last_seen": "2025 CFC Part 9 with January 2026 errata; no supplement listed"
+  },
+  "NFPA-855": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/855/NFPA_855_Proposed_TIA_1852.pdf",
+   "last_seen": "2026 edition; proposed TIA 1852 (CSA C800 large-scale fire test ref)"
+  },
+  "UL-9540": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://www.shopulstandards.com/ProductDetail.aspx?productId=UL9540",
+   "last_seen": "UL 9540 Ed 3 2023-06-28 rev 2025-03-07; UL 9540A Ed 6 2026-03-13"
+  },
+  "UL-1741": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://www.shopulstandards.com/ProductDetail.aspx?productId=UL1741",
+   "last_seen": "UL 1741 Ed 3 2021-09-28 rev 2026-08-14; SB not shown"
+  },
+  "IEEE-1547": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://standards.ieee.org/ieee/1547/5915/",
+   "last_seen": "1547-2018 active; 1547a-2020; P1547 revision authorized"
+  },
+  "CPUC-R21": {
+   "last_checked": "2026-11-16",
+   "last_url": "https://www.cpuc.ca.gov/Rule21",
+   "last_seen": "R.25-08-004 opened 2025-08-20; latest resolution E-5260 2024-05-09"
+  }
+ },
  "queue": []
 }
