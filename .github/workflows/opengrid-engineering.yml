@@ -1,0 +1,51 @@
+name: opengrid-engineering
+on:
+  pull_request:
+    paths:
+      - 'engine/**'
+      - 'assets/catalog.json'
+      - '.github/workflows/opengrid-engineering.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'engine/**'
+      - 'assets/catalog.json'
+      - '.github/workflows/opengrid-engineering.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  model-and-cli:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e './engine[dev,draw,ingest]'
+      - run: python -m pytest engine/tests -q
+      - run: og symbols assets/catalog.json --id pv_inverter
+      - run: og validate engine/examples/sample-building.yaml --study-ready --catalog assets/catalog.json
+      - run: og compile engine/examples/sample-building.yaml --scenario max-solar --out engine/out/max-solar.dss
+      - run: og draw engine/examples/sample-building.yaml --out engine/out/concept.svg
+      - run: og draw engine/examples/sample-building.yaml --out engine/out/concept.pdf
+      - run: og propose engine/examples/sample-building.yaml engine/examples/upgrade-proposal.yaml --out engine/out/proposal.yaml --audit engine/out/changes.json
+
+  opendss-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e './engine[sim]'
+      - run: og study engine/examples/sample-building.yaml --scenario baseline --out engine/out/baseline-study.json
+      - run: og study engine/examples/sample-building.yaml --scenario max-solar --out engine/out/max-solar-study.json
