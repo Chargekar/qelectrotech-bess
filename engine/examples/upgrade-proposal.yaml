@@ -1,0 +1,6 @@
+# Agent proposal example: change the proposed PV output, not the as-built.
+- op: update
+  collection: pv
+  id: PV_250
+  changes:
+    ac_kw: 200
