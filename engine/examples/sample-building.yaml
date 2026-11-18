@@ -1,0 +1,33 @@
+schema_version: '0.1'
+id: ExampleBuilding
+title: Demonstration 480 V Building Solar and BESS
+# Synthetic values only. Not a real engineering design or permit deliverable.
+description: Synthetic radial three-phase network; all ratings are illustrative.
+source:
+  id: GRID
+  bus: UTILITY
+  voltage_pu: 1.0
+  verified: false
+buses:
+  - {id: UTILITY, voltage_ll_kv: 0.48, label: Utility equivalent}
+  - {id: MSB, voltage_ll_kv: 0.48, label: Main switchboard}
+  - {id: PANEL_A, voltage_ll_kv: 0.48, label: Building distribution}
+  - {id: PV_BUS, voltage_ll_kv: 0.48, label: Solar interconnection, status: proposed}
+  - {id: BESS_BUS, voltage_ll_kv: 0.48, label: Storage interconnection, status: proposed}
+  - {id: WIND_BUS, voltage_ll_kv: 0.48, label: Wind interconnection, status: proposed}
+feeders:
+  - {id: F_GRID_MSB, from_bus: UTILITY, to_bus: MSB, length_km: 0.02, r1_ohm_per_km: 0.08, x1_ohm_per_km: 0.07, r0_ohm_per_km: 0.22, x0_ohm_per_km: 0.19, ampacity_a: 1600}
+  - {id: F_PANEL_A, from_bus: MSB, to_bus: PANEL_A, length_km: 0.07, r1_ohm_per_km: 0.12, x1_ohm_per_km: 0.09, r0_ohm_per_km: 0.3, x0_ohm_per_km: 0.25, ampacity_a: 600}
+  - {id: F_PV, from_bus: MSB, to_bus: PV_BUS, length_km: 0.045, r1_ohm_per_km: 0.1, x1_ohm_per_km: 0.08, r0_ohm_per_km: 0.3, x0_ohm_per_km: 0.24, ampacity_a: 450, status: proposed}
+  - {id: F_BESS, from_bus: MSB, to_bus: BESS_BUS, length_km: 0.045, r1_ohm_per_km: 0.1, x1_ohm_per_km: 0.08, r0_ohm_per_km: 0.3, x0_ohm_per_km: 0.24, ampacity_a: 450, status: proposed}
+  - {id: F_WIND, from_bus: MSB, to_bus: WIND_BUS, length_km: 0.07, r1_ohm_per_km: 0.1, x1_ohm_per_km: 0.08, r0_ohm_per_km: 0.3, x0_ohm_per_km: 0.24, ampacity_a: 125, status: proposed}
+loads:
+  - {id: HVAC, bus: PANEL_A, p_kw: 180, q_kvar: 50}
+  - {id: LIGHTING, bus: PANEL_A, p_kw: 65, q_kvar: 15}
+  - {id: MISC, bus: MSB, p_kw: 30, q_kvar: 6}
+pv:
+  - {id: PV_250, bus: PV_BUS, ac_kw: 250, inverter_kva: 250, status: proposed}
+batteries:
+  - {id: BESS_500, bus: BESS_BUS, energy_kwh: 500, pcs_kw: 250, initial_soc_pct: 50, status: proposed}
+wind:
+  - {id: WIND_50, bus: WIND_BUS, rated_kw: 50, status: proposed}
